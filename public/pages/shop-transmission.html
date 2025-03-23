@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoParts Pro - Used Transmissions</title>
+    <style>
+        /* Same styling as engines page with color adjustments */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #2c3e50; /* Different color for differentiation */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .transmission-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .transmission-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .transmission-title {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        .transmission-details {
+            list-style: none;
+            padding: 0;
+        }
+
+        .transmission-details li {
+            margin-bottom: 8px;
+        }
+
+        /* Keep same price and button styling */
+        .price {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+        .search-form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        width: 100%;
+        }
+
+        .search-form form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        input[type="text"], select {
+            padding: 8px;
+            margin: 0 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AutoParts Pro</h1>
+        <p>Quality Used Transmissions</p>
+    </div>
+
+    <div class="search-form">
+        <form>
+            <input type="text" placeholder="Search by make/model">
+            <input type="text" placeholder="Search by year">
+            <select>
+                <option value="">Transmission Type</option>
+                <option>Automatic</option>
+                <option>Manual</option>
+                <option>CVT</option>
+                <option>DCT</option>
+            </select>
+            <button type="submit">Search Transmissions</button>
+        </form>
+    </div>
+
+    <div class="transmission-list">
+        <!-- Transmission 1 -->
+        <div class="transmission-item">
+            <h2 class="transmission-title">Ford 6R80 6-Speed Automatic</h2>
+            <ul class="transmission-details">
+                <li><strong>Year:</strong> 2018</li>
+                <li><strong>Mileage:</strong> 55,000 miles</li>
+                <li><strong>Type:</strong> Automatic</li>
+                <li><strong>Gear Ratio:</strong> 4.17:1</li>
+                <li><strong>Condition:</strong> Rebuilt with warranty</li>
+                <li><strong>Warranty:</strong> 1 year</li>
+                <li class="price">$1,450</li>
+            </ul>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Transmission 2 -->
+        <div class="transmission-item">
+            <h2 class="transmission-title">Toyota U660E 6-Speed</h2>
+            <ul class="transmission-details">
+                <li><strong>Year:</strong> 2020</li>
+                <li><strong>Mileage:</strong> 32,000 miles</li>
+                <li><strong>Type:</strong> Automatic</li>
+                <li><strong>Gear Ratio:</strong> 3.94:1</li>
+                <li><strong>Condition:</strong> Low mileage, tested</li>
+                <li><strong>Warranty:</strong> 18 months</li>
+                <li class="price">$1,850</li>
+            </ul>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Transmission 3 -->
+        <div class="transmission-item">
+            <h2 class="transmission-title">Honda 5-Speed Manual</h2>
+            <ul class="transmission-details">
+                <li><strong>Year:</strong> 2019</li>
+                <li><strong>Mileage:</strong> 48,000 miles</li>
+                <li><strong>Type:</strong> Manual</li>
+                <li><strong>Gear Ratio:</strong> 4.11:1</li>
+                <li><strong>Condition:</strong> Good shift quality</li>
+                <li><strong>Warranty:</strong> 6 months</li>
+                <li class="price">$950</li>
+            </ul>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Transmission 4 -->
+        <div class="transmission-item">
+            <h2 class="transmission-title">Chevrolet 8L90 8-Speed Auto</h2>
+            <ul class="transmission-details">
+                <li><strong>Year:</strong> 2021</li>
+                <li><strong>Mileage:</strong> 25,000 miles</li>
+                <li><strong>Type:</strong> Automatic</li>
+                <li><strong>Gear Ratio:</strong> 4.56:1</li>
+                <li><strong>Condition:</strong> Like new</li>
+                <li><strong>Warranty:</strong> 2 years</li>
+                <li class="price">$2,750</li>
+            </ul>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Transmission 5 -->
+        <div class="transmission-item">
+            <h2 class="transmission-title">Nissan CVT RE0F11A</h2>
+            <ul class="transmission-details">
+                <li><strong>Year:</strong> 2020</li>
+                <li><strong>Mileage:</strong> 40,000 miles</li>
+                <li><strong>Type:</strong> CVT</li>
+                <li><strong>Ratio Range:</strong> 2.349-0.394</li>
+                <li><strong>Condition:</strong> Updated software</li>
+                <li><strong>Warranty:</strong> 1 year</li>
+                <li class="price">$1,650</li>
+            </ul>
+            <button>Add to Cart</button>
+        </div>
+        <div class="transmission-item">
+            <h2 class="transmission-title">[Manufacturer] [Model]</h2>
+            <ul class="transmission-details">
+                <li><strong>Year:</strong> [Year]</li>
+                <li><strong>Mileage:</strong> [Mileage]</li>
+                <li><strong>Type:</strong> [Transmission Type]</li>
+                <li><strong>Gear Ratio:</strong> [Ratio]</li>
+                <li><strong>Condition:</strong> [Condition Description]</li>
+                <li><strong>Warranty:</strong> [Warranty Period]</li>
+                <li class="price">[Price]</li>
+            </ul>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="footer" style="text-align: center; margin-top: 30px; color: #666;">
+        <p>© 2023 AutoParts Pro - All rights reserved</p>
+        <p>Contact us: (555) 123-4567 | info@autopartspro.com</p>
+    </div>
+</body>
+</html>

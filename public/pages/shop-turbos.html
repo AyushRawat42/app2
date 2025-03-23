@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoParts Pro - Used Turbos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #8B0000; /* Dark red header */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .turbo-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .turbo-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .turbo-title {
+            color: #8B0000;
+            margin-top: 0;
+        }
+
+        .turbo-details {
+            list-style: none;
+            padding: 0;
+        }
+
+        .turbo-details li {
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .search-form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .search-form form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        input[type="text"], select {
+            padding: 8px;
+            margin: 0 5px;
+            width: 200px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .search-form form {
+                flex-direction: column;
+                width: 90%;
+            }
+            
+            input[type="text"], select, button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AutoParts Pro</h1>
+        <p>Quality Used Turbos</p>
+    </div>
+
+    <div class="search-form">
+        <form>
+            <input type="text" placeholder="Manufacturer">
+            <input type="text" placeholder="Vehicle Model">
+            <select>
+                <option value="">Turbo Type</option>
+                <option>Single Turbo</option>
+                <option>Twin Turbo</option>
+                <option>Variable Geometry</option>
+                <option>Ball Bearing</option>
+            </select>
+            <button type="submit">Search Turbos</button>
+        </form>
+    </div>
+
+    <div class="turbo-list">
+        <!-- Turbo 1 -->
+        <div class="turbo-item">
+            <h2 class="turbo-title">Garrett GTX3584RS Gen II</h2>
+            <ul class="turbo-details">
+                <li><strong>Vehicle:</strong> Ford Mustang GT</li>
+                <li><strong>Year:</strong> 2019-2022</li>
+                <li><strong>Type:</strong> Ball Bearing Turbo</li>
+                <li><strong>Part #:</strong> 743347-2</li>
+                <li><strong>Condition:</strong> Low miles, no shaft play</li>
+                <li><strong>Warranty:</strong> 6 months</li>
+                <li class="price">$1,850</li>
+            </ul>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Turbo 2 -->
+        <div class="turbo-item">
+            <h2 class="turbo-title">BorgWarner EFR 7163</h2>
+            <ul class="turbo-details">
+                <li><strong>Vehicle:</strong> Subaru WRX STI</li>
+                <li><strong>Year:</strong> 2015-2020</li>
+                <li><strong>Type:</strong> Twin Scroll Turbo</li>
+                <li><strong>Part #:</strong> EFR-7163</li>
+                <li><strong>Condition:</strong> Refurbished</li>
+                <li><strong>Warranty:</strong> 1 year</li>
+                <li class="price">$2,200</li>
+            </ul>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Turbo 3 -->
+        <div class="turbo-item">
+            <h2 class="turbo-title">Mitsubishi TD05-16G</h2>
+            <ul class="turbo-details">
+                <li><strong>Vehicle:</strong> EVO X</li>
+                <li><strong>Year:</strong> 2008-2015</li>
+                <li><strong>Type:</strong> Journal Bearing Turbo</li>
+                <li><strong>Part #:</strong> TD05H-16G</li>
+                <li><strong>Condition:</strong> Good working condition</li>
+                <li><strong>Warranty:</strong> 3 months</li>
+                <li class="price">$650</li>
+            </ul>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Turbo 4 -->
+        <div class="turbo-item">
+            <h2 class="turbo-title">Holset HX35</h2>
+            <ul class="turbo-details">
+                <li><strong>Vehicle:</strong> Cummins Diesel</li>
+                <li><strong>Year:</strong> 2010-2018</li>
+                <li><strong>Type:</strong> Variable Geometry Turbo</li>
+                <li><strong>Part #:</strong> HX35W</li>
+                <li><strong>Condition:</strong> Rebuilt with new cartridges</li>
+                <li><strong>Warranty:</strong> 1 year</li>
+                <li class="price">$1,250</li>
+            </ul>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Turbo 5 -->
+        <div class="turbo-item">
+            <h2 class="turbo-title">Precision 6266</h2>
+            <ul class="turbo-details">
+                <li><strong>Vehicle:</strong> Nissan GT-R</li>
+                <li><strong>Year:</strong> 2020-2023</li>
+                <li><strong>Type:</strong> Ceramic Ball Bearing Turbo</li>
+                <li><strong>Part #:</strong> PT6266</li>
+                <li><strong>Condition:</strong> Like new</li>
+                <li><strong>Warranty:</strong> 2 years</li>
+                <li class="price">$3,450</li>
+            </ul>
+            <button>Add to Cart</button>
+        </div>
+        <!-- Turbo 5 -->
+            <div class="turbo-item">
+                <h2 class="turbo-title">Precision 6266</h2>
+                <ul class="turbo-details">
+                    <li><strong>Vehicle:</strong> Nissan GT-R</li>
+                    <li><strong>Year:</strong> 2020-2023</li>
+                    <li><strong>Type:</strong> Ceramic Ball Bearing Turbo</li>
+                    <li><strong>Part #:</strong> PT6266</li>
+                    <li><strong>Condition:</strong> Like new</li>
+                    <li><strong>Warranty:</strong> 2 years</li>
+                    <li class="price">$3,450</li>
+                </ul>
+                <button>Add to Cart</button>
+                </div>
+
+    </div>
+
+    <div class="footer" style="text-align: center; margin-top: 30px; color: #666;">
+        <p>© 2023 AutoParts Pro - All rights reserved</p>
+        <p>Contact us: (555) 123-4567 | info@autopartspro.com</p>
+    </div>
+</body>
+</html>

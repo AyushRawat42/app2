@@ -185,3 +185,480 @@
     </footer>
 </body>
 </html>
+
+
+
+222222222222222222222222222222222
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota 2.5L Engine | AA Auto Parts</title>
+    <style>
+        /* Reusing previous styles with minor color adjustments */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #E51937; /* Toyota red */
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .nav {
+            background-color: #333;
+            padding: 1rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-content {
+            flex: 3;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 1rem;
+        }
+
+        .engine-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .specs-table td {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+        }
+
+        .price {
+            color: #E51937;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .warranty-badge {
+            background-color: green;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>AA Auto Parts</h1>
+        <p>Quality Certified Used Engines</p>
+    </header>
+
+    <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <main class="main-content">
+            <h2>2020 Toyota 2.5L 4-Cylinder Engine (A25A-FKS)</h2>
+            <img src="toyota-engine-placeholder.jpg" alt="Toyota 2.5L Engine" class="engine-image">
+            <div class="price">$2,200.00</div>
+            <span class="warranty-badge">1-Year Warranty Included</span>
+
+            <h3>Engine Overview</h3>
+            <p>This professionally rebuilt 2.5L A25A-FKS engine comes from a 2020 Toyota vehicle with only 38,500 verified miles. Fully reconditioned to like-new condition with complete documentation of the rebuild process.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Complete rebuild with OEM specifications</li>
+                <li>New timing chain and water pump installed</li>
+                <li>0-mile rebuild status on critical components</li>
+                <li>Dyno tested: 98% efficiency rating</li>
+                <li>Includes 1-year unlimited mileage warranty</li>
+            </ul>
+
+            <h3>Technical Specifications</h3>
+            <table class="specs-table">
+                <tr>
+                    <td>Engine Code</td>
+                    <td>A25A-FKS</td>
+                </tr>
+                <tr>
+                    <td>Displacement</td>
+                    <td>2.5L (2487cc)</td>
+                </tr>
+                <tr>
+                    <td>Horsepower</td>
+                    <td>203 HP @ 6600 RPM</td>
+                </tr>
+                <tr>
+                    <td>Torque</td>
+                    <td>184 lb-ft @ 5000 RPM</td>
+                </tr>
+                <tr>
+                    <td>Fuel System</td>
+                    <td>Direct Injection with VVT-i</td>
+                </tr>
+                <tr>
+                    <td>Compatible Models</td>
+                    <td>2018-2023 Camry, 2019-2022 RAV4, 2020-2022 Highlander</td>
+                </tr>
+            </table>
+
+            <h3>Rebuild Details</h3>
+            <ul>
+                <li>New piston rings and bearings</li>
+                <li>Resurfaced cylinder head</li>
+                <li>Updated valve train components</li>
+                <li>New gaskets and seals throughout</li>
+                <li>Pressure tested cooling system</li>
+            </ul>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Order Information</h3>
+            <p><strong>Part Number:</strong> ENG-TOY25-2020</p>
+            <p><strong>Condition:</strong> Professionally Rebuilt</p>
+            <p><strong>Availability:</strong> 3 in Stock</p>
+            <p><strong>Shipping:</strong> Free Liftgate Delivery</p>
+            
+            <h3>Package Includes</h3>
+            <ul>
+                <li>Complete long block</li>
+                <li>New engine mounts</li>
+                <li>Installation manual</li>
+                <li>Rebuild certification</li>
+            </ul>
+
+            <h3>Secure Purchase</h3>
+            <button>Buy Now</button>
+            <button>Add to Cart</button>
+            <p>Financing Available</p>
+            <p>24/7 Support: 1-800-555-TOYO</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>© 2023 AA Auto Parts - Certified Toyota Engine Specialists</p>
+        <p>All engines include VIN verification and service history reports</p>
+    </footer>
+</body>
+</html>
+
+33333333333333333333333
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda K24 2.4L Engine for Sale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #e10a0a;
+            margin-bottom: 5px;
+        }
+        .engine-image {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .engine-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .specs {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .specs h2 {
+            margin-top: 0;
+            color: #e10a0a;
+        }
+        .spec-item {
+            margin-bottom: 10px;
+        }
+        .spec-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 120px;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e10a0a;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .contact {
+            background-color: #e10a0a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        .warranty-badge {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Honda K24 2.4L Engine</h1>
+        <p>High quality used engine for sale</p>
+    </div>
+
+    <div class="engine-image">
+        <!-- Placeholder for engine image - replace with actual image -->
+        <img src="https://via.placeholder.com/600x400?text=Honda+K24+2.4L+Engine" alt="Honda K24 2.4L Engine">
+    </div>
+
+    <div class="specs">
+        <h2>Engine Specifications</h2>
+        <div class="spec-item">
+            <span class="spec-label">Year:</span> 2018
+        </div>
+        <div class="spec-item">
+            <span class="spec-label">Mileage:</span> 65,000 miles
+        </div>
+        <div class="spec-item">
+            <span class="spec-label">Engine Code:</span> K24Z7
+        </div>
+        <div class="spec-item">
+            <span class="spec-label">Condition:</span> Good working condition
+        </div>
+        <div class="spec-item">
+            <span class="spec-label">Warranty:</span> 3 months <span class="warranty-badge">WARRANTY INCLUDED</span>
+        </div>
+    </div>
+
+    <div class="price">
+        $1,650
+    </div>
+
+    <div class="specs">
+        <h2>Engine Details</h2>
+        <p>The Honda K24Z7 2.4L engine is a reliable and efficient powerplant known for its performance and durability. This 2018 model with only 65,000 miles is in good working condition and comes with a 3-month warranty for your peace of mind.</p>
+        <p>This engine is complete with all major components including intake manifold, fuel system, and sensors. It's an excellent replacement for your worn-out engine or upgrade for your project car.</p>
+    </div>
+
+    <div class="contact">
+        CONTACT US: (123) 456-7890 | engines@example.com
+    </div>
+</body>
+</html>
+
+
+444444444444444444444444
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chevrolet 5.3L V8 Engine for Sale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #0066cc;
+            margin-bottom: 5px;
+        }
+        .engine-image {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .engine-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .specs {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .specs h2 {
+            margin-top: 0;
+            color: #0066cc;
+        }
+        .spec-item {
+            margin-bottom: 10px;
+        }
+        .spec-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 150px;
+        }
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0066cc;
+            text-align: center;
+            margin: 25px 0;
+        }
+        .contact {
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        .warranty-badge {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .features {
+            margin: 20px 0;
+        }
+        .features h3 {
+            color: #0066cc;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Chevrolet 5.3L V8 Engine</h1>
+        <p>Complete with accessories - Ready for installation</p>
+    </div>
+
+    <div class="engine-image">
+        <!-- Placeholder for engine image - replace with actual image -->
+        <img src="https://via.placeholder.com/600x400?text=Chevrolet+5.3L+V8+Engine" alt="Chevrolet 5.3L V8 Engine">
+    </div>
+
+    <div class="specs">
+        <h2>Engine Specifications</h2>
+        <div class="spec-item">
+            <span class="spec-label">Year:</span> 2017
+        </div>
+        <div class="spec-item">
+            <span class="spec-label">Mileage:</span> 78,200 miles
+        </div>
+        <div class="spec-item">
+            <span class="spec-label">Engine Code:</span> L83
+        </div>
+        <div class="spec-item">
+            <span class="spec-label">Condition:</span> Complete with accessories
+        </div>
+        <div class="spec-item">
+            <span class="spec-label">Warranty:</span> 90 days <span class="warranty-badge">WARRANTY INCLUDED</span>
+        </div>
+    </div>
+
+    <div class="price">
+        $2,950
+    </div>
+
+    <div class="features">
+        <h3>Included Components:</h3>
+        <ul>
+            <li>Complete engine assembly</li>
+            <li>Intake manifold</li>
+            <li>Fuel injection system</li>
+            <li>All sensors and wiring harness</li>
+            <li>Accessory brackets</li>
+            <li>Oil pan and valve covers</li>
+        </ul>
+    </div>
+
+    <div class="specs">
+        <h2>Engine Details</h2>
+        <p>The Chevrolet 5.3L V8 L83 engine is a powerful and efficient Gen V Small Block engine featuring advanced technologies including Direct Injection and Active Fuel Management. This 2017 model with 78,200 miles comes complete with all accessories for easy installation.</p>
+        <p>This engine was removed from a running vehicle and includes all major components needed for your swap or replacement project. The 90-day warranty provides assurance of quality and reliability.</p>
+    </div>
+
+    <div class="contact">
+        CONTACT US: (555) 123-4567 | enginesales@example.com
+    </div>
+</body>
+</html>

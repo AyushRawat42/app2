@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toyota U660E 6-Speed Automatic Transmission | Low Mileage</title>
+    <title>Mitsubishi TD05-16G Turbocharger | EVO X</title>
     <style>
         :root {
-            --toyota-red: #e10a0a;
-            --toyota-dark: #1a1a1a;
-            --toyota-light: #f8f8f8;
-            --toyota-gray: #666;
+            --mitsubishi-red: #e60012;
+            --mitsubishi-dark: #1a1a1a;
+            --mitsubishi-light: #f8f8f8;
+            --mitsubishi-gray: #666;
         }
         body {
             font-family: 'Arial', sans-serif;
@@ -18,12 +18,12 @@
             margin: 0 auto;
             padding: 20px;
             color: #333;
-            background-color: var(--toyota-light);
+            background-color: var(--mitsubishi-light);
         }
         .header {
-            background: linear-gradient(135deg, var(--toyota-dark), #333);
+            background: linear-gradient(135deg, var(--mitsubishi-dark), var(--mitsubishi-red));
             color: white;
-            padding: 35px 20px;
+            padding: 40px 20px;
             text-align: center;
             margin-bottom: 30px;
             border-radius: 0 0 8px 8px;
@@ -35,29 +35,31 @@
             font-weight: 600;
         }
         .header h1 span {
-            color: var(--toyota-red);
+            color: white;
+            font-weight: 300;
         }
         .header p {
             margin: 10px 0 0;
             font-size: 1.1rem;
             opacity: 0.9;
         }
-        .mileage-badge {
+        .condition-badge {
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: var(--toyota-red);
-            color: white;
+            background-color: white;
+            color: var(--mitsubishi-red);
             padding: 6px 12px;
             border-radius: 20px;
             font-weight: bold;
             font-size: 0.9rem;
+            border: 1px solid var(--mitsubishi-red);
         }
-        .transmission-image {
+        .turbo-image {
             text-align: center;
             margin: 30px 0;
         }
-        .transmission-image img {
+        .turbo-image img {
             width: 300px;
             height: 300px;
             border-radius: 5px;
@@ -75,11 +77,11 @@
             padding: 25px;
             border-radius: 5px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            border-top: 3px solid var(--toyota-red);
+            border-top: 3px solid var(--mitsubishi-red);
         }
         .specs-card h2 {
             margin-top: 0;
-            color: var(--toyota-dark);
+            color: var(--mitsubishi-dark);
             padding-bottom: 10px;
             font-weight: 600;
             font-size: 1.3rem;
@@ -90,8 +92,8 @@
         }
         .spec-label {
             font-weight: bold;
-            width: 140px;
-            color: var(--toyota-dark);
+            width: 150px;
+            color: var(--mitsubishi-dark);
         }
         .spec-value {
             flex: 1;
@@ -103,7 +105,7 @@
         .price {
             font-size: 2.8rem;
             font-weight: bold;
-            color: var(--toyota-red);
+            color: var(--mitsubishi-red);
             display: inline-block;
             position: relative;
         }
@@ -113,7 +115,7 @@
             top: 50%;
             width: 40px;
             height: 2px;
-            background: var(--toyota-gray);
+            background: var(--mitsubishi-gray);
         }
         .price::before {
             left: -50px;
@@ -130,7 +132,7 @@
         }
         .features h3 {
             margin-top: 0;
-            color: var(--toyota-dark);
+            color: var(--mitsubishi-dark);
             font-weight: 600;
         }
         .features ul {
@@ -145,26 +147,26 @@
         }
         .features li::before {
             content: "•";
-            color: var(--toyota-red);
+            color: var(--mitsubishi-red);
             position: absolute;
             left: 0;
             font-weight: bold;
         }
-        .description {
+        .performance {
             background: white;
             padding: 25px;
             border-radius: 5px;
             margin-bottom: 30px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            border-left: 3px solid var(--toyota-red);
+            border-left: 3px solid var(--mitsubishi-red);
         }
-        .description h3 {
+        .performance h3 {
             margin-top: 0;
-            color: var(--toyota-dark);
+            color: var(--mitsubishi-dark);
             font-weight: 600;
         }
         .contact {
-            background: linear-gradient(135deg, var(--toyota-dark), #333);
+            background: linear-gradient(135deg, var(--mitsubishi-dark), var(--mitsubishi-red));
             color: white;
             text-align: center;
             padding: 25px;
@@ -179,7 +181,7 @@
             margin: 15px 0;
         }
         .contact-info a {
-            color: var(--toyota-red);
+            color: white;
             text-decoration: none;
             font-weight: bold;
         }
@@ -202,7 +204,7 @@
             .price::after {
                 right: -30px;
             }
-            .mileage-badge {
+            .condition-badge {
                 position: static;
                 display: inline-block;
                 margin-bottom: 10px;
@@ -212,91 +214,91 @@
 </head>
 <body>
     <div class="header">
-        <div class="mileage-badge">LOW MILEAGE: 32,000</div>
-        <h1>TOYOTA <span>U660E</span> 6-SPEED</h1>
-        <p>Automatic Transmission - Tested & Ready</p>
+        <div class="condition-badge">GOOD WORKING CONDITION</div>
+        <h1>MITSUBISHI <span>TD05-16G</span></h1>
+        <p>Journal Bearing Turbocharger for EVO X</p>
     </div>
 
-    <div class="transmission-image">
-        <!-- Placeholder for transmission image - replace with actual image -->
-        <img src="/app2/public/images/toyota 6 speed auto trans.jfif" alt="Toyota U660E 6-Speed Automatic Transmission">
+    <div class="turbo-image">
+        <!-- Placeholder for turbo image - replace with actual image -->
+        <img src="/app2/public/images/mitsubishi turbo.jpg" alt="Mitsubishi TD05-16G Turbocharger">
     </div>
 
     <div class="specs-container">
         <div class="specs-card">
-            <h2>Transmission Specifications</h2>
+            <h2>Turbo Specifications</h2>
             <div class="spec-item">
-                <div class="spec-label">Year:</div>
-                <div class="spec-value">2020</div>
+                <div class="spec-label">Vehicle:</div>
+                <div class="spec-value">EVO X</div>
             </div>
             <div class="spec-item">
-                <div class="spec-label">Mileage:</div>
-                <div class="spec-value">32,000 miles</div>
+                <div class="spec-label">Year Range:</div>
+                <div class="spec-value">2008-2015</div>
             </div>
             <div class="spec-item">
                 <div class="spec-label">Type:</div>
-                <div class="spec-value">Automatic</div>
+                <div class="spec-value">Journal Bearing Turbo</div>
             </div>
             <div class="spec-item">
-                <div class="spec-label">Condition:</div>
-                <div class="spec-value">Low mileage, tested</div>
+                <div class="spec-label">Part #:</div>
+                <div class="spec-value">TD05H-16G</div>
             </div>
         </div>
         <div class="specs-card">
             <h2>Technical Details</h2>
             <div class="spec-item">
-                <div class="spec-label">Gear Ratio (1st):</div>
-                <div class="spec-value">3.94:1</div>
+                <div class="spec-label">Compressor Wheel:</div>
+                <div class="spec-value">16G (47.6mm inducer)</div>
             </div>
             <div class="spec-item">
-                <div class="spec-label">Max Torque:</div>
-                <div class="spec-value">221 lb-ft</div>
+                <div class="spec-label">Turbine Wheel:</div>
+                <div class="spec-value">TD05H (56.5mm)</div>
             </div>
             <div class="spec-item">
-                <div class="spec-label">Weight:</div>
-                <div class="spec-value">145 lbs (dry)</div>
+                <div class="spec-label">Housing A/R:</div>
+                <div class="spec-value">0.70</div>
             </div>
             <div class="spec-item">
-                <div class="spec-label">Fluid Capacity:</div>
-                <div class="spec-value">6.9 quarts</div>
+                <div class="spec-label">Condition:</div>
+                <div class="spec-value">Good working condition</div>
             </div>
         </div>
     </div>
 
     <div class="price-display">
-        <div class="price">$1,850</div>
+        <div class="price">$650</div>
     </div>
 
     <div class="features">
         <h3>Key Features</h3>
         <ul>
-            <li>Complete U660E transmission assembly</li>
-            <li>Low mileage - only 32,000 miles</li>
-            <li>Professionally tested and inspected</li>
-            <li>Original Toyota components</li>
-            <li>Includes torque converter</li>
-            <li>Properly sealed for shipping</li>
-            <li>Ready for installation</li>
-            <li>Compatible with WS transmission fluid</li>
+            <li>Mitsubishi TD05-16G turbocharger</li>
+            <li>OEM-quality journal bearings</li>
+            <li>16G compressor wheel</li>
+            <li>TD05H turbine housing</li>
+            <li>0.70 A/R housing</li>
+            <li>Good working condition</li>
+            <li>Minimal shaft play</li>
+            <li>Includes oil and coolant lines</li>
         </ul>
     </div>
 
-    <div class="description">
-        <h3>Transmission Description</h3>
-        <p>This 2020 Toyota U660E 6-speed automatic transmission is a low-mileage unit with only 32,000 miles. The U660E is known for its smooth shifting and reliability, found in many popular Toyota models including Camry, RAV4, and Highlander.</p>
+    <div class="performance">
+        <h3>Performance Characteristics</h3>
+        <p>The Mitsubishi TD05-16G is the factory turbocharger for the EVO X, known for its excellent balance of response and power. This unit is in good working condition with minimal shaft play and proper oiling throughout.</p>
         
-        <p>This transmission features a wide 3.94:1 first gear ratio for excellent acceleration, with well-spaced gear ratios for optimal performance and fuel efficiency. The unit has been thoroughly tested for proper operation of all gears, including the overdrive and torque converter lockup functions.</p>
+        <p>The 16G compressor wheel provides excellent airflow for stock to moderately tuned EVO X applications, typically supporting up to 350hp. The journal bearing design offers proven durability when properly maintained.</p>
         
-        <p>Ideal for replacement in 4-cylinder Toyota applications, this U660E transmission offers like-new performance at a fraction of the cost of a new unit. The low mileage ensures plenty of remaining service life when properly maintained.</p>
+        <p>Perfect for EVO X owners needing a replacement turbo or those looking to return their vehicle to stock specifications. This TD05-16G offers OEM-quality performance at an affordable price.</p>
     </div>
 
     <div class="contact">
-        <h3>Interested in this transmission?</h3>
+        <h3>Need this EVO X turbo?</h3>
         <div class="contact-info">
-            Call: <a href="tel:+18005558660">(800) 555-8660</a>
+            Call: <a href="tel:+18005551616">(800) 555-1616</a>
         </div>
         <div class="contact-info">
-            Email: <a href="mailto:transmissions@toyotaparts.com">transmissions@toyotaparts.com</a>
+            Email: <a href="mailto:turbo@mitsuparts.com">turbo@mitsuparts.com</a>
         </div>
     </div>
 </body>

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toyota U660E 6-Speed Automatic Transmission | Low Mileage</title>
+    <title>Nissan RE0F11A CVT Transmission | Updated Software</title>
     <style>
         :root {
-            --toyota-red: #e10a0a;
-            --toyota-dark: #1a1a1a;
-            --toyota-light: #f8f8f8;
-            --toyota-gray: #666;
+            --nissan-red: #c00;
+            --nissan-dark: #222;
+            --nissan-light: #f5f5f5;
+            --nissan-silver: #999;
         }
         body {
             font-family: 'Arial', sans-serif;
@@ -18,12 +18,12 @@
             margin: 0 auto;
             padding: 20px;
             color: #333;
-            background-color: var(--toyota-light);
+            background-color: var(--nissan-light);
         }
         .header {
-            background: linear-gradient(135deg, var(--toyota-dark), #333);
+            background: linear-gradient(135deg, var(--nissan-dark), var(--nissan-red));
             color: white;
-            padding: 35px 20px;
+            padding: 40px 20px;
             text-align: center;
             margin-bottom: 30px;
             border-radius: 0 0 8px 8px;
@@ -35,23 +35,25 @@
             font-weight: 600;
         }
         .header h1 span {
-            color: var(--toyota-red);
+            color: #fff;
+            font-weight: 300;
         }
         .header p {
             margin: 10px 0 0;
             font-size: 1.1rem;
             opacity: 0.9;
         }
-        .mileage-badge {
+        .update-badge {
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: var(--toyota-red);
-            color: white;
+            background-color: white;
+            color: var(--nissan-red);
             padding: 6px 12px;
             border-radius: 20px;
             font-weight: bold;
             font-size: 0.9rem;
+            border: 1px solid var(--nissan-red);
         }
         .transmission-image {
             text-align: center;
@@ -75,11 +77,11 @@
             padding: 25px;
             border-radius: 5px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            border-top: 3px solid var(--toyota-red);
+            border-top: 3px solid var(--nissan-red);
         }
         .specs-card h2 {
             margin-top: 0;
-            color: var(--toyota-dark);
+            color: var(--nissan-dark);
             padding-bottom: 10px;
             font-weight: 600;
             font-size: 1.3rem;
@@ -90,11 +92,15 @@
         }
         .spec-label {
             font-weight: bold;
-            width: 140px;
-            color: var(--toyota-dark);
+            width: 150px;
+            color: var(--nissan-dark);
         }
         .spec-value {
             flex: 1;
+        }
+        .ratio-display {
+            font-weight: bold;
+            color: var(--nissan-red);
         }
         .price-display {
             text-align: center;
@@ -103,7 +109,7 @@
         .price {
             font-size: 2.8rem;
             font-weight: bold;
-            color: var(--toyota-red);
+            color: var(--nissan-red);
             display: inline-block;
             position: relative;
         }
@@ -113,7 +119,7 @@
             top: 50%;
             width: 40px;
             height: 2px;
-            background: var(--toyota-gray);
+            background: var(--nissan-silver);
         }
         .price::before {
             left: -50px;
@@ -130,7 +136,7 @@
         }
         .features h3 {
             margin-top: 0;
-            color: var(--toyota-dark);
+            color: var(--nissan-dark);
             font-weight: 600;
         }
         .features ul {
@@ -145,7 +151,7 @@
         }
         .features li::before {
             content: "•";
-            color: var(--toyota-red);
+            color: var(--nissan-red);
             position: absolute;
             left: 0;
             font-weight: bold;
@@ -156,15 +162,15 @@
             border-radius: 5px;
             margin-bottom: 30px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            border-left: 3px solid var(--toyota-red);
+            border-left: 3px solid var(--nissan-red);
         }
         .description h3 {
             margin-top: 0;
-            color: var(--toyota-dark);
+            color: var(--nissan-dark);
             font-weight: 600;
         }
         .contact {
-            background: linear-gradient(135deg, var(--toyota-dark), #333);
+            background: linear-gradient(135deg, var(--nissan-dark), var(--nissan-red));
             color: white;
             text-align: center;
             padding: 25px;
@@ -179,7 +185,7 @@
             margin: 15px 0;
         }
         .contact-info a {
-            color: var(--toyota-red);
+            color: white;
             text-decoration: none;
             font-weight: bold;
         }
@@ -202,7 +208,7 @@
             .price::after {
                 right: -30px;
             }
-            .mileage-badge {
+            .update-badge {
                 position: static;
                 display: inline-block;
                 margin-bottom: 10px;
@@ -212,14 +218,14 @@
 </head>
 <body>
     <div class="header">
-        <div class="mileage-badge">LOW MILEAGE: 32,000</div>
-        <h1>TOYOTA <span>U660E</span> 6-SPEED</h1>
-        <p>Automatic Transmission - Tested & Ready</p>
+        <div class="update-badge">UPDATED SOFTWARE</div>
+        <h1>NISSAN <span>RE0F11A</span> CVT</h1>
+        <p>Continuously Variable Transmission</p>
     </div>
 
     <div class="transmission-image">
         <!-- Placeholder for transmission image - replace with actual image -->
-        <img src="/app2/public/images/toyota 6 speed auto trans.jfif" alt="Toyota U660E 6-Speed Automatic Transmission">
+        <img src="/app2/public/images/nissan cvt trans.jfif" alt="Nissan RE0F11A CVT Transmission">
     </div>
 
     <div class="specs-container">
@@ -231,26 +237,26 @@
             </div>
             <div class="spec-item">
                 <div class="spec-label">Mileage:</div>
-                <div class="spec-value">32,000 miles</div>
+                <div class="spec-value">40,000 miles</div>
             </div>
             <div class="spec-item">
                 <div class="spec-label">Type:</div>
-                <div class="spec-value">Automatic</div>
+                <div class="spec-value">CVT</div>
             </div>
             <div class="spec-item">
                 <div class="spec-label">Condition:</div>
-                <div class="spec-value">Low mileage, tested</div>
+                <div class="spec-value">Updated software</div>
             </div>
         </div>
         <div class="specs-card">
-            <h2>Technical Details</h2>
+            <h2>Performance Specs</h2>
             <div class="spec-item">
-                <div class="spec-label">Gear Ratio (1st):</div>
-                <div class="spec-value">3.94:1</div>
+                <div class="spec-label">Ratio Range:</div>
+                <div class="spec-value"><span class="ratio-display">2.349-0.394</span></div>
             </div>
             <div class="spec-item">
                 <div class="spec-label">Max Torque:</div>
-                <div class="spec-value">221 lb-ft</div>
+                <div class="spec-value">190 lb-ft</div>
             </div>
             <div class="spec-item">
                 <div class="spec-label">Weight:</div>
@@ -258,45 +264,45 @@
             </div>
             <div class="spec-item">
                 <div class="spec-label">Fluid Capacity:</div>
-                <div class="spec-value">6.9 quarts</div>
+                <div class="spec-value">7.4 quarts</div>
             </div>
         </div>
     </div>
 
     <div class="price-display">
-        <div class="price">$1,850</div>
+        <div class="price">$1,650</div>
     </div>
 
     <div class="features">
         <h3>Key Features</h3>
         <ul>
-            <li>Complete U660E transmission assembly</li>
-            <li>Low mileage - only 32,000 miles</li>
-            <li>Professionally tested and inspected</li>
-            <li>Original Toyota components</li>
-            <li>Includes torque converter</li>
+            <li>Complete RE0F11A CVT assembly</li>
+            <li>Low mileage - only 40,000 miles</li>
+            <li>Latest software updates installed</li>
+            <li>Tested for smooth operation</li>
+            <li>Includes all electronics and wiring</li>
             <li>Properly sealed for shipping</li>
             <li>Ready for installation</li>
-            <li>Compatible with WS transmission fluid</li>
+            <li>Compatible with NS-3 CVT fluid</li>
         </ul>
     </div>
 
     <div class="description">
         <h3>Transmission Description</h3>
-        <p>This 2020 Toyota U660E 6-speed automatic transmission is a low-mileage unit with only 32,000 miles. The U660E is known for its smooth shifting and reliability, found in many popular Toyota models including Camry, RAV4, and Highlander.</p>
+        <p>This 2020 Nissan RE0F11A CVT transmission features the latest software updates and has only 40,000 miles. The continuously variable transmission provides seamless acceleration and improved fuel efficiency compared to traditional automatics.</p>
         
-        <p>This transmission features a wide 3.94:1 first gear ratio for excellent acceleration, with well-spaced gear ratios for optimal performance and fuel efficiency. The unit has been thoroughly tested for proper operation of all gears, including the overdrive and torque converter lockup functions.</p>
+        <p>This unit has been updated with Nissan's latest TCM software to ensure optimal performance and reliability. The wide ratio range (2.349-0.394) allows for both strong acceleration and efficient highway cruising.</p>
         
-        <p>Ideal for replacement in 4-cylinder Toyota applications, this U660E transmission offers like-new performance at a fraction of the cost of a new unit. The low mileage ensures plenty of remaining service life when properly maintained.</p>
+        <p>Ideal for Altima, Sentra, Rogue, and other Nissan models equipped with the RE0F11A CVT. This transmission offers smooth, reliable performance with the benefit of recent software improvements.</p>
     </div>
 
     <div class="contact">
-        <h3>Interested in this transmission?</h3>
+        <h3>Need this CVT transmission?</h3>
         <div class="contact-info">
-            Call: <a href="tel:+18005558660">(800) 555-8660</a>
+            Call: <a href="tel:+18005554111">(800) 555-4111</a>
         </div>
         <div class="contact-info">
-            Email: <a href="mailto:transmissions@toyotaparts.com">transmissions@toyotaparts.com</a>
+            Email: <a href="mailto:cvt@nissanparts.com">cvt@nissanparts.com</a>
         </div>
     </div>
 </body>

@@ -3,153 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precision 6266 Turbocharger for Nissan GT-R</title>
+    <title>Precision 6266 Turbo - Ceramic Ball Bearing Turbocharger for Nissan GT-R</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
+            margin: 0;
             padding: 20px;
             color: #222;
-            background-color: #f5f5f5;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f8f8f8;
         }
-        .product-card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            padding: 25px;
-        }
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #0066cc;
+        header {
+            border-bottom: 3px solid #0066cc;
             padding-bottom: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         h1 {
             color: #0066cc;
             margin-bottom: 5px;
-            font-size: 28px;
+            font-size: 2.2em;
         }
         .subtitle {
-            color: #666;
-            font-size: 18px;
-            margin-top: 0;
+            font-size: 1.2em;
+            color: #555;
         }
-        .price {
-            font-size: 24px;
-            font-weight: bold;
-            color: #d50000;
-            margin: 15px 0;
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .product-image {
+            flex: 1;
+            min-width: 350px;
             text-align: center;
         }
-        .specs {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
+        .product-image img {
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .product-details {
+            flex: 1;
+            min-width: 350px;
+        }
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d32f2f;
             margin: 20px 0;
         }
+        .condition-tag {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .specs {
+            background: #f5f9ff;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 25px;
+            border-left: 4px solid #0066cc;
+        }
+        .specs h3 {
+            margin-top: 0;
+            color: #0066cc;
+            font-size: 1.3em;
+        }
         .spec-item {
-            margin-bottom: 10px;
             display: flex;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
         }
         .spec-label {
             font-weight: bold;
-            width: 150px;
-            color: #444;
+            width: 180px;
+            color: #333;
         }
-        .condition {
-            color: #2e7d32;
-            font-weight: bold;
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
         }
-        .highlight {
-            background-color: #e3f2fd;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
+        .buy-button {
+            background: #d32f2f;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            flex: 1;
+            max-width: 250px;
+        }
+        .buy-button:hover {
+            background: #b71c1c;
+        }
+        .secondary-button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            flex: 1;
+            max-width: 250px;
+        }
+        .secondary-button:hover {
+            background: #0052a3;
         }
         .features {
-            margin: 25px 0;
+            margin-top: 30px;
         }
         .features h3 {
             color: #0066cc;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
         }
-        .footer {
-            margin-top: 30px;
-            text-align: center;
-            font-size: 14px;
-            color: #666;
+        .features ul {
+            padding-left: 20px;
+        }
+        .features li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background: #fffde7;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .product-image, .product-details {
+                min-width: 100%;
+            }
+            .action-buttons {
+                flex-direction: column;
+            }
+            .buy-button, .secondary-button {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="product-card">
-        <div class="header">
-            <h1>Precision 6266 Turbocharger</h1>
-            <p class="subtitle">Nissan VQ35DE 3.5L V6 - GT-R Application</p>
+    <header>
+        <h1>Precision 6266 Ceramic Ball Bearing Turbocharger</h1>
+        <p class="subtitle">High-performance turbo for Nissan GT-R (2020-2023) with VQ35DE 3.5L V6 engine</p>
+    </header>
+
+    <div class="product-container">
+        <div class="product-image">
+            <!-- Replace with actual image path -->
+            <img src="https://www.full-race.com/media/catalog/product/cache/7810f91fc579070f70436cba9234eeaa/n/e/next_gen_6670_turbocharger_rated_for_1100hp_1.jpg" alt="Precision 6266 Ceramic Ball Bearing Turbocharger">
         </div>
-
-        <div class="price">Call for Pricing</div>
-
-        <div class="specs">
-            <div class="spec-item">
-                <span class="spec-label">Vehicle:</span>
-                <span>Nissan GT-R</span>
+        
+        <div class="product-details">
+            <div class="price">$3,450</div>
+            <span class="condition-tag">Like New Condition</span>
+<!--             
+            <div class="highlight">
+                <strong>Limited Availability:</strong> This like-new unit comes with full manufacturer warranty and includes all original accessories.
             </div>
-            <div class="spec-item">
-                <span class="spec-label">Engine:</span>
-                <span>VQ35DE 3.5L V6</span>
+            
+            <div class="action-buttons">
+                <button class="buy-button">Add to Cart</button>
+                <button class="secondary-button">Contact Us</button>
+            </div> -->
+            
+            <div class="specs">
+                <h3>Technical Specifications</h3>
+                <div class="spec-item">
+                    <div class="spec-label">Part Number:</div>
+                    <div><strong>PT6266</strong></div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Engine:</div>
+                    <div>Nissan VQ35DE 3.5L V6</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Vehicle:</div>
+                    <div>Nissan GT-R (2020-2023)</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Turbo Type:</div>
+                    <div>Ceramic Ball Bearing Turbo</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Compressor Wheel:</div>
+                    <div>66mm Billet Aluminum</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Turbine Wheel:</div>
+                    <div>66mm Forged Milled</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Housing A/R:</div>
+                    <div>0.81 Compressor / 0.92 Turbine</div>
+                </div>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">Year:</span>
-                <span>2020-2023</span>
+            
+            <div class="features">
+                <h3>Premium Features</h3>
+                <ul>
+                    <li>Advanced ceramic ball bearing system for minimal lag</li>
+                    <li>Billet compressor wheel for maximum efficiency</li>
+                    <li>Precision balanced assembly for smooth operation</li>
+                    <li>Capable of supporting 700+ horsepower</li>
+                    <li>Includes all necessary installation hardware</li>
+                    <li>Like-new condition with minimal use</li>
+                    <li>Comes with remaining manufacturer warranty</li>
+                </ul>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">Type:</span>
-                <span>Ceramic Ball Bearing Turbo</span>
+            
+            <div class="features">
+                <h3>Performance Benefits</h3>
+                <p>This Precision 6266 turbo delivers exceptional spool characteristics with the ceramic ball bearing system while providing massive top-end power. The advanced aerodynamics of the billet compressor wheel provide excellent airflow efficiency, making this turbo ideal for both street and track applications.</p>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">Part #:</span>
-                <span>PT6266</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Condition:</span>
-                <span class="condition">Like new</span>
-            </div>
-        </div>
-
-        <div class="highlight">
-            <strong>Premium Performance:</strong> The Precision 6266 ceramic ball bearing turbo delivers exceptional response and power potential for your Nissan GT-R.
-        </div>
-
-        <div class="features">
-            <h3>Key Features:</h3>
-            <ul>
-                <li>High-performance ceramic ball bearing design</li>
-                <li>Optimized for Nissan VQ35DE 3.5L V6 engine</li>
-                <li>Direct bolt-on application for 2020-2023 GT-R models</li>
-                <li>Like-new condition with minimal use</li>
-                <li>Excellent spool characteristics with strong top-end</li>
-                <li>Includes all necessary hardware (if applicable)</li>
-            </ul>
-        </div>
-
-        <div class="features">
-            <h3>Performance Specifications:</h3>
-            <ul>
-                <li>Compressor Wheel: 62mm</li>
-                <li>Turbine Wheel: 66mm</li>
-                <li>Ball Bearing CHRA for reduced friction</li>
-                <li>Capable of supporting 600+ HP</li>
-                <li>Excellent street and track performance</li>
-            </ul>
-        </div>
-
-        <div class="footer">
-            <p>Contact us for more details or to verify fitment for your specific vehicle</p>
-            <p>All turbochargers are inspected and tested prior to sale</p>
         </div>
     </div>
 </body>

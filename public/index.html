@@ -5,6 +5,305 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ignite Auto - Home</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .why-choose-us {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .why-choose-us h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        .benefit-item {
+            display: inline-block;
+            width: 30%;
+            margin: 1.5%;
+            padding: 20px;
+            vertical-align: top;
+            box-sizing: border-box;
+            background: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-item h3 {
+            color: #e74c3c;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        
+        .benefit-item p {
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .benefit-item {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        /* motto section */
+        .motto-banner {
+        background-image: url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        color: white;
+    }
+    
+    .motto-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .motto-content {
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        max-width: 800px;
+    }
+    
+    .motto-banner h1 {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: #fff;
+    }
+    
+    .motto {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        color: #f1c40f;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #e74c3c;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 4px;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+        background-color: #c0392b;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    @media (max-width: 768px) {
+        .motto-banner {
+            height: 300px;
+        }
+        
+        .motto-banner h1 {
+            font-size: 2rem;
+        }
+        
+        .motto {
+            font-size: 1.3rem;
+        }
+    }
+
+    /* carousel */
+    .brand-carousel-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+    
+    .brand-carousel-container h2 {
+        color: #2c3e50;
+        margin-bottom: 30px;
+        font-size: 28px;
+    }
+    
+    .brand-carousel {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        height: 100px;
+        align-items: center;
+        background: #f5f5f5;
+        border-radius: 8px;
+        padding: 10px 0;
+    }
+    
+    .brand-slide {
+        flex: 0 0 auto;
+        padding: 0 30px;
+        animation: slide 30s linear infinite;
+    }
+    
+    .brand-slide img {
+        height: 60px;
+        width: auto;
+        max-width: 120px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+    }
+    
+    .brand-slide img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .brand-slide {
+            padding: 0 20px;
+        }
+        
+        .brand-slide img {
+            height: 40px;
+        }
+    }
+
+    /* customer feedback */
+    .customer-feedback-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+    
+        .customer-feedback-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 32px;
+            position: relative;
+        }
+    
+        .customer-feedback-section h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #e74c3c;
+            margin: 15px auto 0;
+        }
+    
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+    
+        .testimonial-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+    
+        .rating {
+            color: #f1c40f;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+    
+        .feedback {
+            color: #555;
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+        }
+    
+        .feedback:before, .feedback:after {
+            content: '"';
+            color: #e74c3c;
+            font-size: 24px;
+            opacity: 0.3;
+        }
+    
+        .customer-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+    
+        .name {
+            font-weight: bold;
+            color: #333;
+        }
+    
+        @media (max-width: 768px) {
+            .testimonials-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .customer-feedback-section {
+                padding: 20px 15px;
+            }
+            
+            .testimonial-card {
+                padding: 20px;
+            }
+        }
+    </style>
+    
 </head>
 <body>
     <!-- Header -->
@@ -76,6 +375,201 @@
             </div>
         </div>
     </section>
+    
+    <!-- motto -->
+    <div class="motto-banner">
+        <div class="motto-content">
+            <h1>GearHead Auto Salvage</h1>
+            <p class="motto">"Quality Used Parts • Unbeatable Prices • Trusted by Mechanics"</p>
+            <a href="pages/login.html" class="cta-button">Shop Parts Now</a>
+        </div>
+    </div>
+
+    <!-- carousel -->
+    <div class="brand-carousel-container">
+        <h2>Our Parts Fit These Brands</h2>
+        <div class="brand-carousel">
+            <div class="brand-slide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Ford_Motor_Company_Logo.svg/1200px-Ford_Motor_Company_Logo.svg.png" alt="Ford">
+            </div>
+            <div class="brand-slide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Toyota.svg/1200px-Toyota.svg.png" alt="Toyota">
+            </div>
+            <div class="brand-slide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Chevrolet_logo.png/800px-Chevrolet_logo.png" alt="Chevrolet">
+            </div>
+            <div class="brand-slide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Honda_logo.svg/800px-Honda_logo.svg.png" alt="Honda">
+            </div>
+            <div class="brand-slide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Nissan_logo.png/800px-Nissan_logo.png" alt="Nissan">
+            </div>
+            <div class="brand-slide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Jeep_logo.svg/800px-Jeep_logo.svg.png" alt="Jeep">
+            </div>
+            <div class="brand-slide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/800px-Mercedes-Logo.svg.png" alt="Mercedes-Benz">
+            </div>
+            <div class="brand-slide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/BMW_logo_%28gray%29.svg/800px-BMW_logo_%28gray%29.svg.png" alt="BMW">
+            </div>
+            <div class="brand-slide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Volkswagen_Logo_till_1995.svg/800px-Volkswagen_Logo_till_1995.svg.png" alt="Volkswagen">
+            </div>
+            <div class="brand-slide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Hyundai_logo_black.png/800px-Hyundai_logo_black.png" alt="Hyundai">
+            </div>
+        </div>
+    </div>
+
+    <!-- why choose us -->
+    <div class="why-choose-us">
+        <h2>Why Choose Our Used Auto Parts?</h2>
+        
+        <div class="benefit-item">
+            <div class="benefit-icon">🚗</div>
+            <h3>Quality Tested Parts</h3>
+            <p>Every part undergoes rigorous inspection to ensure reliability and performance.</p>
+        </div>
+        
+        <div class="benefit-item">
+            <div class="benefit-icon">💰</div>
+            <h3>Save 50-80% Off Retail</h3>
+            <p>Get OEM quality parts at a fraction of dealership prices.</p>
+        </div>
+        
+        <div class="benefit-item">
+            <div class="benefit-icon">🔧</div>
+            <h3>Expert Advice</h3>
+            <p>Our team of auto experts helps you find the perfect match for your vehicle.</p>
+        </div>
+        
+        <div class="benefit-item">
+            <div class="benefit-icon">🚚</div>
+            <h3>Fast Nationwide Shipping</h3>
+            <p>Most orders ship same day and arrive within 3-5 business days.</p>
+        </div>
+        
+        <div class="benefit-item">
+            <div class="benefit-icon">🛡️</div>
+            <h3>90-Day Warranty</h3>
+            <p>All parts come with our no-hassle warranty for your peace of mind.</p>
+        </div>
+        
+        <div class="benefit-item">
+            <div class="benefit-icon">♻️</div>
+            <h3>Eco-Friendly Choice</h3>
+            <p>Buying used auto parts helps reduce waste and conserve resources.</p>
+        </div>
+    </div>
+    
+    <!-- customer feedback -->
+    <div class="customer-feedback-section">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="feedback">"Found the exact alternator I needed for my 2015 F-150 at half the dealer price. Shipped fast and works perfectly!"</p>
+                <div class="customer-info">
+                    <span class="name">Mike R.</span>
+                    <span class="location">Houston, TX</span>
+                </div>
+            </div>
+    
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="feedback">"The transmission I ordered was in excellent condition. Saved me over $1,200 compared to new. Will definitely order again!"</p>
+                <div class="customer-info">
+                    <span class="name">Sarah K.</span>
+                    <span class="location">Phoenix, AZ</span>
+                </div>
+            </div>
+    
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="rating">★★★★☆</div>
+                <p class="feedback">"Great customer service helped me identify the right part for my classic Camaro. Minor scratch on the fender but otherwise perfect."</p>
+                <div class="customer-info">
+                    <span class="name">James T.</span>
+                    <span class="location">Chicago, IL</span>
+                </div>
+            </div>
+    
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="feedback">"My mechanic was impressed with the quality of the used engine we got. Running smooth with 30,000 miles at a fraction of the cost!"</p>
+                <div class="customer-info">
+                    <span class="name">Lisa M.</span>
+                    <span class="location">Denver, CO</span>
+                </div>
+            </div>
+    
+            <!-- Testimonial 5 -->
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="feedback">"Ordered a rear bumper on Monday, arrived Wednesday. Perfect match for my Silverado. Couldn't be happier with the service!"</p>
+                <div class="customer-info">
+                    <span class="name">Robert J.</span>
+                    <span class="location">Atlanta, GA</span>
+                </div>
+            </div>
+    
+            <!-- Testimonial 6 -->
+            <!-- <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="feedback">"The website's part matching system is incredibly accurate. Found a door assembly for my Prius that fit like it was made for it."</p>
+                <div class="customer-info">
+                    <span class="name">Emily S.</span>
+                    <span class="location">Seattle, WA</span>
+                </div>
+            </div> -->
+    
+            <!-- Testimonial 7 -->
+            <div class="testimonial-card">
+                <div class="rating">★★★★☆</div>
+                <p class="feedback">"Great prices and fast shipping. The headlights I ordered had one small clip broken but still installed fine."</p>
+                <div class="customer-info">
+                    <span class="name">David P.</span>
+                    <span class="location">Boston, MA</span>
+                </div>
+            </div>
+    
+            <!-- Testimonial 8 -->
+            <!-- <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="feedback">"Saved my business hundreds on fleet repairs. Quality used parts delivered right to our shop when we need them."</p>
+                <div class="customer-info">
+                    <span class="name">Carlos V.</span>
+                    <span class="location">Miami, FL</span>
+                </div>
+            </div> -->
+    
+            <!-- Testimonial 9 -->
+            <!-- <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="feedback">"The warranty gave me peace of mind. Didn't need it though - the alternator has been working flawlessly for 6 months now."</p>
+                <div class="customer-info">
+                    <span class="name">Jennifer L.</span>
+                    <span class="location">Dallas, TX</span>
+                </div>
+            </div>
+     -->
+            <!-- Testimonial 10 -->
+            <!-- <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="feedback">"Unbelievable deal on a complete navigation system for my luxury car. Works perfectly and looks brand new!"</p>
+                <div class="customer-info">
+                    <span class="name">Thomas W.</span>
+                    <span class="location">San Diego, CA</span>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    
+
 
     <!-- Footer -->
     <footer>

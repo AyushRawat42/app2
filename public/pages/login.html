@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoParts Pro - Member Login</title>
+    <title>Ignite Auto - Member Login</title>
     <style>
 
         .back-home {
@@ -136,6 +136,7 @@
             }
         }
     </style>
+    
 </head>
 <body>
     <div class="auth-container">
@@ -143,8 +144,8 @@
             <a href="../index.html">Back to Homepage</a>
         </div>
         <div class="brand-header">
-            <h1>AutoParts Pro</h1>
-            <p>Premium Automotive Components</p>
+            <h1>Americano purje</h1>
+            <h2>Get Your Quote</h2>
         </div>
 <!-- 
         <div class="tabs">
@@ -159,36 +160,62 @@
         <form id="dataForm" class="auth-form" >
             <div class="form-group">
                 <label for="username">Name:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="text" id="username" name="username" placeholder="Enter your name" >
             </div>
             <div class="form-group">
                 <label for="phone">Phone:</label>
-                <input type="phone" id="phone" name="phone" required>
+                <input type="phone" id="phone" name="phone" placeholder="+1 222 333 4444" required>
+            </div> 
+
+            <div class="form-group">
+                <label for="email">Email:(Optional)</label>
+                <input type="email" id="email" name="email" placeholder="abc@gmail.com" >
+            </div>
+
+            <div class="form-group">
+                <label for="Select Part">Select Part</label>
+                <select id="Select Part" name="Select Part">
+                    <option value="Engine">Engine</option>
+                    <option value="Transmission">Transmission</option>
+                    <option value="Turbo">Turbo</option>
+                  
+
+ 
+
+                    <!-- Add more years as needed -->
+                </select>
             </div> 
             <div class="form-group">
+                <label for="phone">Make Year:</label>
+                <input type="number" placeholder="YYYY" min="1999" max="2025">
+   <script>
+      document.querySelector("input[type=number]")
+      .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+   </script>
+            </div> 
+            <div class="form-group">
+                <label for="Make & Model">Make & Model</label>
+                <input type="Make & Model" id="Make & Model" name="Make & Model" placeholder=" Ford Freestar Engine" required>
+            </div> 
+            <!-- <div class="form-group">
                 
                 <label for="loginPassword">Password</label>
                 <input type="password" id="loginPassword" required>
                 <div class="password-requirements">
                     (Must be at least 8 characters)
                 </div>
-            </div>
-
+            </div> -->
+<!-- 
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password</label>
                 <input type="password" id="confirmPassword" required>
-            </div>
+            </div> -->
 
-            <button type="submit" class="submit-btn">Create Account</button>
+            <button type="submit" class="submit-btn">Submit</button>
 
-            <div class="switch-form">
+            <!-- <div class="switch-form">
                 <p>By signing up, you agree to our <a href="#terms">Terms & Conditions</a></p>
-            </div>
+            </div> -->
         </form>
     </div>
 

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Used Engines | AA Auto Parts</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .nav {
+            background-color: #444;
+            padding: 1rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-content {
+            flex: 3;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 1rem;
+        }
+
+        .engine-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .specs-table td {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+        }
+
+        .price {
+            color: #c00;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .warranty-badge {
+            background-color: green;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- <header class="header">
+        <h1>AA Auto Parts</h1>
+        <p>Quality Used Auto Parts Since 2005</p>
+    </header> -->
+
+    <!-- <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </nav> -->
+
+    <div class="container">
+        <main class="main-content">
+            <h2>Used Engine - 2018 Honda Accord 2.4L L4</h2>
+            <img src="engine-placeholder.jpg" alt="2018 Honda Accord 2.4L Engine" class="engine-image">
+            <div class="price">$1,895.00</div>
+            <!-- <span class="warranty-badge">1-Year Warranty Included</span> -->
+
+            <h3>Engine Overview</h3>
+            <p>This quality used 2.4L 4-cylinder engine comes from a 2018 Honda Accord with only 48,235 verified miles. The engine was removed from a well-maintained vehicle and has passed our rigorous 125-point inspection process.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Complete engine assembly includes all components</li>
+                <li>Compression tested: 175-180 psi across all cylinders</li>
+                <li>No oil leaks or unusual wear patterns</li>
+                <li>Includes 90-day parts/labor warranty</li>
+            </ul>
+
+            <h3>Technical Specifications</h3>
+            <table class="specs-table">
+                <tr>
+                    <td>Engine Type</td>
+                    <td>2.4L L4 DOHC 16V</td>
+                </tr>
+                <tr>
+                    <td>Horsepower</td>
+                    <td>185 HP @ 6400 RPM</td>
+                </tr>
+                <tr>
+                    <td>Torque</td>
+                    <td>181 lb-ft @ 3900 RPM</td>
+                </tr>
+                <tr>
+                    <td>Fuel System</td>
+                    <td>Direct Injection</td>
+                </tr>
+                <tr>
+                    <td>Compatible Models</td>
+                    <td>2013-2017 Honda Accord, 2014-2018 Acura TLX</td>
+                </tr>
+            </table>
+
+            <h3>Installation Notes</h3>
+            <p>This engine comes complete with:</p>
+            <ul>
+                <li>Complete long block assembly</li>
+                <li>Alternator and starter (tested)</li>
+                <li>Fuel rail and injectors</li>
+                <li>All sensors and wiring harness</li>
+            </ul>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Quick Details</h3>
+            <p><strong>Part Number:</strong> ENG-HDA24-2018</p>
+            <p><strong>Availability:</strong> In Stock</p>
+            <p><strong>Shipping:</strong> Free to Certified Installers</p>
+            
+            <h3>Benefits of Buying Used</h3>
+            <ul>
+                <li>Save 40-60% vs new</li>
+                <li>Environmentally friendly</li>
+                <li>OEM quality parts</li>
+                <li>Verified mileage</li>
+            </ul>
+
+            <h3>Order Now</h3>
+            <button>Add to Cart</button>
+            <p>or Call: 1-800-555-AUTO</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>© 2023 AA Auto Parts - All rights reserved</p>
+        <p>EPA Certified Recycler | R2 Responsible Recycling</p>
+    </footer>
+</body>
+</html>

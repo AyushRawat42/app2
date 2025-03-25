@@ -3,51 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subaru EJ257 2.5L Turbo Engine | Stage 2 Rebuilt</title>
+    <title>Subaru EJ257 2.5L Turbo Engine | Premium Performance Engine</title>
     <style>
         :root {
-            --subaru-blue: #003f87;
-            --subaru-gold: #ffd700;
-            --subaru-dark: #1a1a1a;
-            --subaru-light: #f5f5f5;
+            --bmw-blue: #0066b1;
+            --bmw-dark: #1c1c1c;
+            --bmw-light: #f8f8f8;
+            --accent: #e6a722;
         }
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
             max-width: 900px;
             margin: 0 auto;
             padding: 0;
             color: #333;
-            background-color: var(--subaru-light);
+            background-color: var(--bmw-light);
         }
         .header {
-            background: linear-gradient(135deg, var(--subaru-dark), var(--subaru-blue));
+            background: linear-gradient(135deg, var(--bmw-dark), var(--bmw-blue));
             color: white;
             padding: 40px 20px;
             text-align: center;
             margin-bottom: 30px;
             border-radius: 0 0 8px 8px;
-            position: relative;
-            overflow: hidden;
-        }
-        .header::after {
-            content: "";
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 2px;
-            background: var(--subaru-gold);
         }
         .header h1 {
             margin: 0;
             font-size: 2.5rem;
-            font-weight: 600;
+            font-weight: 300;
             letter-spacing: 1px;
         }
         .header h1 span {
-            color: var(--subaru-gold);
+            font-weight: 600;
+            color: var(--accent);
         }
         .header p {
             margin: 10px 0 0;
@@ -58,25 +47,13 @@
             text-align: center;
             margin: 30px auto;
             max-width: 800px;
-            position: relative;
         }
         .engine-image img {
-            width: 100%;
+            width: 300px;
+            height: 300px;
             border-radius: 6px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             border: 1px solid rgba(0,0,0,0.1);
-        }
-        .stage-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: var(--subaru-gold);
-            color: var(--subaru-dark);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
         .specs-container {
             display: grid;
@@ -89,25 +66,35 @@
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 3px solid var(--subaru-gold);
         }
         .specs-card h2 {
             margin-top: 0;
-            color: var(--subaru-blue);
+            color: var(--bmw-blue);
+            border-bottom: 1px solid #eee;
             padding-bottom: 10px;
-            font-weight: 600;
+            font-weight: 500;
         }
         .spec-item {
             display: flex;
             margin-bottom: 12px;
         }
         .spec-label {
-            font-weight: bold;
-            width: 150px;
-            color: var(--subaru-dark);
+            font-weight: 600;
+            width: 140px;
+            color: var(--bmw-dark);
         }
         .spec-value {
             flex: 1;
+        }
+        .euro-badge {
+            background-color: var(--bmw-blue);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 8px;
+            display: inline-block;
         }
         .price-container {
             text-align: center;
@@ -115,24 +102,32 @@
         }
         .price {
             font-size: 2.8rem;
-            font-weight: bold;
-            color: var(--subaru-blue);
+            font-weight: 300;
+            color: var(--bmw-dark);
             display: inline-block;
             position: relative;
         }
-        .price::before, .price::after {
+        .price span {
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .price::before {
             content: "";
             position: absolute;
             top: 50%;
-            width: 40px;
+            left: -30px;
+            width: 20px;
             height: 2px;
-            background: var(--subaru-gold);
-        }
-        .price::before {
-            left: -50px;
+            background: var(--accent);
         }
         .price::after {
-            right: -50px;
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 20px;
+            height: 2px;
+            background: var(--accent);
         }
         .features {
             background: white;
@@ -140,12 +135,11 @@
             border-radius: 8px;
             margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-left: 3px solid var(--subaru-gold);
         }
         .features h3 {
             margin-top: 0;
-            color: var(--subaru-blue);
-            font-weight: 600;
+            color: var(--bmw-blue);
+            font-weight: 500;
         }
         .features ul {
             columns: 2;
@@ -154,38 +148,31 @@
         .features li {
             margin-bottom: 10px;
             break-inside: avoid;
-            position: relative;
-            padding-left: 20px;
         }
-        .features li::before {
-            content: "•";
-            color: var(--subaru-gold);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        .rebuild-details {
+        .description {
             background: white;
             padding: 30px;
             border-radius: 8px;
             margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .rebuild-details h3 {
+        .description h3 {
             margin-top: 0;
-            color: var(--subaru-blue);
-            font-weight: 600;
+            color: var(--bmw-blue);
+            font-weight: 500;
         }
         .contact {
-            background: linear-gradient(135deg, var(--subaru-dark), var(--subaru-blue));
+            background: linear-gradient(135deg, var(--bmw-dark), var(--bmw-blue));
             color: white;
             text-align: center;
             padding: 25px;
             border-radius: 8px;
             margin-top: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
         .contact h3 {
             margin-top: 0;
+            font-weight: 300;
             font-size: 1.4rem;
         }
         .contact-info {
@@ -193,9 +180,9 @@
             margin: 15px 0;
         }
         .contact-info a {
-            color: var(--subaru-gold);
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
         }
         @media (max-width: 768px) {
             .specs-container {
@@ -207,33 +194,23 @@
             .price {
                 font-size: 2.2rem;
             }
-            .price::before, .price::after {
-                width: 20px;
-            }
-            .price::before {
-                left: -30px;
-            }
-            .price::after {
-                right: -30px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>SUBARU <span>EJ257</span> 2.5L TURBO</h1>
-        <p>Stage 2 Rebuilt Performance Engine</p>
+        <h1>Subaru EJ257 2.5L Turbo Engine</h1>
+        <p>Premium  performance engine</p>
     </div>
 
     <div class="engine-image">
         <!-- Placeholder for engine image - replace with actual image -->
-        <img src="/app2/public/images/subaru.jfif" alt="Subaru EJ257 2.5L Turbo Engine">
-        <div class="stage-badge">STAGE 2 REBUILT</div>
+        <img src="/app2/public/images/subaru.jfif" width="337",height="337" alt="BMW B58 3.0L Turbo Engine">
     </div>
 
     <div class="specs-container">
         <div class="specs-card">
-            <h2>Engine Specifications</h2>
+            <h2>Technical Specifications</h2>
             <div class="spec-item">
                 <div class="spec-label">Year:</div>
                 <div class="spec-value">2019</div>
@@ -252,7 +229,7 @@
             </div>
         </div>
         <div class="specs-card">
-            <h2>Performance Specs</h2>
+            <h2>Performance Data</h2>
             <div class="spec-item">
                 <div class="spec-label">Displacement:</div>
                 <div class="spec-value">2.5L (2,457 cc)</div>
@@ -262,22 +239,22 @@
                 <div class="spec-value">Boxer-4 Turbo</div>
             </div>
             <div class="spec-item">
-                <div class="spec-label">Horsepower:</div>
+                <div class="spec-label">Power Output:</div>
                 <div class="spec-value">300+ hp (after rebuild)</div>
             </div>
             <div class="spec-item">
-                <div class="spec-label">Turbo:</div>
-                <div class="spec-value">VF-series included</div>
+                <div class="spec-label">Torque:</div>
+                <div class="spec-value">290 lb-ft</div>
             </div>
         </div>
     </div>
 
     <div class="price-container">
-        <div class="price">$3,150</div>
+        <div class="price"><span>$3,150</span></div>
     </div>
 
     <div class="features">
-        <h3>Rebuild Features & Components</h3>
+        <h3>Included Components</h3>
         <ul>
             <li>Complete EJ257 short block assembly</li>
             <li>New forged pistons (Stage 2 spec)</li>
@@ -294,8 +271,8 @@
         </ul>
     </div>
 
-    <div class="rebuild-details">
-        <h3>Rebuild Details</h3>
+    <div class="description">
+        <h3>Rebuilt details</h3>
         <p>This 2019 Subaru EJ257 2.5L turbo engine has been professionally rebuilt to Stage 2 specifications with only 54,300 miles on the chassis. The rebuild includes forged internals capable of handling increased boost pressures, making this an excellent choice for performance enthusiasts.</p>
         
         <p>The engine features a complete refresh of all critical components including new pistons, rods, bearings, and gaskets. The cylinder heads have been inspected, resurfaced, and fitted with new valve stem seals. This EJ257 comes complete with turbocharger, intake manifold, and all necessary components for a complete installation.</p>
@@ -306,10 +283,10 @@
     <div class="contact">
         <h3>Ready to boost your build?</h3>
         <div class="contact-info">
-            Call: <a href="tel:+18005555325">(800) 555-5325</a>
+            Call: <a href="tel:+18005550123">(800) 555-0123</a>
         </div>
         <div class="contact-info">
-            Email: <a href="mailto:performance@subaruengines.com">performance@subaruengines.com</a>
+            Email: <a href="mailto:b58sales@premiumengines.com">b58sales@premiumengines.com</a>
         </div>
     </div>
 </body>

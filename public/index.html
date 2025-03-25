@@ -302,6 +302,249 @@
                 padding: 20px;
             }
         }
+
+        /* shop by category */
+        .shop-by-category {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 20px;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    .shop-by-category h2 {
+        text-align: center;
+        color: #2c3e50;
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    
+    .subtitle {
+        text-align: center;
+        color: #7f8c8d;
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+    
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .category-card {
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .category-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    
+    .category-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .category-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .category-card:hover .category-image img {
+        transform: scale(1.05);
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+    }
+    
+    .category-card h3 {
+        color: #2c3e50;
+        font-size: 22px;
+        margin: 20px 20px 10px;
+    }
+    
+    .category-card p {
+        color: #7f8c8d;
+        margin: 0 20px 20px;
+        line-height: 1.5;
+    }
+    
+    .shop-btn {
+        display: inline-block;
+        margin: 0 20px 25px;
+        padding: 10px 20px;
+        background-color: #e74c3c;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+    
+    .shop-btn:hover {
+        background-color: #c0392b;
+    }
+    
+    .shop-btn span {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+    
+    .shop-btn:hover span {
+        transform: translateX(3px);
+    }
+    
+    @media (max-width: 768px) {
+        .category-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .shop-by-category {
+            margin: 40px auto;
+        }
+    }
+
+     /* Featured Products Styling */
+     .featured-products {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+        font-family: 'Arial', sans-serif;
+    }
+    
+    .featured-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .featured-header h2 {
+        font-size: 36px;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+    
+    .featured-header p {
+        font-size: 18px;
+        color: #7f8c8d;
+    }
+    
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+    }
+    
+    .product-card {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+    
+    .product-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: #e74c3c;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        z-index: 2;
+    }
+    
+    .product-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .product-card:hover .product-image {
+        transform: scale(1.03);
+    }
+    
+    .product-details {
+        padding: 20px;
+    }
+    
+    .product-details h3 {
+        font-size: 20px;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+    
+    .product-description {
+        color: #7f8c8d;
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+    
+    .product-meta {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .price {
+        font-size: 22px;
+        font-weight: bold;
+        color: #e74c3c;
+        margin-right: 10px;
+    }
+    
+    .original-price {
+        font-size: 14px;
+        color: #95a5a6;
+        text-decoration: line-through;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background 0.3s ease;
+    }
+    
+    .cta-button:hover {
+        background: #2980b9;
+    }
+    
+    @media (max-width: 768px) {
+        .products-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .featured-header h2 {
+            font-size: 28px;
+        }
+    }
     </style>
     
 </head>
@@ -331,50 +574,101 @@
 
     <!-- Featured Products -->
     <section class="featured-products">
-        <h2>Featured Products</h2>
-        <div class="products-grid">
-            <div class="product">
-                <img src="images/Chevy-Truck-Silverado.jpg" alt="Chevy-Truck-Silverado">
-                <h3>Chevy-Truck-Silverado</h3>
-                <p>Condition: Good</p>
-                <p>Price: $1400-2500</p>
-                <button>Add to Cart</button>
+        <div class="featured-products">
+            <div class="featured-header">
+                <h2>Featured Auto Parts</h2>
+                <p>Top-quality used parts with warranties, shipped nationwide</p>
             </div>
-            <div class="product">
-                <img src="images/Dodge Charger Tr-2.jpg" alt="2020 Dogde-Charger-Transmission">
-                <h3>2020 Dogde-Charger-Transmission</h3>
-                <p>Condition: Fair</p>
-                <p>Price: $350-900</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/Toyota Corolla-Tr 2 (2000-2).jpg" alt="2000-2002 Toyota-Corolla-Transmission">
-                <h3>2000-2002 Toyota-Corolla-Transmission</h3>
-                <p>Condition: Excellent</p>
-                <p>Price: $1000-2000</p>
-                <button>Add to Cart</button>
+            
+            <div class="products-grid">
+                <!-- Engine Product -->
+                <div class="product-card">
+                    <div class="product-badge">BESTSELLER</div>
+                    <img src="https://www.fordcomponentsalesllc.com/wp-content/uploads/2021/09/Ford-2.0L-Ecoboost-Engine.png" alt="Used Engine" class="product-image">
+                    <div class="product-details">
+                        <h3>2.0L Inline-4 Turbo Engine</h3>
+                        <p class="product-description">Low-mileage engine from a 2020 Ford EcoBoost. 30-day warranty included.</p>
+                        <div class="product-meta">
+                            <span class="price">$1,850</span>
+                            <span class="original-price">$2,800 new</span>
+                        </div>
+                        <a href="pages/engines/engine1.html" class="cta-button">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Transmission Product -->
+                <div class="product-card">
+                    <div class="product-badge">READY TO SHIP</div>
+                    <img src="" alt="Used Transmission" class="product-image">
+                    <div class="product-details">
+                        <h3>6-Speed Automatic Transmission</h3>
+                        <p class="product-description">From a 2019 Ford F-150. Tested and guaranteed.</p>
+                        <div class="product-meta">
+                            <span class="price">$899</span>
+                            <span class="original-price">$2,200 new</span>
+                        </div>
+                        <a href="#" class="cta-button">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Turbo Product -->
+                <div class="product-card">
+                    <div class="product-badge">PERFORMANCE</div>
+                    <img src="" alt="Used Turbocharger" class="product-image">
+                    <div class="product-details">
+                        <h3>Garrett Turbocharger</h3>
+                        <p class="product-description">For Dodge Cummins 6.7L. Rebuilt with a 90-day warranty.</p>
+                        <div class="product-meta">
+                            <span class="price">$499</span>
+                            <span class="original-price">$1,300 new</span>
+                        </div>
+                        <a href="#" class="cta-button">View Details</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Categories Section -->
-    <section class="categories">
+    <div class="shop-by-category">
         <h2>Shop by Category</h2>
-        <div class="categories-grid">
-            <div class="category">
-                <img src="images/engine.png" alt="Engines">
+        <p class="subtitle">Find quality used parts for your vehicle</p>
+        
+        <div class="category-grid">
+            <!-- Engine Category -->
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="https://www.digitaltrends.com/wp-content/uploads/2018/01/2018-Dodge-Charger-485-hp-6-4L-Hemi-V8-.jpg?p=1" alt="Engines">
+                    <div class="overlay"></div>
+                </div>
                 <h3>Engines</h3>
+                <p>Complete engines with warranty from late-model vehicles</p>
+                <a href="pages/shop-engines.html" class="shop-btn">Shop Engines <span>&rarr;</span></a>
             </div>
-            <div class="category">
-                <img src="images/transmission.png" alt="Transmissions">
+            
+            <!-- Transmission Category -->
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnEoaDdTliJhBahgJOfvT8ofrRpdKpJ9hTiQ&s" alt="Transmissions">
+                    <div class="overlay"></div>
+                </div>
                 <h3>Transmissions</h3>
+                <p>Manual and automatic transmissions tested for reliability</p>
+                <a href="pages/shop-transmission.html" class="shop-btn">Shop Transmissions <span>&rarr;</span></a>
             </div>
-            <div class="category">
-                <img src="images/turbo.png" alt="Turbos">
+            
+            <!-- Turbo Category -->
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpguejEer5-xaFcynKb4n29NGRicr75nFhrQ&s" alt="Turbos">
+                    <div class="overlay"></div>
+                </div>
                 <h3>Turbos</h3>
+                <p>Performance turbochargers from top manufacturers</p>
+                <a href="pages/shop-turbos.html" class="shop-btn">Shop Turbos <span>&rarr;</span></a>
             </div>
         </div>
-    </section>
+    </div>
     
     <!-- motto -->
     <div class="motto-banner">

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ford F-450 6.7L Power Stroke Diesel Engine | Commercial Grade</title>
+    <style>
+        :root {
+            --ford-blue: #003478;
+            --ford-diesel: #333333;
+            --ford-dark: #222;
+            --ford-light: #f5f5f5;
+            --ford-silver: #999;
+            --ford-gold: #d4af37;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: var(--ford-light);
+        }
+        .header {
+            background: linear-gradient(135deg, var(--ford-diesel), var(--ford-blue));
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 0 0 8px 8px;
+            position: relative;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        .header h1 span {
+            color: var(--ford-gold);
+            font-weight: 300;
+        }
+        .header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .commercial-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--ford-gold);
+            color: var(--ford-diesel);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            border: 1px solid var(--ford-diesel);
+        }
+        .engine-image {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .engine-image img {
+            width: 300px;
+            height: 300px;
+            max-height: 400px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+        .specs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+        .specs-card {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--ford-blue);
+        }
+        .specs-card h2 {
+            margin-top: 0;
+            color: var(--ford-dark);
+            padding-bottom: 15px;
+            font-weight: 600;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #eee;
+        }
+        .spec-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .spec-label {
+            font-weight: bold;
+            width: 160px;
+            color: var(--ford-dark);
+        }
+        .spec-value {
+            flex: 1;
+        }
+        .torque-display {
+            font-weight: bold;
+            color: var(--ford-gold);
+            font-size: 1.1rem;
+        }
+        .price-display {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--ford-blue);
+            display: inline-block;
+            position: relative;
+        }
+        .price::before, .price::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 2px;
+            background: var(--ford-silver);
+        }
+        .price::before {
+            left: -60px;
+        }
+        .price::after {
+            right: -60px;
+        }
+        .features {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        .features h3 {
+            margin-top: 0;
+            color: var(--ford-dark);
+            font-weight: 600;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .features ul {
+            columns: 2;
+            column-gap: 40px;
+        }
+        .features li {
+            margin-bottom: 12px;
+            break-inside: avoid;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.05rem;
+        }
+        .features li::before {
+            content: "•";
+            color: var(--ford-blue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .description {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--ford-blue);
+        }
+        .description h3 {
+            margin-top: 0;
+            color: var(--ford-dark);
+            font-weight: 600;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .description p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .compatibility {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        .compatibility h3 {
+            margin-top: 0;
+            color: var(--ford-dark);
+            font-weight: 600;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .contact {
+            background: linear-gradient(135deg, var(--ford-diesel), var(--ford-blue));
+            color: white;
+            text-align: center;
+            padding: 35px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .contact h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .warranty {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .warranty h3 {
+            color: var(--ford-blue);
+            margin-top: 0;
+        }
+        @media (max-width: 768px) {
+            .specs-container {
+                grid-template-columns: 1fr;
+            }
+            .features ul {
+                columns: 1;
+            }
+            .price {
+                font-size: 2.5rem;
+            }
+            .price::before, .price::after {
+                width: 30px;
+            }
+            .price::before {
+                left: -40px;
+            }
+            .price::after {
+                right: -40px;
+            }
+            .commercial-badge {
+                position: static;
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+            .header {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="commercial-badge">COMMERCIAL GRADE</div>
+        <h1>FORD F-450 <span>6.7L Power Stroke</span></h1>
+        <p>High-Torque Turbo Diesel V8 Engine</p>
+    </div>
+
+    <div class="engine-image">
+        <img src="https://img.equipmentworld.com/files/base/randallreilly/all/image/2013/09/eqw.6.7_Diesel_Engine.png?auto=format%2Ccompress&fit=max&q=70&w=400" alt="Ford F-450 6.7L Power Stroke Diesel Engine">
+    </div>
+
+    <div class="specs-container">
+        <div class="specs-card">
+            <h2>Engine Specifications</h2>
+            <div class="spec-item">
+                <div class="spec-label">Year:</div>
+                <div class="spec-value">2023</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Mileage:</div>
+                <div class="spec-value">38,000 miles</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Engine Code:</div>
+                <div class="spec-value">6.7L Power Stroke</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Condition:</div>
+                <div class="spec-value">Commercial Fleet Maintained</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Service Records:</div>
+                <div class="spec-value">Complete history available</div>
+            </div>
+        </div>
+        <div class="specs-card">
+            <h2>Performance Specs</h2>
+            <div class="spec-item">
+                <div class="spec-label">Horsepower:</div>
+                <div class="spec-value">475 hp @ 2600 rpm</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Torque:</div>
+                <div class="spec-value"><span class="torque-display">1,050 lb-ft</span> @ 1600 rpm</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Turbocharger:</div>
+                <div class="spec-value">Garrett GT37 Variable Geometry</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Fuel System:</div>
+                <div class="spec-value">High Pressure Common Rail</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Emissions:</div>
+                <div class="spec-value">EPA Compliant</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="price-display">
+        <div class="price">$10,950</div>
+    </div>
+
+    <!-- <div class="warranty">
+        <h3>✔ 1-Year Commercial Warranty Included</h3>
+        <p>This heavy-duty diesel engine comes with a 12-month warranty for commercial use</p>
+    </div> -->
+
+    <div class="features">
+        <h3>Key Features</h3>
+        <ul>
+            <li>Complete 6.7L Power Stroke diesel engine assembly</li>
+            <li>Commercial fleet maintenance records included</li>
+            <li>Includes Garrett GT37 variable geometry turbocharger</li>
+            <li>Tested compression and leakdown within specifications</li>
+            <li>High-pressure common rail fuel system</li>
+            <li>Complete wiring harness and sensors included</li>
+            <li>Ready for immediate installation</li>
+            <li>No blow-by or oil consumption issues</li>
+            <li>Properly stored with diesel preservative</li>
+            <li>Includes factory ECU (programmable)</li>
+            <li>DPF system available separately</li>
+            <li>Aftertreatment system optional</li>
+            <li>Commercial duty cycle tested</li>
+            <li>Ideal for upfitting into service vehicles</li>
+        </ul>
+    </div>
+
+    <div class="description">
+        <h3>Engine Description</h3>
+        <p>This 2023 Ford F-450 6.7L Power Stroke V8 diesel engine represents the pinnacle of commercial-grade powertrain technology. With only 38,000 carefully maintained miles from a fleet-operated F-450, this engine delivers exceptional value for commercial operators, municipal fleets, and heavy-duty applications.</p>
+        
+        <p>The third-generation 6.7L Power Stroke features a compacted graphite iron block, forged steel crankshaft, and dual overhead cams for maximum durability under load. This particular unit has been professionally inspected and includes all necessary components for installation in F-450 chassis cab or pickup applications.</p>
+        
+        <p>With its massive 1,050 lb-ft of torque available at just 1,600 rpm, this Power Stroke diesel is ideally suited for the most demanding F-450 applications including tow trucks, utility vehicles, and construction equipment.</p>
+    </div>
+
+    <div class="compatibility">
+        <h3>Compatible F-450 Models</h3>
+        <ul>
+            <li>2017-2023 F-450 Super Duty Pickup</li>
+            <li>2017-2023 F-450 Chassis Cab</li>
+            <li>All cab configurations (Regular, SuperCab, SuperCrew)</li>
+            <li>DRW (Dual Rear Wheel) models</li>
+            <li>4WD configurations (2WD conversion possible)</li>
+            <li>Compatible with 6R140 or 10R140 heavy-duty transmissions</li>
+            <li>Requires diesel exhaust fluid (DEF) system</li>
+            <li>Ideal for upfitting into commercial vehicles</li>
+        </ul>
+    </div>
+
+    <div class="contact">
+        <h3>Contact Our Commercial Diesel Specialists</h3>
+        <div class="contact-info">
+            Call: <a href="tel:+18005554666">(800) 555-4666</a>
+        </div>
+        <div class="contact-info">
+            Email: <a href="mailto:commercial@forddiesel.com">commercial@forddiesel.com</a>
+        </div>
+        <div class="contact-info">
+            Commercial Fleet Discounts Available
+        </div>
+    </div>
+</body>
+</html>

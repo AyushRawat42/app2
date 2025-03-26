@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodge 200 Series 360ci V8 Engine | Heavy Duty Classic</title>
+    <style>
+        :root {
+            --dodge-red: #D5202A;
+            --dodge-blue: #0064B1;
+            --dodge-dark: #1A1A1A;
+            --dodge-light: #F5F5F5;
+            --dodge-silver: #CCCCCC;
+            --dodge-gold: #D4AF37;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: var(--dodge-light);
+        }
+        .header {
+            background: linear-gradient(135deg, var(--dodge-dark), var(--dodge-blue));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 0 0 8px 8px;
+            position: relative;
+            border-bottom: 4px solid var(--dodge-red);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        .header h1 span {
+            color: var(--dodge-gold);
+            font-weight: 300;
+        }
+        .header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .heavy-duty-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--dodge-gold);
+            color: var(--dodge-dark);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            border: 2px solid var(--dodge-red);
+        }
+        .engine-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .engine-image img {
+            width: 300px;
+            height: 300px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+        .specs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+        .specs-card {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--dodge-red);
+        }
+        .specs-card h2 {
+            margin-top: 0;
+            color: var(--dodge-dark);
+            padding-bottom: 15px;
+            font-weight: 600;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #eee;
+        }
+        .spec-item {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        .spec-label {
+            font-weight: bold;
+            width: 180px;
+            color: var(--dodge-dark);
+            font-size: 1.1rem;
+        }
+        .spec-value {
+            flex: 1;
+            font-size: 1.1rem;
+        }
+        .displacement-display {
+            font-weight: bold;
+            color: var(--dodge-red);
+            font-size: 1.2rem;
+        }
+        .price-display {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .price {
+            font-size: 3.2rem;
+            font-weight: bold;
+            color: var(--dodge-red);
+            display: inline-block;
+            position: relative;
+        }
+        .price::before, .price::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 3px;
+            background: var(--dodge-silver);
+        }
+        .price::before {
+            left: -60px;
+        }
+        .price::after {
+            right: -60px;
+        }
+        .features {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .features h3 {
+            margin-top: 0;
+            color: var(--dodge-dark);
+            font-weight: 600;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 12px;
+        }
+        .features ul {
+            columns: 2;
+            column-gap: 40px;
+        }
+        .features li {
+            margin-bottom: 12px;
+            break-inside: avoid;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.1rem;
+        }
+        .features li::before {
+            content: "▸";
+            color: var(--dodge-red);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .description {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--dodge-blue);
+        }
+        .description h3 {
+            margin-top: 0;
+            color: var(--dodge-dark);
+            font-weight: 600;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 12px;
+        }
+        .description p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .compatibility {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .compatibility h3 {
+            margin-top: 0;
+            color: var(--dodge-dark);
+            font-weight: 600;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 12px;
+        }
+        .warranty {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            text-align: center;
+            border: 2px solid var(--dodge-blue);
+        }
+        .warranty h3 {
+            color: var(--dodge-red);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .contact {
+            background: linear-gradient(135deg, var(--dodge-dark), var(--dodge-blue));
+            color: white;
+            text-align: center;
+            padding: 35px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-top: 4px solid var(--dodge-red);
+        }
+        .contact h3 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .decade-tag {
+            display: inline-block;
+            background-color: var(--dodge-red);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-left: 8px;
+        }
+        @media (max-width: 768px) {
+            .specs-container {
+                grid-template-columns: 1fr;
+            }
+            .features ul {
+                columns: 1;
+            }
+            .price {
+                font-size: 2.5rem;
+            }
+            .price::before, .price::after {
+                width: 30px;
+            }
+            .price::before {
+                left: -40px;
+            }
+            .price::after {
+                right: -40px;
+            }
+            .heavy-duty-badge {
+                position: static;
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="heavy-duty-badge">HEAVY DUTY</div>
+        <h1>DODGE 200 SERIES <span>360ci V8</span></h1>
+        <p>LA-Series Big Block Engine for Classic Work Trucks</p>
+    </div>
+
+    <div class="engine-image">
+        <img src="https://barnfinds.com/wp-content/uploads/2024/08/081224-1972-Dodge-D200-5.jpg" alt="Dodge 360ci V8 Engine">
+    </div>
+
+    <div class="specs-container">
+        <div class="specs-card">
+            <h2>Engine Specifications</h2>
+            <div class="spec-item">
+                <div class="spec-label">Year:</div>
+                <div class="spec-value">1978 <span class="decade-tag">70s</span></div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Mileage:</div>
+                <div class="spec-value">65,000 miles</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Displacement:</div>
+                <div class="spec-value"><span class="displacement-display">360ci (5.9L)</span></div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Engine Family:</div>
+                <div class="spec-value">LA-Series (Big Block)</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Condition:</div>
+                <div class="spec-value">Professionally Rebuilt</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Engine Code:</div>
+                <div class="spec-value">D8</div>
+            </div>
+        </div>
+        <div class="specs-card">
+            <h2>Performance Specs</h2>
+            <div class="spec-item">
+                <div class="spec-label">Horsepower:</div>
+                <div class="spec-value">175-195 hp</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Torque:</div>
+                <div class="spec-value"><span class="displacement-display">305-325 lb-ft</span></div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Compression:</div>
+                <div class="spec-value">8.4:1</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Fuel System:</div>
+                <div class="spec-value">4-barrel carburetor</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Oil Capacity:</div>
+                <div class="spec-value">6 quarts</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Bore x Stroke:</div>
+                <div class="spec-value">4.00" x 3.58"</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="price-display">
+        <div class="price">$3,950</div>
+    </div>
+
+    <!-- <div class="warranty">
+        <h3>✔ 2-Year Warranty on Rebuilt Engine</h3>
+        <p>This professionally rebuilt 360ci V8 comes with a 24-month warranty</p>
+    </div> -->
+
+    <div class="features">
+        <h3>Key Features</h3>
+        <ul>
+            <li>Complete 360ci LA-series big block V8</li>
+            <li>Professional engine rebuild with receipts</li>
+            <li>Original 4-barrel carburetor</li>
+            <li>New pistons, rings, and bearings</li>
+            <li>Reconditioned connecting rods</li>
+            <li>Reground crankshaft</li>
+            <li>Rebuilt cylinder heads</li>
+            <li>New timing chain and gears</li>
+            <li>Complete gasket and seal kit</li>
+            <li>New oil pump and water pump</li>
+            <li>Includes correct intake manifold</li>
+            <li>Ready for installation</li>
+            <li>Ideal for work truck restoration</li>
+            <li>Increased torque over 318ci models</li>
+        </ul>
+    </div>
+
+    <div class="description">
+        <h3>Engine Description</h3>
+        <p>This 1978 Dodge 360ci V8 engine is the perfect powerplant for your Dodge 200 Series work truck restoration or heavy-duty repair. As the larger brother to the 318ci, the 360 was the preferred engine for D200/W200 models that needed extra torque for towing and hauling.</p>
+        
+        <p>This particular engine has been professionally rebuilt to factory specifications, with attention to the durability needs of classic work trucks. The LA-series 360 features a robust cast iron block and heads, hydraulic lifters, and a 4-barrel carburetor for improved performance over the 2-barrel versions.</p>
+        
+        <p>Ideal for D200, W200, and other Dodge 200 Series trucks from the 1970s, this engine provides the authentic power that these heavy-duty classics were known for, with the reliability of a professional rebuild.</p>
+    </div>
+
+    <div class="compatibility">
+        <h3>Compatible Dodge Models</h3>
+        <ul>
+            <li>1967-1978 Dodge D200/D250</li>
+            <li>1967-1978 Dodge W200/W250 (4x4)</li>
+            <li>Dodge Camper Special models</li>
+            <li>Dodge Utiline and Sweptline trucks</li>
+            <li>2WD and 4WD configurations</li>
+            <li>Original equipment for many 200 Series models</li>
+            <li>Also fits some 100 Series with modifications</li>
+        </ul>
+    </div>
+
+    <div class="contact">
+        <h3>Ready for Your Classic Work Truck?</h3>
+        <div class="contact-info">
+            Call: <a href="tel:+18005558888">(800) 555-8888</a>
+        </div>
+        <div class="contact-info">
+            Email: <a href="mailto:worktruck@dodgeparts.com">worktruck@dodgeparts.com</a>
+        </div>
+        <div class="contact-info">
+            Ask about our installation services
+        </div>
+    </div>
+</body>
+</html>

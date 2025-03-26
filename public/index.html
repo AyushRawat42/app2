@@ -6,6 +6,7 @@
     <title>Ignite Auto - Home</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        
         .why-choose-us {
             max-width: 1000px;
             margin: 40px auto;
@@ -418,6 +419,50 @@
     }
 
      /* Featured Products Styling */
+
+     /* contact us section */
+     .hero-message {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 30px;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .hero-heading {
+        font-size: 42px;
+        font-weight: 800;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .hero-subtext {
+        font-size: 22px;
+        color: #555;
+        line-height: 1.5;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    @media (max-width: 768px) {
+        .hero-heading {
+            font-size: 32px;
+        }
+        
+        .hero-subtext {
+            font-size: 18px;
+        }
+        
+        .hero-message {
+            padding: 20px;
+            margin: 20px auto;
+        }
+    }
      .featured-products {
         max-width: 1200px;
         margin: 0 auto;
@@ -432,13 +477,13 @@
     }
     
     .featured-header h2 {
-        font-size: 36px;
+        font-size: 46px;
         color: #2c3e50;
         margin-bottom: 10px;
     }
     
     .featured-header p {
-        font-size: 18px;
+        font-size: 28px;
         color: #7f8c8d;
     }
     
@@ -545,6 +590,98 @@
             font-size: 28px;
         }
     }
+    /* pop-up */
+    .contact-popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border: 1px solid #e74c3c;
+            animation: slideIn 0.5s ease-out;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .popup-header {
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .popup-header h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        
+        .close-popup {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .popup-content {
+            padding: 15px;
+        }
+        
+        .popup-content p {
+            margin: 0 0 15px 0;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .popup-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .popup-btn {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .popup-btn.primary {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .popup-btn.secondary {
+            background: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .popup-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
     </style>
     
 </head>
@@ -572,9 +709,24 @@
         <button onclick="searchProducts()">Search</button>
     </section> -->
 
-    
-    <!-- Featured Products -->
+    <!-- contact us section -->
+    <!-- <div class="hero-message">
+        <h1 class="hero-heading">Quality Used Auto Parts at Affordable Prices</h1>
+        <p class="hero-subtext">Specializing in used engines, transmissions, and turbos for all makes and models. All parts are thoroughly tested and come with a warranty.</p>
+        <br>
+        <br>
+        <a href="/public/pages/login.html" class="cta-button">GET YOUR QUOTE</a>
+    </div> -->
+   <!-- Featured Products -->
     <section class="featured-products">
+         <!-- contact us section -->
+    <div class="hero-message">
+        <h1 class="hero-heading">Quality Used Auto Parts at Affordable Prices</h1>
+        <p class="hero-subtext">Specializing in used engines, transmissions, and turbos for all makes and models. All parts are thoroughly tested and come with a warranty.</p>
+        <br>
+        <br>
+        <a href="/public/pages/login.html" class="cta-button">GET YOUR QUOTE</a>
+    </div>
         <div class="featured-products">
             <div class="featured-header">
                 <h2>Featured Auto Parts</h2>
@@ -600,7 +752,7 @@
                 <!-- Transmission Product -->
                 <div class="product-card">
                     <div class="product-badge">READY TO SHIP</div>
-                    <img src="" alt="Used Transmission" class="product-image">
+                    <img src="https://advancedtransmission.com/wp-content/uploads/2023/12/ford-transmission-problems.jpeg" alt="Used Transmission" class="product-image">
                     <div class="product-details">
                         <h3>6-Speed Automatic Transmission</h3>
                         <p class="product-description">From a 2019 Ford F-150. Tested and guaranteed.</p>
@@ -608,14 +760,14 @@
                             <span class="price">$899</span>
                             <span class="original-price">$2,200 new</span>
                         </div>
-                        <a href="#" class="cta-button">View Details</a>
+                        <a href="/public/pages/transmission/transmission1.html" class="cta-button">View Details</a>
                     </div>
                 </div>
                 
                 <!-- Turbo Product -->
                 <div class="product-card">
                     <div class="product-badge">PERFORMANCE</div>
-                    <img src="" alt="Used Turbocharger" class="product-image">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSySQiqqRTXA3A3phMt9RU_edC4EnSuUOumXu6XuQvm4THeolXqGGBhQ4BpDJWwI5slZxVLrAuvqHpldVMieGeAG7Wz_qpZC8nZme1Wua0HdFY33Xw8lZjGZg" alt="Used Turbocharger" class="product-image">
                     <div class="product-details">
                         <h3>Garrett Turbocharger</h3>
                         <p class="product-description">For Dodge Cummins 6.7L. Rebuilt with a 90-day warranty.</p>
@@ -623,7 +775,7 @@
                             <span class="price">$499</span>
                             <span class="original-price">$1,300 new</span>
                         </div>
-                        <a href="#" class="cta-button">View Details</a>
+                        <a href="/public/pages/turbo/turbo1.html" class="cta-button">View Details</a>
                     </div>
                 </div>
             </div>
@@ -685,19 +837,19 @@
         <h2>Our Parts Fit These Brands</h2>
         <div class="brand-carousel">
             <div class="brand-slide">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Ford_Motor_Company_Logo.svg/1200px-Ford_Motor_Company_Logo.svg.png" alt="Ford">
+                <img src="https://media.designrush.com/inspirations/291692/conversions/ford-logo-1-preview.jpg" alt="Ford">
             </div>
             <div class="brand-slide">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Toyota.svg/1200px-Toyota.svg.png" alt="Toyota">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6b2FkwYqSTo9hbYh2_B9zsKDHe3fryAuSCQ&s" alt="Toyota">
             </div>
             <div class="brand-slide">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Chevrolet_logo.png/800px-Chevrolet_logo.png" alt="Chevrolet">
+                <img src="https://images.seeklogo.com/logo-png/26/2/chevrolet-logo-png_seeklogo-260170.png?v=1954738238805873616" alt="Chevrolet">
             </div>
             <div class="brand-slide">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Honda_logo.svg/800px-Honda_logo.svg.png" alt="Honda">
+                <img src="https://w7.pngwing.com/pngs/978/480/png-transparent-honda-logo-car-toyota-honda-cr-v-honda-angle-trademark-rectangle.png" alt="Honda">
             </div>
             <div class="brand-slide">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Nissan_logo.png/800px-Nissan_logo.png" alt="Nissan">
+                <img src="https://wallpapers.com/images/hd/nissan-automotive-brand-logo-gcfu8m53losfzum1.png" alt="Nissan">
             </div>
             <div class="brand-slide">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Jeep_logo.svg/800px-Jeep_logo.svg.png" alt="Jeep">
@@ -706,10 +858,10 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/800px-Mercedes-Logo.svg.png" alt="Mercedes-Benz">
             </div>
             <div class="brand-slide">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/BMW_logo_%28gray%29.svg/800px-BMW_logo_%28gray%29.svg.png" alt="BMW">
+                <img src="https://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19707.png" alt="BMW">
             </div>
             <div class="brand-slide">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Volkswagen_Logo_till_1995.svg/800px-Volkswagen_Logo_till_1995.svg.png" alt="Volkswagen">
+                <img src="https://images.seeklogo.com/logo-png/15/2/volkswagen-logo-png_seeklogo-150537.png" alt="Volkswagen">
             </div>
             <div class="brand-slide">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Hyundai_logo_black.png/800px-Hyundai_logo_black.png" alt="Hyundai">
@@ -863,6 +1015,73 @@
             </div>
         </div>
     </div>
+
+      <!-- Contact Popup -->
+    <div class="contact-popup" id="contactPopup">
+        <div class="popup-header">
+            <h3>Need Help?</h3>
+            <button class="close-popup" id="closePopup">&times;</button>
+        </div>
+        <div class="popup-content">
+            <p>Our parts specialists are standing by to help you find exactly what you need for your vehicle.</p>
+            <div class="popup-buttons">
+                <button class="popup-btn primary" onclick="window.location.href='tel:+18005551234'">
+                    Call Now: (800) 555-1234
+                </button>
+        
+                <button class="popup-btn secondary" onclick="window.location.href='../public/pages/login.html'">
+                    Get Your Quote in 10 minutes
+                </button>
+                <!-- <button class="popup-btn secondary" onclick="window.location.href='/live-chat.html'">
+                    Live Chat
+                </button> -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show popup every 30 seconds
+        let popupTimer;
+        const contactPopup = document.getElementById('contactPopup');
+        const closePopup = document.getElementById('closePopup');
+        
+        function showPopup() {
+            contactPopup.style.display = 'block';
+            // Reset the timer when popup is shown
+            resetPopupTimer();
+        }
+        
+        function hidePopup() {
+            contactPopup.style.display = 'none';
+        }
+        
+        function resetPopupTimer() {
+            clearTimeout(popupTimer);
+            popupTimer = setTimeout(showPopup, 30000); // 30 seconds
+        }
+        
+        // Close button event
+        closePopup.addEventListener('click', hidePopup);
+        
+        // Show popup after 30 seconds when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            popupTimer = setTimeout(showPopup, 30000); // 30 seconds
+            
+            // Also show if user tries to leave the page
+            window.addEventListener('mouseout', function(e) {
+                if (e.clientY < 0) {
+                    showPopup();
+                }
+            });
+        });
+        
+        // Show popup when user reaches bottom of page
+        window.addEventListener('scroll', function() {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                showPopup();
+            }
+        });
+    </script>
     
 
 

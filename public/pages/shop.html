@@ -39,14 +39,14 @@
 
         .hero {
             background-image: url('https://via.placeholder.com/1920x600');
-            height: 600px;
+            height: 200px;
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            color: rgb(219, 99, 99);
+            color: black;
             text-align: center;
         }
 
@@ -112,45 +112,49 @@
     <nav>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="shop-engines.html">Engines</a></li>
+            <!-- <li><a href="shop-engines.html">Engines</a></li>
             <li><a href="shop-transmission.html">Transmission</a></li>
             <li><a href="shop-turbos.html">Turbos</a></li>
-            <li><a href="shop-otherparts.html">Other Parts</a></li>
+            <li><a href="shop-otherparts.html">Other Parts</a></li> -->
         </ul>
     </nav>
-
-    <div class="hero">
+   <div class="hero">
         <h1>Premium Auto Parts</h1>
-        <p>Quality Components for Peak Performance</p>
-        <button style="margin-top: 1rem; padding: 0.8rem 2rem; background-color: #e74c3c; color: white; border: none; border-radius: 4px;">Shop Now</button>
+        <h3><ul style="list-style-type: disc;">
+            <li>Genuine Parts</li>
+            <li>    Affordable Prices</li>
+            <li>24/7 Support</li>
+            <li>90-Day Warranty</li>
+        </ul></h3>
+        <!-- <button style="margin-top: 1rem; padding: 0.8rem 2rem; background-color: #e74c3c; color: white; border: none; border-radius: 4px;">Shop Now</button> -->
     </div>
-
-    <div class="products">
+     <div class="products">
         <section class="product-category" id="engines">
             <h2>Engines</h2>
             <div class="product-grid">
                 <div class="product-card">
                     <img src="../images/V-8.avif" alt="V8 Engine">
-                    <h3>V8 Performance Engine</h3>
-                    <p class="price">$4,999.99</p>
-                    <p>High-performance V8 engine with 450+ horsepower</p>
+                    <h3>Quality Engines</h3>
+                    <p class="price">Starting from $899.99</p>
+                    <p>High-performance engines with 90-Day Warranty</p>
                 </div>
-                <!-- Add more engine products -->
-            </div>
+            </div>  
         </section>
+        <a href="/public/pages/shop-engines.html" style="color: white; background-color: #e74c3c; border: none; border-radius: 4px; margin-top: 1rem; padding: 0.8rem 2rem;">Shop Now</a>
 
         <section class="product-category" id="transmission">
             <h2>Transmission Systems</h2>
             <div class="product-grid">
                 <div class="product-card">
                     <img src="../images/6 speed manual transmission.jpg" alt="Manual Transmission">
-                    <h3>6-Speed Manual Transmission</h3>
-                    <p class="price">$1,799.99</p>
-                    <p>Advanced manual transmission system</p>
+                    <h3>Manual/Automatic Transmissions</h3>
+                    <p class="price">Starting at $699.99</p>
+                    <p>Advanced manual/automatic transmission systems with 90-Day Warranty</p>
                 </div>
                 <!-- Add more transmission products -->
             </div>
         </section>
+        <a href="/public/pages/shop-transmission.html" style="color: white; background-color: #e74c3c; border: none; border-radius: 4px; margin-top: 1rem; padding: 0.8rem 2rem;">Shop Now</a>
 
         <section class="product-category" id="turbos">
             <h2>Turbochargers</h2>
@@ -159,13 +163,14 @@
                     <img src="../images/turbo charger.jpg" alt="Turbocharger">
                     <h3>Pro Series Turbocharger</h3>
                     <p class="price">$899.99</p>
-                    <p>High-efficiency turbocharger with ball bearing</p>
+                    <p>High-efficiency turbochargers with ball 90-Day Warranty</p>
                 </div>
                 <!-- Add more turbo products -->
             </div>
         </section>
+        <a href="/public/pages/shop-transmission.html" style="color: white; background-color: #e74c3c; border: none; border-radius: 4px; margin-top: 1rem; padding: 0.8rem 2rem;">Shop Now</a>
 
-        <section class="product-category" id="other">
+        <!-- <section class="product-category" id="other">
             <h2>Other Parts</h2>
             <div class="product-grid">
                 <div class="product-card">
@@ -174,9 +179,9 @@
                     <p class="price">$699.99</p>
                     <p>High-performance disc brake system</p>
                 </div>
-                <!-- Add more other products -->
+                
             </div>
-        </section>
+        </section> -->
     </div>
 
     <footer>

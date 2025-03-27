@@ -251,7 +251,7 @@
 
     <div class="price-container">
         <div class="price"><span>$1,850</span></div>
-        <button class="add-to-cart">Add to Cart</button>
+        <button id ="EcoBoost2L" class="add-to-cart">Add to Cart</button>
     </div>
 
     <div class="features">
@@ -292,13 +292,16 @@
      <script>
         <button class="add-to-cart" 
          onclick="addToCart({
-          id: 'ENG-2025',
-          name: 'Performance Turbocharger',
-          price: 899.99,
-          image: 'turbo-image.jpg'
+          id: 'EcoBoost2L',
+          name: 'EcoBoost 2L',
+          price: 1850.00,
+          image: 'https://www.fordcomponentsalesllc.com/wp-content/uploads/2021/09/Ford-2.0L-Ecoboost-Engine.png'
          })">
          Add to Cart
         </button>
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', addToCart);
+  });
      </script>
 </body>
 </html>

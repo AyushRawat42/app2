@@ -7,17 +7,31 @@ const userSchema=new mongose.Schema({
       required:true
     },
   
-    email:{
-        type:String,
+  
+    phone:{
+        type:Number,
         required:true
     },
-    phone:{
-        type:Number
+    email:{
+        type:String,
+     
     },
-    password:{
-        type:String
-    }
-
+  part:{
+    type:String,
+     enum:['Engine','Transmission','Turbo'],
+        default:'engine',
+        required:true
+  },
+  year:{
+    type:Number,
+ 
+ 
+  },
+  model:{
+    type:String,
+  
+ 
+  }
 });
 
 userSchema.pre('save',async function(next){

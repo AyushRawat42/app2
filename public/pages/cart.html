@@ -337,7 +337,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Remove buttons
     document.querySelectorAll('.remove-btn').forEach(button => {
       button.addEventListener('click', function() {
-        const itemId = this.dataset.id;
+        const itemId = this.myArray.id;
+        console.log(itemId)
         removeFromCart(itemId);
       });
     });
@@ -412,24 +413,25 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
   }
-  
+  const storedArray = JSON.parse(localStorage.getItem('myArray'));
+  console.log(storedArray)
   // For demonstration: Add sample items if cart is empty
   if (cart.length === 0 && window.location.href.includes('cart.html')) {
-    const sampleItems = [
-      {
-        id: 'ENG-2025',
-        name: 'Performance Turbocharger',
-        price: 899.99,
-        image: 'https://via.placeholder.com/80x60?text=Turbo'
-      },
-      {
-        id: 'TRANS-4567',
-        name: '6-Speed Transmission Kit',
-        price: 1499.99,
-        image: 'https://via.placeholder.com/80x60?text=Transmission'
-      }
-    ];
-    
+    // const sampleItems = [
+    //   {
+    //     id: 'ENG-2025',
+    //     name: 'Performance Turbocharger',
+    //     price: 899.99,
+    //     image: 'https://via.placeholder.com/80x60?text=Turbo'
+    //   },
+    //   {
+    //     id: 'TRANS-4567',
+    //     name: '6-Speed Transmission Kit',
+    //     price: 1499.99,
+    //     image: 'https://via.placeholder.com/80x60?text=Transmission'
+    //   }
+    // ];
+    storedArray.forEach(item => addToCart(item));
     // Uncomment to load sample data for demo purposes
   // sampleItems.forEach(item => addToCart(item));
   }

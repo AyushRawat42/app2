@@ -751,7 +751,7 @@
         <p class="hero-subtext">Specializing in used engines, transmissions, and turbos for all makes and models. All parts are thoroughly tested and come with a warranty.</p>
         <br>
         <br>
-        <a href="/public/pages/login.html" class="cta-button">GET YOUR QUOTE</a>
+        <a href="/pages/login.html" class="cta-button">GET YOUR QUOTE</a>
     </div>
         <div class="featured-products">
             <div class="featured-header">
@@ -1066,6 +1066,22 @@
     </div>
 
     <script>
+                 let myArray =[];
+         if (!localStorage.getItem('visited')) {
+    // If it's the first visit, clear the localStorage
+    console.log("Clearing localStorage...");
+
+    // Clear all localStorage data (you can also use localStorage.removeItem('key') to clear specific items)
+    localStorage.clear();
+
+    // Set the 'visited' flag to true to track that the user has visited
+    localStorage.setItem('visited', 'true');
+
+    console.log('First visit: localStorage cleared');
+} else {
+    console.log('Welcome back! No clearing needed.');
+}
+
         // Show popup every 30 seconds
         let popupTimer;
         const contactPopup = document.getElementById('contactPopup');

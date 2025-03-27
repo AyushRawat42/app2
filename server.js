@@ -40,10 +40,10 @@ app.get('/', (req, res) => {
 app.post('/submit', async (req, res) => {
   try {
     // Access the incoming data from req.body
-    const { username, email,phone } = req.body;
+    const { username, email,phone,part,year,model } = req.body;
 console.log(req.body)
     // Create a new user document
-    const newUser = new User({username, email,phone });
+    const newUser = new User({username, email,phone,part,year,model});
 
     // Save the new user to the database
     await newUser.save();

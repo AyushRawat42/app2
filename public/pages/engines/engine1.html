@@ -290,15 +290,19 @@
 
     <!-- add to cart button -->
      <script>
-        <button class="add-to-cart" 
-         onclick="addToCart({
-          id: 'EcoBoost2L',
+        function addToCart(){
+            let myArray=JSON.parse(localStorage.getItem('myArray')) || [];
+      myArray.push({ id: 'EcoBoost2L',
           name: 'EcoBoost 2L',
           price: 1850.00,
           image: 'https://www.fordcomponentsalesllc.com/wp-content/uploads/2021/09/Ford-2.0L-Ecoboost-Engine.png'
-         })">
-         Add to Cart
-        </button>
+     })
+         console.log(myArray)
+       
+        localStorage.setItem('myArray', JSON.stringify(myArray));
+        }
+           
+    
         document.querySelectorAll('.add-to-cart').forEach(button => {
   button.addEventListener('click', addToCart);
   });

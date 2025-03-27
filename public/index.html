@@ -392,7 +392,7 @@
         display: inline-block;
         margin: 0 20px 25px;
         padding: 10px 20px;
-        background-color: #00ABE4;;
+        background-color: #e74c3c;
         color: white;
         text-decoration: none;
         border-radius: 4px;
@@ -432,17 +432,17 @@
         padding: 30px;
         text-align: center;
         font-family: 'Arial', sans-serif;
-        background-color: #f9f9f9;
+        background-color: #E9F1FA;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREl3pRJyn31DayHeuRX-UrMtF8nRBxNNBXlQ&s");  */
-         
+        position: sticky;
+        background-image: url("images/bg6.webp");
     }
     
     .hero-heading {
         font-size: 42px;
         font-weight: 800;
-        color: #2c3e50;
+        color: #ffffff;
         margin-bottom: 20px;
         line-height: 1.2;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
@@ -450,7 +450,8 @@
     
     .hero-subtext {
         font-size: 22px;
-        color: #555;
+        font-weight: 400;
+        color: #070707;
         line-height: 1.5;
         max-width: 800px;
         margin: 0 auto;
@@ -615,7 +616,7 @@
         }
         
         .popup-header {
-            background: #00ABE4;;
+            background: #2c3e50;
             color: white;
             padding: 15px;
             border-radius: 8px 8px 0 0;
@@ -664,7 +665,7 @@
         }
         
         .popup-btn.primary {
-            background: #00ABE4;;
+            background: #2c3e50;
             color: white;
         }
         
@@ -751,7 +752,7 @@
         <p class="hero-subtext">Specializing in used engines, transmissions, and turbos for all makes and models. All parts are thoroughly tested and come with a warranty.</p>
         <br>
         <br>
-        <a href="/pages/login.html" class="cta-button">GET YOUR QUOTE</a>
+        <a href="/public/pages/login.html" class="cta-button">GET YOUR QUOTE</a>
     </div>
         <div class="featured-products">
             <div class="featured-header">
@@ -852,7 +853,7 @@
     <!-- motto -->
     <div class="motto-banner">
         <div class="motto-content">
-            <h1>Parts Genie</h1>
+            <h1>GearHead Auto Salvage</h1>
             <p class="motto">"Quality Used Parts • Unbeatable Prices • Trusted by Mechanics"</p>
             <a href="pages/login.html" class="cta-button">Shop Parts Now</a>
         </div>
@@ -1066,22 +1067,6 @@
     </div>
 
     <script>
-                 let myArray =[];
-         if (!localStorage.getItem('visited')) {
-    // If it's the first visit, clear the localStorage
-    console.log("Clearing localStorage...");
-
-    // Clear all localStorage data (you can also use localStorage.removeItem('key') to clear specific items)
-    localStorage.clear();
-
-    // Set the 'visited' flag to true to track that the user has visited
-    localStorage.setItem('visited', 'true');
-
-    console.log('First visit: localStorage cleared');
-} else {
-    console.log('Welcome back! No clearing needed.');
-}
-
         // Show popup every 30 seconds
         let popupTimer;
         const contactPopup = document.getElementById('contactPopup');

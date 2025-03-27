@@ -138,32 +138,32 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="shippingFirstName">First Name*</label>
-                            <input type="text" id="shippingFirstName" required>
+                            <input type="text" id="FirstName" required>
                         </div>
                         <div class="form-group">
                             <label for="shippingLastName">Last Name*</label>
-                            <input type="text" id="shippingLastName" required>
+                            <input type="text" id="LastName" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="shippingAddress1">Address Line 1*</label>
-                        <input type="text" id="shippingAddress1" required>
+                        <input type="text" id="Addressline1" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="shippingAddress2">Address Line 2 (Optional)</label>
-                        <input type="text" id="shippingAddress2">
+                        <input type="text" id="Addressline2">
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
                             <label for="shippingCity">City*</label>
-                            <input type="text" id="shippingCity" required>
+                            <input type="text" id="City" required>
                         </div>
                         <div class="form-group">
                             <label for="shippingState">State*</label>
-                            <select id="shippingState" required>
+                            <select id="State" required>
                                 <option value="">Select State</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -219,18 +219,18 @@
                         </div>
                         <div class="form-group">
                             <label for="shippingZip">ZIP Code*</label>
-                            <input type="text" id="shippingZip" required pattern="\d{5}(-\d{4})?">
+                            <input type="text" id="ZIP" required pattern="\d{5}(-\d{4})?">
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="shippingPhone">Phone Number*</label>
-                        <input type="tel" id="shippingPhone" required>
+                        <input type="tel" id="Phone" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="shippingEmail">Email Address*</label>
-                        <input type="email" id="shippingEmail" required>
+                        <input type="email" id="Email" required>
                     </div>
                 </div>
                 
@@ -245,32 +245,32 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="billingFirstName">First Name*</label>
-                                <input type="text" id="billingFirstName">
+                                <input type="text" id="FirstName2">
                             </div>
                             <div class="form-group">
                                 <label for="billingLastName">Last Name*</label>
-                                <input type="text" id="billingLastName">
+                                <input type="text" id="LastName2">
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="billingAddress1">Address Line 1*</label>
-                            <input type="text" id="billingAddress1">
+                            <input type="text" id="Addressline1b">
                         </div>
                         
                         <div class="form-group">
                             <label for="billingAddress2">Address Line 2 (Optional)</label>
-                            <input type="text" id="billingAddress2">
+                            <input type="text" id="Addressline2b">
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="billingCity">City*</label>
-                                <input type="text" id="billingCity">
+                                <input type="text" id="City2">
                             </div>
                             <div class="form-group">
                                 <label for="billingState">State*</label>
-                                <select id="billingState">
+                                <select id="State2">
                                     <option value="">Select State</option>
                                     <!-- Same states as shipping -->
                                     <option value="AL">Alabama</option>
@@ -281,7 +281,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="billingZip">ZIP Code*</label>
-                                <input type="text" id="billingZip" pattern="\d{5}(-\d{4})?">
+                                <input type="text" id="ZIP2" pattern="\d{5}(-\d{4})?">
                             </div>
                         </div>
                     </div>
@@ -298,21 +298,21 @@
                     <div id="creditCardFields">
                         <div class="form-group">
                             <label for="cardNumber">Card Number*</label>
-                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                            <input type="text" id="Cardnum" placeholder="1234 5678 9012 3456" required>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="cardName">Name on Card*</label>
-                                <input type="text" id="cardName" required>
+                                <input type="text" id="Namecard" required>
                             </div>
                             <div class="form-group">
                                 <label for="cardExpiry">Expiry Date*</label>
-                                <input type="text" id="cardExpiry" placeholder="MM/YY" required>
+                                <input type="text" id="Expiry" placeholder="MM/YY" required>
                             </div>
                             <div class="form-group">
                                 <label for="cardCvv">CVV*</label>
-                                <input type="text" id="cardCvv" placeholder="123" required>
+                                <input type="text" id="CVV" placeholder="123" required>
                             </div>
                         </div>
                     </div>
@@ -404,6 +404,76 @@
             // Form validation and submission logic would go here
             alert('Order placed successfully!');
         });
+
+
+         // When the form is submitted
+         document.getElementById("checkoutForm").addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form from reloading the page
+      
+          // Collect data from the form
+          const FirstName = document.getElementById("FirstName").value;
+          const LastName = document.getElementById("LastName").value;
+          const Addressline1 = document.getElementById("Addressline1").value;
+          const Addressline2 = document.getElementById("Addressline2").value;
+          const City= document.getElementById("City").value;
+          const State= document.getElementById("State").value;
+          const Phone= document.getElementById("Phone").value;
+          const Email= document.getElementById("Email").value;
+          const ZIP=document.getElementById("ZIP").value;
+          const FirstName2= document.getElementById("FirstName2").value;
+          const LastName2= document.getElementById("LastName2").value;
+          const Addressline1b= document.getElementById("Addressline1b").value;
+          const Addressline2b= document.getElementById("Addressline2b").value;
+          const City2= document.getElementById("City2").value;
+          const State2= document.getElementById("State2").value;
+          const ZIP2= document.getElementById("ZIP2").value;
+          const Cardnum= document.getElementById("Cardnum").value;
+          const Namecard= document.getElementById("Namecard").value;
+          const Expiry= document.getElementById("Expiry").value;
+          const CVV= document.getElementById("CVV").value;
+          // Create an object with the form data
+          const data = {
+            FirstName:FirstName,
+            LastName:LastName,
+            Addressline1:Addressline1,
+            Addressline2:Addressline2,
+            City:City,
+            State:State,
+            ZIP:ZIP,
+                        Phone:Phone,
+            Email:Email,
+            FirstName2:FirstName2,
+            LastName2:LastName2,
+            Addressline1b:Addressline1b,
+            Addressline2b:Addressline2b,
+            City2:City2,
+            State2:State2,
+            ZIP2:ZIP2,
+            Cardnum:Cardnum,
+            Namecard:Namecard,
+            Expiry:Expiry,
+            CVV:CVV
+
+
+          };
+  console.log(data)
+          // Send the data to the backend using fetch
+          fetch("http://localhost:3000/submitbill", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data) // Convert the data to JSON format
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log("Success:", data);
+          })
+          .catch(error => {
+            console.error("Error:", error);
+          });
+        });
+
     </script>
 </body>
 </html>

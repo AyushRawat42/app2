@@ -2,6 +2,7 @@ const express=require('express');
 const app=express();
 require('dotenv').config();
 const User=require('./Model/user')
+const Bill=require('./Model/checkout')
 const db=require('./db');
 const bodyParser=require('body-parser')
 app.use(bodyParser.json())
@@ -56,6 +57,24 @@ console.log(req.body)
   }
 });
 
+app.post('/submitbill', async (req, res) => {
+  try {
+    // Access the incoming data from req.body
+    const { FirstName,LastName,Addressline1,Addressline2,City,State,ZIP,Phone,Email,FirstName2,LastName2,Addressline1b,Addressline2b,City2,State2,ZIP2,Cardnum,Namecard,Expiry,CVV } = req.body;
+console.log(req.body)
+    // Create a new user document
+    const newBill = new Bill({FirstName,LastName,Addressline1,Addressline2,City,State,ZIP,Phone,Email,FirstName2,LastName2,Addressline1b,Addressline2b,City2,State2,ZIP2,Cardnum,Namecard,Expiry,CVV });
+
+    // Save the new user to the database
+    await newBill.save();
+
+    // Send a success response back to the client
+    res.status(201).json({ message: 'Bill added successfully!', Bill: newBill });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error adding bill.' });
+  }
+});
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });

@@ -3,11 +3,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #E9F1FA;;
 }
 
 header {
-    background-color: #333;
+    background-color: #00ABE4;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -105,7 +105,7 @@ nav ul li a:hover {
 
 button[type="submit"] {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #00ABE4;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -149,7 +149,7 @@ button[type="submit"]:hover {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #00ABE4;;
     color: #fff;
     text-align: center;
     padding: 10px;

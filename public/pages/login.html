@@ -12,11 +12,12 @@
         }
 
         .back-home a {
-            color: black;
+            color: #ffffff;
             text-decoration: none;
             font-weight: bold;
             display: inline-flex;
             align-items: center;
+            background: #00ABE4;
         }
 
         .back-home a:hover {
@@ -121,13 +122,20 @@
         }
 
         .brand-header {
-            text-align: center;
+            /* text-align: center; */
             margin-bottom: 30px;
+            background: #00ABE4;
         }
 
         .brand-header h1 {
-            color: black;
+            color: #ffffff;
             font-size: 2.5em;
+        }
+        .brand-header h2{
+            color: #ffffff;
+        }
+        .brand-header a{
+            color: #ffffff;
         }
 
         @media (max-width: 600px) {
@@ -139,14 +147,22 @@
     
 </head>
 <body>
-    <div class="auth-container">
-        <div class="back-home">
-            <a href="../index.html">Back to Homepage</a>
-        </div>
+    <header>
         <div class="brand-header">
-            <h1>Parts Genie</h1>
-            <h2>Get Your Quote</h2>
+            <h1 style="text-align: center;">Parts Genie</h1>
+            <h2 style="text-align: center;">Get Your Quote</h2>
+            <a href="../index.html" style="text-align: left;">Back to Homepage</a>
         </div>
+    </header>
+    <div class="auth-container">
+        <!-- <div class="back-home">
+            
+        </div> -->
+        <!-- <div class="brand-header">
+            <h1 style="text-align: center;">Parts Genie</h1>
+            <h2 style="text-align: center;">Get Your Quote</h2>
+            <a href="../index.html" style="text-align: left;">Back to Homepage</a>
+        </div> -->
 <!-- 
         <div class="tabs">
             <button class="tab active" onclick="showForm('login')">Login</button>

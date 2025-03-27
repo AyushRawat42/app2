@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodge Charger SRT 392 6.4L HEMI V8 | Supercharged Performance</title>
+    <style>
+        :root {
+            --srt-red: #D5202A;
+            --srt-black: #000000;
+            --srt-dark: #1a1a1a;
+            --srt-light: #f8f8f8;
+            --accent: #FFC72C;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+            color: #333;
+            background-color: var(--srt-light);
+        }
+        .header {
+            background: linear-gradient(135deg, var(--srt-black), var(--srt-red));
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 0 0 8px 8px;
+            border-bottom: 4px solid var(--accent);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header h1 span {
+            color: var(--accent);
+        }
+        .header p {
+            margin: 15px 0 0;
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        .srt-badge {
+            display: inline-block;
+            background-color: var(--srt-red);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        .engine-image {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        .engine-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            border: 3px solid var(--srt-red);
+        }
+        .specs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .specs-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--srt-red);
+        }
+        .specs-card h2 {
+            margin-top: 0;
+            color: var(--srt-red);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 12px;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .spec-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .spec-label {
+            font-weight: 700;
+            width: 160px;
+            color: var(--srt-black);
+            font-size: 1.1rem;
+        }
+        .spec-value {
+            flex: 1;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .hemi-badge {
+            background-color: var(--srt-black);
+            color: var(--accent);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-left: 10px;
+            display: inline-block;
+            text-transform: uppercase;
+            border: 1px solid var(--accent);
+        }
+        .price-container {
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+        }
+        .price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--srt-black);
+            display: inline-block;
+            position: relative;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .price span {
+            color: var(--srt-red);
+        }
+        .price::before, .price::after {
+            content: "⚡";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-size: 2rem;
+        }
+        .price::before {
+            left: -50px;
+        }
+        .price::after {
+            right: -50px;
+        }
+        .mileage-range {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1.4rem;
+            color: var(--srt-black);
+            font-weight: 600;
+        }
+        .mileage-range span {
+            color: var(--srt-red);
+        }
+        .features {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--srt-red);
+        }
+        .features h3 {
+            margin-top: 0;
+            color: var(--srt-red);
+            font-weight: 700;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .features ul {
+            columns: 2;
+            column-gap: 40px;
+            padding-left: 20px;
+        }
+        .features li {
+            margin-bottom: 15px;
+            break-inside: avoid;
+            position: relative;
+            list-style-type: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .features li::before {
+            content: "•";
+            color: var(--srt-red);
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+        .description {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--srt-red);
+        }
+        .description h3 {
+            margin-top: 0;
+            color: var(--srt-red);
+            font-weight: 700;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .description p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .contact {
+            background: linear-gradient(135deg, var(--srt-black), var(--srt-red));
+            color: white;
+            text-align: center;
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-top: 4px solid var(--accent);
+        }
+        .contact h3 {
+            margin-top: 0;
+            font-weight: 300;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+        .contact-info {
+            font-size: 1.4rem;
+            margin: 20px 0;
+        }
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+        @media (max-width: 768px) {
+            .specs-container {
+                grid-template-columns: 1fr;
+            }
+            .features ul {
+                columns: 1;
+            }
+            .price {
+                font-size: 2.8rem;
+            }
+            .header h1 {
+                font-size: 2.4rem;
+            }
+            .engine-image img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>DODGE CHARGER <span>SRT 392</span></h1>
+        <p>6.4L HEMI V8 - The Ultimate American Muscle</p>
+        <div class="srt-badge">SRT PERFORMANCE</div>
+    </div>
+
+    <div class="engine-image">
+        <img src="https://d3j7mquu4xakgo.cloudfront.net/production/catalog/product/cache/1/thumbnail/1200x/17f82f742ffe127f42dca9de82fb58b1/6/8/68303090ac-2024-crate-engine-mopar-392-6.4l-srt-geniii-hemi-2.jpg" alt="Dodge 6.4L HEMI SRT 392 Engine">
+    </div>
+
+    <div class="mileage-range">
+        Available engines with mileage: <span>30k-60k miles</span>
+    </div>
+
+    <div class="specs-container">
+        <div class="specs-card">
+            <h2>SRT Specifications</h2>
+            <div class="spec-item">
+                <div class="spec-label">Engine Code:</div>
+                <div class="spec-value">APAC/APAB</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Condition:</div>
+                <div class="spec-value">Low mileage, excellent condition</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Displacement:</div>
+                <div class="spec-value">6.4L (6,417 cc)</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Configuration:</div>
+                <div class="spec-value">90° V8</div>
+            </div>
+        </div>
+        <div class="specs-card">
+            <h2>SRT Performance</h2>
+            <div class="spec-item">
+                <div class="spec-label">Horsepower:</div>
+                <div class="spec-value">485 hp <span class="hemi-badge">392 HEMI</span></div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Torque:</div>
+                <div class="spec-value">475 lb-ft</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Compression:</div>
+                <div class="spec-value">10.9:1</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Redline:</div>
+                <div class="spec-value">6,400 RPM</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="price-container">
+        <div class="price"><span>$4,500-$6,000</span></div>
+    </div>
+
+    <div class="features">
+        <h3>SRT 392 Exclusive Features</h3>
+        <ul>
+            <li>High-flow cylinder heads with 2.13" intake valves</li>
+            <li>Forged steel crankshaft</li>
+            <li>High-strength aluminum alloy pistons</li>
+            <li>Performance-tuned camshaft</li>
+            <li>Active dual-mode exhaust system</li>
+            <li>High-capacity oil and cooling systems</li>
+            <li>SRT-specific engine calibration</li>
+            <li>Cold-air intake system</li>
+            <li>High-performance ignition system</li>
+            <li>Upgraded fuel delivery system</li>
+            <li>Track-proven durability</li>
+            <li>SRT badging and identification</li>
+        </ul>
+    </div>
+
+    <div class="description">
+        <h3>SRT 392 HEMI Performance</h3>
+        <p>The Dodge Charger SRT 392's 6.4L HEMI V8 represents the pinnacle of naturally aspirated American muscle, delivering a staggering 485 horsepower and 475 lb-ft of torque. These available units come from our exclusive inventory of low-mileage (30,000-60,000 miles) SRT engines that have undergone rigorous inspection and testing to meet SRT performance standards.</p>
+        
+        <p>The "392" designation (referring to 392 cubic inches) honors classic muscle car displacement while delivering modern performance technology. This HEMI features high-flow cylinder heads, forged internal components, and SRT-specific tuning to achieve its impressive output. The active dual-mode exhaust provides an aggressive soundtrack that perfectly complements the engine's brutal acceleration.</p>
+        
+        <p>This engine is ideal for Charger SRT 392 (2015-2023) replacements or high-performance builds. The 6.4L HEMI's broad torque curve delivers explosive acceleration at any rpm, while its robust construction handles track use with ease. These engines are also prized for swaps into classic muscle cars, offering modern reliability with traditional HEMI power.</p>
+        
+        <p>Each SRT 392 engine comes complete with all essential performance components including intake system, fuel rail, sensors, and SRT-specific accessories (specific components may vary by unit). These are turn-key solutions for your high-performance project.</p>
+    </div>
+
+    <div class="contact">
+        <h3>READY FOR SRT PERFORMANCE?</h3>
+        <div class="contact-info">
+            Call: <a href="tel:+18005557932">(800) 555-SRT9</a>
+        </div>
+        <div class="contact-info">
+            Email: <a href="mailto:srt@dodgeperformance.com">srt@dodgeperformance.com</a>
+        </div>
+    </div>
+</body>
+</html>

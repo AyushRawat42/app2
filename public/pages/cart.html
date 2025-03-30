@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shopping Cart</title>
+  <source src="cart.js">
   <style>
     /* Global Styles */
     * {
@@ -237,7 +238,7 @@
 
 
   <!--cart back-end  -->
-  <script>
+  <!-- <script>
     // cart.js - Shopping Cart Functionality
 document.addEventListener('DOMContentLoaded', function() {
   // DOM Elements
@@ -337,12 +338,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Remove buttons
     document.querySelectorAll('.remove-btn').forEach(button => {
-      button.addEventListener('click', function() {
-        const itemId = this.myArray.id;
-        console.log(itemId)
-        removeFromCart(itemId);
-      });
+  button.addEventListener('click', function() {
+    const itemId = this.dataset.id; // Fix: use dataset.id instead of myArray.id
+    removeFromCart(itemId);
     });
+   });
   }
   
   // Function to update item quantity
@@ -363,10 +363,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Function to remove item from cart
   function removeFromCart(itemId) {
-    cart = cart.filter(item => item.id != itemId);
-    updateCart();
-    showNotification('Item removed from cart');
-  }
+  cart = cart.filter(item => item.id !== itemId);
+  updateCart();
+  showNotification('Item removed from cart');
+ }
   
   // Function to update cart in localStorage and re-render
   function updateCart() {
@@ -437,6 +437,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // sampleItems.forEach(item => addToCart(item));
   }
 });
-  </script>
+  </script> -->
 </body>
 </html>

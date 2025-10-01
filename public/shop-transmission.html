@@ -3,305 +3,627 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parts Genie - Used Transmissions</title>
-    <script src="cart.js"></script>
+    <title>Quality Used Transmissions - PartsGenie</title>
     <style>
-        /* Same styling as engines page with color adjustments */
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset and Base Styles */
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #0a1128;
             background-color: #E9F1FA;
         }
 
-        .header {
-            background-color: #c0392b; /* Different color for differentiation */
-            color: white;
-            padding: 15px;
-            /* text-align: center; */
-            margin-bottom: 20px;
-            font-size: 25px;
-
-        }
-
-        .transmission-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .transmission-item {
-            background-color: white;
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        .transmission-title {
-            color: #2c3e50;
-            margin-top: 0;
-        }
-
-        .transmission-details {
-            list-style: none;
-            padding: 0;
-        }
-
-        .transmission-details li {
-            margin-bottom: 8px;
-        }
-
-        /* Keep same price and button styling */
-        .price {
-            color: #e74c3c;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        button {
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             background-color: #c0392b;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
+            padding: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        button:hover {
-            background-color: #2980b9;
-        }
-        .search-form {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-        width: 100%;
-        }
-
-        .search-form form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-            max-width: 800px;
+        .header-container {
+            max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
         }
 
-        input[type="text"], select {
-            padding: 8px;
-            margin: 0 5px;
-            width: 200px;
+        .logo h1 a {
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .cart-count {
+            background: #ff4444;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+
+        /* Main Content */
+        .shop-main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Search and Filter Section */
+        .search-filter-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .search-container h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .filter-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            min-width: 200px;
+        }
+
+        .search-btn {
+            background: #c0392b;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: #a93226;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+            background: #f8f9fa;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .product-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .product-details p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .product-details strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #c0392b;
+            margin-top: 1rem;
+            text-align: center;
+            padding: 0.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px dashed #c0392b;
+        }
+
+        /* Product Actions */
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .add-to-cart, .view-details {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .add-to-cart {
+            background: #c0392b;
+            color: white;
+        }
+
+        .add-to-cart:hover {
+            background: #a93226;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+        }
+
+        .view-details {
+            background: #34495e;
+            color: white;
+        }
+
+        .view-details:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 73, 94, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .filter-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-select {
+                min-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .product-info {
+                padding: 1rem;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1 style="text-align: center;">Parts Genie </h1>
-        <p style="text-align: center;">Quality Used Transmissions</p>
-        <a href="../index.html" style="color: #f5f5f5; text-align: left;"  >Back to Homepage </a>
-        <!-- <div class="back-home">
-            <a href="../index.html">Back to Homepage</a>
-        </div> -->
-    </div>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="index.html">PartsGenie</a></h1>
+                <p>Quality Used Auto Parts</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="partner.html">Partners</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-link">
+                            🛒 Cart <span class="cart-count" id="cart-badge" style="display: none;">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <!-- <div class="search-form">
-        <form>
-            <input type="text" placeholder="Search by make/model">
-            <input type="text" placeholder="Search by year">
-            <select>
-                <option value="">Transmission Type</option>
-                <option>Automatic</option>
-                <option>Manual</option>
-                <option>CVT</option>
-                <option>DCT</option>
-            </select>
-            <button type="submit">Search Transmissions</button>
-        </form>
-    </div> -->
+    <!-- Main Content -->
+    <main class="shop-main">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Quality Used Transmissions</h1>
+                <p>Professional tested transmissions with warranty - Fast nationwide shipping</p>
+            </div>
 
-    <div class="transmission-list">
-       <!-- Transmission 1: Ford 10R80 -->
-<div class="transmission-card" 
-     data-id="ford-10r80-auto-2020" 
-     data-name="Ford 10R80 10-Speed Automatic" 
-     data-price="2800"
-     data-image="/images/transmissions/ford-10r80.jpg">
-    <h3>Ford 10R80 10-Speed Automatic</h3>
-    <div class="transmission-details">
-        <p><strong>Type:</strong> Automatic</p>
-        <p><strong>Speeds:</strong> 10-Speed</p>
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 35,000 miles</p>
-        <p><strong>Condition:</strong> Excellent</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,800</p>
-    </div>
-    <div class="transmission-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-container">
+                    <h2>Find the Perfect Transmission for Your Vehicle</h2>
+                    <div class="filter-options">
+                        <select class="filter-select">
+                            <option value="">Any Transmission Type</option>
+                            <option value="automatic">Automatic</option>
+                            <option value="manual">Manual</option>
+                            <option value="cvt">CVT</option>
+                        </select>
+                        <button class="search-btn">Search Transmissions</button>
+                    </div>
+                </div>
+            </div>
 
-<!-- Transmission 2: Toyota A650E -->
-<div class="transmission-card" 
-     data-id="toyota-a650e-auto-2019" 
-     data-name="Toyota A650E 5-Speed Automatic" 
-     data-price="2200"
-     data-image="/images/transmissions/toyota-a650e.jpg">
-    <h3>Toyota A650E 5-Speed Automatic</h3>
-    <div class="transmission-details">
-        <p><strong>Type:</strong> Automatic</p>
-        <p><strong>Speeds:</strong> 5-Speed</p>
-        <p><strong>Year:</strong> 2019</p>
-        <p><strong>Mileage:</strong> 42,000 miles</p>
-        <p><strong>Condition:</strong> Good</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,200</p>
-    </div>
-    <div class="transmission-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+            <!-- Transmissions Grid -->
+            <div class="products-grid">
+                <!-- Transmission 1: Ford 10R80 -->
+                <div class="product-card" 
+                     data-id="ford-10r80-auto-2020" 
+                     data-name="Ford 10R80 10-Speed Automatic" 
+                     data-price="2800"
+                     data-image="/images/transmissions/ford-10r80.jpg">
+                    <div class="product-image">
+                        <img src="/images/transmissions/ford-10r80.jpg" alt="Ford 10R80 10-Speed Automatic" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHJhbnNtaXNzaW9uPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ford 10R80 10-Speed Automatic</h3>
+                        <div class="product-details">
+                            <p><strong>Type:</strong> Automatic</p>
+                            <p><strong>Speeds:</strong> 10-Speed</p>
+                            <p><strong>Year:</strong> 2020</p>
+                            <p><strong>Mileage:</strong> 35,000 miles</p>
+                            <p><strong>Condition:</strong> Excellent</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$2,800</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Transmission 3: GM 8L90 -->
-<div class="transmission-card" 
-     data-id="gm-8l90-auto-2020" 
-     data-name="GM 8L90 8-Speed Automatic" 
-     data-price="3200"
-     data-image="/images/transmissions/gm-8l90.jpg">
-    <h3>GM 8L90 8-Speed Automatic</h3>
-    <div class="transmission-details">
-        <p><strong>Type:</strong> Automatic</p>
-        <p><strong>Speeds:</strong> 8-Speed</p>
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 28,000 miles</p>
-        <p><strong>Condition:</strong> Excellent</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,200</p>
-    </div>
-    <div class="transmission-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+                <!-- Transmission 2: Toyota A650E -->
+                <div class="product-card" 
+                     data-id="toyota-a650e-auto-2019" 
+                     data-name="Toyota A650E 5-Speed Automatic" 
+                     data-price="2200"
+                     data-image="/images/transmissions/toyota-a650e.jpg">
+                    <div class="product-image">
+                        <img src="/images/transmissions/toyota-a650e.jpg" alt="Toyota A650E 5-Speed Automatic" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHJhbnNtaXNzaW9uPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Toyota A650E 5-Speed Automatic</h3>
+                        <div class="product-details">
+                            <p><strong>Type:</strong> Automatic</p>
+                            <p><strong>Speeds:</strong> 5-Speed</p>
+                            <p><strong>Year:</strong> 2019</p>
+                            <p><strong>Mileage:</strong> 42,000 miles</p>
+                            <p><strong>Condition:</strong> Good</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$2,200</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Transmission 4: Honda CVT -->
-<div class="transmission-card" 
-     data-id="honda-cvt-auto-2021" 
-     data-name="Honda CVT Automatic" 
-     data-price="2600"
-     data-image="/images/transmissions/honda-cvt.jpg">
-    <h3>Honda CVT Automatic</h3>
-    <div class="transmission-details">
-        <p><strong>Type:</strong> CVT</p>
-        <p><strong>Speeds:</strong> Continuously Variable</p>
-        <p><strong>Year:</strong> 2021</p>
-        <p><strong>Mileage:</strong> 18,000 miles</p>
-        <p><strong>Condition:</strong> Like New</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,600</p>
-    </div>
-    <div class="transmission-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+                <!-- Transmission 3: GM 8L90 -->
+                <div class="product-card" 
+                     data-id="gm-8l90-auto-2020" 
+                     data-name="GM 8L90 8-Speed Automatic" 
+                     data-price="3200"
+                     data-image="/images/transmissions/gm-8l90.jpg">
+                    <div class="product-image">
+                        <img src="/images/transmissions/gm-8l90.jpg" alt="GM 8L90 8-Speed Automatic" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHJhbnNtaXNzaW9uPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>GM 8L90 8-Speed Automatic</h3>
+                        <div class="product-details">
+                            <p><strong>Type:</strong> Automatic</p>
+                            <p><strong>Speeds:</strong> 8-Speed</p>
+                            <p><strong>Year:</strong> 2020</p>
+                            <p><strong>Mileage:</strong> 28,000 miles</p>
+                            <p><strong>Condition:</strong> Excellent</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$3,200</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Transmission 5: BMW ZF 8HP -->
-<div class="transmission-card" 
-     data-id="bmw-zf-8hp-auto-2020" 
-     data-name="BMW ZF 8HP 8-Speed Automatic" 
-     data-price="3800"
-     data-image="/images/transmissions/bmw-zf-8hp.jpg">
-    <h3>BMW ZF 8HP 8-Speed Automatic</h3>
-    <div class="transmission-details">
-        <p><strong>Type:</strong> Automatic</p>
-        <p><strong>Speeds:</strong> 8-Speed</p>
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 31,000 miles</p>
-        <p><strong>Condition:</strong> Excellent</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,800</p>
-    </div>
-    <div class="transmission-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+                <!-- Transmission 4: Honda CVT -->
+                <div class="product-card" 
+                     data-id="honda-cvt-auto-2021" 
+                     data-name="Honda CVT Automatic" 
+                     data-price="2600"
+                     data-image="/images/transmissions/honda-cvt.jpg">
+                    <div class="product-image">
+                        <img src="/images/transmissions/honda-cvt.jpg" alt="Honda CVT Automatic" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHJhbnNtaXNzaW9uPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Honda CVT Automatic</h3>
+                        <div class="product-details">
+                            <p><strong>Type:</strong> CVT</p>
+                            <p><strong>Speeds:</strong> Continuously Variable</p>
+                            <p><strong>Year:</strong> 2021</p>
+                            <p><strong>Mileage:</strong> 18,000 miles</p>
+                            <p><strong>Condition:</strong> Like New</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$2,600</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Transmission 6: Subaru Lineartronic CVT -->
-<div class="transmission-card" 
-     data-id="subaru-lineartronic-cvt-2020" 
-     data-name="Subaru Lineartronic CVT" 
-     data-price="2400"
-     data-image="/images/transmissions/subaru-lineartronic.jpg">
-    <h3>Subaru Lineartronic CVT</h3>
-    <div class="transmission-details">
-        <p><strong>Type:</strong> CVT</p>
-        <p><strong>Speeds:</strong> Continuously Variable</p>
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 39,000 miles</p>
-        <p><strong>Condition:</strong> Good</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,400</p>
-    </div>
-    <div class="transmission-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+                <!-- Transmission 5: BMW ZF 8HP -->
+                <div class="product-card" 
+                     data-id="bmw-zf-8hp-auto-2020" 
+                     data-name="BMW ZF 8HP 8-Speed Automatic" 
+                     data-price="3800"
+                     data-image="/images/transmissions/bmw-zf-8hp.jpg">
+                    <div class="product-image">
+                        <img src="/images/transmissions/bmw-zf-8hp.jpg" alt="BMW ZF 8HP 8-Speed Automatic" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHJhbnNtaXNzaW9uPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>BMW ZF 8HP 8-Speed Automatic</h3>
+                        <div class="product-details">
+                            <p><strong>Type:</strong> Automatic</p>
+                            <p><strong>Speeds:</strong> 8-Speed</p>
+                            <p><strong>Year:</strong> 2020</p>
+                            <p><strong>Mileage:</strong> 31,000 miles</p>
+                            <p><strong>Condition:</strong> Excellent</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$3,800</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Transmission 7: Nissan XTRONIC CVT -->
-<div class="transmission-card" 
-     data-id="nissan-xtronic-cvt-2019" 
-     data-name="Nissan XTRONIC CVT" 
-     data-price="2100"
-     data-image="/images/transmissions/nissan-xtronic.jpg">
-    <h3>Nissan XTRONIC CVT</h3>
-    <div class="transmission-details">
-        <p><strong>Type:</strong> CVT</p>
-        <p><strong>Speeds:</strong> Continuously Variable</p>
-        <p><strong>Year:</strong> 2019</p>
-        <p><strong>Mileage:</strong> 48,000 miles</p>
-        <p><strong>Condition:</strong> Good</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,100</p>
-    </div>
-    <div class="transmission-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+                <!-- Transmission 6: Subaru Lineartronic CVT -->
+                <div class="product-card" 
+                     data-id="subaru-lineartronic-cvt-2020" 
+                     data-name="Subaru Lineartronic CVT" 
+                     data-price="2400"
+                     data-image="/images/transmissions/subaru-lineartronic.jpg">
+                    <div class="product-image">
+                        <img src="/images/transmissions/subaru-lineartronic.jpg" alt="Subaru Lineartronic CVT" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHJhbnNtaXNzaW9uPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Subaru Lineartronic CVT</h3>
+                        <div class="product-details">
+                            <p><strong>Type:</strong> CVT</p>
+                            <p><strong>Speeds:</strong> Continuously Variable</p>
+                            <p><strong>Year:</strong> 2020</p>
+                            <p><strong>Mileage:</strong> 39,000 miles</p>
+                            <p><strong>Condition:</strong> Good</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$2,400</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Transmission 8: Dodge 8HP70 -->
-<div class="transmission-card" 
-     data-id="dodge-8hp70-auto-2020" 
-     data-name="Dodge 8HP70 8-Speed Automatic" 
-     data-price="3000"
-     data-image="/images/transmissions/dodge-8hp70.jpg">
-    <h3>Dodge 8HP70 8-Speed Automatic</h3>
-    <div class="transmission-details">
-        <p><strong>Type:</strong> Automatic</p>
-        <p><strong>Speeds:</strong> 8-Speed</p>
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 33,000 miles</p>
-        <p><strong>Condition:</strong> Excellent</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,000</p>
-    </div>
-    <div class="transmission-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
-</div>
+                <!-- Transmission 7: Nissan XTRONIC CVT -->
+                <div class="product-card" 
+                     data-id="nissan-xtronic-cvt-2019" 
+                     data-name="Nissan XTRONIC CVT" 
+                     data-price="2100"
+                     data-image="/images/transmissions/nissan-xtronic.jpg">
+                    <div class="product-image">
+                        <img src="/images/transmissions/nissan-xtronic.jpg" alt="Nissan XTRONIC CVT" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHJhbnNtaXNzaW9uPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Nissan XTRONIC CVT</h3>
+                        <div class="product-details">
+                            <p><strong>Type:</strong> CVT</p>
+                            <p><strong>Speeds:</strong> Continuously Variable</p>
+                            <p><strong>Year:</strong> 2019</p>
+                            <p><strong>Mileage:</strong> 48,000 miles</p>
+                            <p><strong>Condition:</strong> Good</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$2,100</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="footer" style="text-align: center; margin-top: 30px; color: #666;">
-        <p>© 2025 Parts Genie - All rights reserved</p>
-        <p>Contact us: (555) 123-4567 | info@partgenie.com</p>
-    </div>
+                <!-- Transmission 8: Dodge 8HP70 -->
+                <div class="product-card" 
+                     data-id="dodge-8hp70-auto-2020" 
+                     data-name="Dodge 8HP70 8-Speed Automatic" 
+                     data-price="3000"
+                     data-image="/images/transmissions/dodge-8hp70.jpg">
+                    <div class="product-image">
+                        <img src="/images/transmissions/dodge-8hp70.jpg" alt="Dodge 8HP70 8-Speed Automatic" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHJhbnNtaXNzaW9uPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Dodge 8HP70 8-Speed Automatic</h3>
+                        <div class="product-details">
+                            <p><strong>Type:</strong> Automatic</p>
+                            <p><strong>Speeds:</strong> 8-Speed</p>
+                            <p><strong>Year:</strong> 2020</p>
+                            <p><strong>Mileage:</strong> 33,000 miles</p>
+                            <p><strong>Condition:</strong> Excellent</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$3,000</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PartsGenie - All rights reserved</p>
+            <p>Contact us: (555) 123-4567 | info@partsgenie.com</p>
+        </div>
+    </footer>
+
     <script src="cart.js"></script>
-
 </body>
 </html>

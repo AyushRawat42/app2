@@ -3,271 +3,629 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parts Genie - Used Turbos</title>
-    <script src="cart.js"></script>
+    <title>Quality Used Turbos - PartsGenie</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset and Base Styles */
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #0a1128;
             background-color: #E9F1FA;
         }
 
-        .header {
-            background-color: #c0392b; /* Dark red header */
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #c0392b;
             color: white;
-            padding: 15px;
-            /* text-align: center; */
-            margin-bottom: 20px;
-            font-size: 25px;
+            padding: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .turbo-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+        .header-container {
             max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
         }
 
-        .turbo-item {
-            background-color: white;
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 5px;
+        .logo h1 a {
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
         }
 
-        .turbo-title {
-            color: #8B0000;
-            margin-top: 0;
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
 
-        .turbo-details {
+        nav ul {
             list-style: none;
-            padding: 0;
+            display: flex;
+            gap: 2rem;
         }
 
-        .turbo-details li {
-            margin-bottom: 8px;
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .cart-count {
+            background: #ff4444;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+
+        /* Main Content */
+        .shop-main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Search and Filter Section */
+        .search-filter-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .search-container h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .filter-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            min-width: 200px;
+        }
+
+        .search-btn {
+            background: #c0392b;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: #a93226;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+            background: #f8f9fa;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .product-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .product-details p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .product-details strong {
+            color: #2c3e50;
+            font-weight: 600;
         }
 
         .price {
-            color: #e74c3c;
+            font-size: 1.4rem;
             font-weight: bold;
-            font-size: 1.2em;
+            color: #c0392b;
+            margin-top: 1rem;
+            text-align: center;
+            padding: 0.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px dashed #c0392b;
         }
 
-        .search-form {
+        /* Product Actions */
+        .product-actions {
             display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            width: 100%;
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
 
-        .search-form form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        input[type="text"], select {
-            padding: 8px;
-            margin: 0 5px;
-            width: 200px;
-        }
-
-        button {
-            background-color: #c0392b;
-            color: white;
+        .add-to-cart, .view-details {
+            flex: 1;
+            padding: 0.8rem 1rem;
             border: none;
-            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
         }
 
-        button:hover {
-            background-color: #c0392b;
+        .add-to-cart {
+            background: #c0392b;
+            color: white;
         }
 
+        .add-to-cart:hover {
+            background: #a93226;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+        }
+
+        .view-details {
+            background: #34495e;
+            color: white;
+        }
+
+        .view-details:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 73, 94, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .search-form form {
+            .header-container {
                 flex-direction: column;
-                width: 90%;
+                gap: 1rem;
+                padding: 1rem;
             }
-            
-            input[type="text"], select, button {
-                width: 100%;
-                margin: 5px 0;
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .filter-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-select {
+                min-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .product-info {
+                padding: 1rem;
+            }
+
+            .product-actions {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1 style="text-align: center;">Parts Genie </h1>
-        <p style="text-align: center;">Quality Used Turbos</p>
-        <a href="../index.html" style="color: #f5f5f5; text-align: left;"  >Back to Homepage </a>
-        <!-- <div class="back-home">
-            <a href="../index.html">Back to Homepage</a>
-        </div> -->
-    </div>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="index.html">PartsGenie</a></h1>
+                <p>Quality Used Auto Parts</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="partner.html">Partners</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-link">
+                            🛒 Cart <span class="cart-count" id="cart-badge" style="display: none;">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <!-- <div class="search-form">
-        <form>
-            <input type="text" placeholder="Manufacturer">
-            <input type="text" placeholder="Vehicle Model">
-            <select>
-                <option value="">Turbo Type</option>
-                <option>Single Turbo</option>
-                <option>Twin Turbo</option>
-                <option>Variable Geometry</option>
-                <option>Ball Bearing</option>
-            </select>
-            <button type="submit">Search Turbos</button>
-        </form>
-    </div> -->
+    <!-- Main Content -->
+    <main class="shop-main">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Quality Used Turbos</h1>
+                <p>High-performance turbochargers with warranty - Fast nationwide shipping</p>
+            </div>
 
-    <div class="turbo-list">
-       <!-- Turbo 1: Garrett GT2860RS -->
-<div class="turbo-card" 
-     data-id="garrett-gt2860rs-2020" 
-     data-name="Garrett GT2860RS Turbocharger" 
-     data-price="1800"
-     data-image="/images/turbos/garrett-gt2860rs.jpg">
-    <h3>Garrett GT2860RS Turbocharger</h3>
-    <div class="turbo-details">
-        <p><strong>Brand:</strong> Garrett</p>
-        <p><strong>Model:</strong> GT2860RS</p>
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Condition:</strong> Rebuilt</p>
-        <p><strong>Max Power:</strong> 340 HP</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$1,800</p>
-    </div>
-    <div class="turbo-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-container">
+                    <h2>Find the Perfect Turbocharger for Your Vehicle</h2>
+                    <div class="filter-options">
+                        <select class="filter-select">
+                            <option value="">Any Turbo Brand</option>
+                            <option value="garrett">Garrett</option>
+                            <option value="borgwarner">BorgWarner</option>
+                            <option value="ihi">IHI</option>
+                            <option value="holset">Holset</option>
+                            <option value="mitsubishi">Mitsubishi</option>
+                        </select>
+                        <button class="search-btn">Search Turbos</button>
+                    </div>
+                </div>
+            </div>
 
-<!-- Turbo 2: BorgWarner K03 -->
-<div class="turbo-card" 
-     data-id="borgwarner-k03-2019" 
-     data-name="BorgWarner K03 Turbocharger" 
-     data-price="1200"
-     data-image="/images/turbos/borgwarner-k03.jpg">
-    <h3>BorgWarner K03 Turbocharger</h3>
-    <div class="turbo-details">
-        <p><strong>Brand:</strong> BorgWarner</p>
-        <p><strong>Model:</strong> K03</p>
-        <p><strong>Year:</strong> 2019</p>
-        <p><strong>Condition:</strong> Good</p>
-        <p><strong>Max Power:</strong> 200 HP</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$1,200</p>
-    </div>
-    <div class="turbo-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+            <!-- Turbos Grid -->
+            <div class="products-grid">
+                <!-- Turbo 1: Garrett GT2860RS -->
+                <div class="product-card" 
+                     data-id="garrett-gt2860rs-2020" 
+                     data-name="Garrett GT2860RS Turbocharger" 
+                     data-price="1800"
+                     data-image="/images/turbos/garrett-gt2860rs.jpg">
+                    <div class="product-image">
+                        <img src="/images/turbos/garrett-gt2860rs.jpg" alt="Garrett GT2860RS Turbocharger" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHVyYm9jaGFyZ2VyPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Garrett GT2860RS Turbocharger</h3>
+                        <div class="product-details">
+                            <p><strong>Brand:</strong> Garrett</p>
+                            <p><strong>Model:</strong> GT2860RS</p>
+                            <p><strong>Year:</strong> 2020</p>
+                            <p><strong>Condition:</strong> Rebuilt</p>
+                            <p><strong>Max Power:</strong> 340 HP</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$1,800</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Turbo 3: IHI VF52 -->
-<div class="turbo-card" 
-     data-id="ihi-vf52-2020" 
-     data-name="IHI VF52 Turbocharger" 
-     data-price="2200"
-     data-image="/images/turbos/ihi-vf52.jpg">
-    <h3>IHI VF52 Turbocharger</h3>
-    <div class="turbo-details">
-        <p><strong>Brand:</strong> IHI</p>
-        <p><strong>Model:</strong> VF52</p>
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Condition:</strong> Excellent</p>
-        <p><strong>Max Power:</strong> 300 HP</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,200</p>
-    </div>
-    <div class="turbo-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+                <!-- Turbo 2: BorgWarner K03 -->
+                <div class="product-card" 
+                     data-id="borgwarner-k03-2019" 
+                     data-name="BorgWarner K03 Turbocharger" 
+                     data-price="1200"
+                     data-image="/images/turbos/borgwarner-k03.jpg">
+                    <div class="product-image">
+                        <img src="/images/turbos/borgwarner-k03.jpg" alt="BorgWarner K03 Turbocharger" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHVyYm9jaGFyZ2VyPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>BorgWarner K03 Turbocharger</h3>
+                        <div class="product-details">
+                            <p><strong>Brand:</strong> BorgWarner</p>
+                            <p><strong>Model:</strong> K03</p>
+                            <p><strong>Year:</strong> 2019</p>
+                            <p><strong>Condition:</strong> Good</p>
+                            <p><strong>Max Power:</strong> 200 HP</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$1,200</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Turbo 4: Holset HX35W -->
-<div class="turbo-card" 
-     data-id="holset-hx35w-2019" 
-     data-name="Holset HX35W Turbocharger" 
-     data-price="1650"
-     data-image="/images/turbos/holset-hx35w.jpg">
-    <h3>Holset HX35W Turbocharger</h3>
-    <div class="turbo-details">
-        <p><strong>Brand:</strong> Holset</p>
-        <p><strong>Model:</strong> HX35W</p>
-        <p><strong>Year:</strong> 2019</p>
-        <p><strong>Condition:</strong> Good</p>
-        <p><strong>Max Power:</strong> 280 HP</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$1,650</p>
-    </div>
-    <div class="turbo-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+                <!-- Turbo 3: IHI VF52 -->
+                <div class="product-card" 
+                     data-id="ihi-vf52-2020" 
+                     data-name="IHI VF52 Turbocharger" 
+                     data-price="2200"
+                     data-image="/images/turbos/ihi-vf52.jpg">
+                    <div class="product-image">
+                        <img src="/images/turbos/ihi-vf52.jpg" alt="IHI VF52 Turbocharger" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHVyYm9jaGFyZ2VyPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>IHI VF52 Turbocharger</h3>
+                        <div class="product-details">
+                            <p><strong>Brand:</strong> IHI</p>
+                            <p><strong>Model:</strong> VF52</p>
+                            <p><strong>Year:</strong> 2020</p>
+                            <p><strong>Condition:</strong> Excellent</p>
+                            <p><strong>Max Power:</strong> 300 HP</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$2,200</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Turbo 5: Mitsubishi TD04 -->
-<div class="turbo-card" 
-     data-id="mitsubishi-td04-2020" 
-     data-name="Mitsubishi TD04 Turbocharger" 
-     data-price="1400"
-     data-image="/images/turbos/mitsubishi-td04.jpg">
-    <h3>Mitsubishi TD04 Turbocharger</h3>
-    <div class="turbo-details">
-        <p><strong>Brand:</strong> Mitsubishi</p>
-        <p><strong>Model:</strong> TD04</p>
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Condition:</strong> Rebuilt</p>
-        <p><strong>Max Power:</strong> 250 HP</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$1,400</p>
-    </div>
-    <div class="turbo-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+                <!-- Turbo 4: Holset HX35W -->
+                <div class="product-card" 
+                     data-id="holset-hx35w-2019" 
+                     data-name="Holset HX35W Turbocharger" 
+                     data-price="1650"
+                     data-image="/images/turbos/holset-hx35w.jpg">
+                    <div class="product-image">
+                        <img src="/images/turbos/holset-hx35w.jpg" alt="Holset HX35W Turbocharger" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHVyYm9jaGFyZ2VyPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Holset HX35W Turbocharger</h3>
+                        <div class="product-details">
+                            <p><strong>Brand:</strong> Holset</p>
+                            <p><strong>Model:</strong> HX35W</p>
+                            <p><strong>Year:</strong> 2019</p>
+                            <p><strong>Condition:</strong> Good</p>
+                            <p><strong>Max Power:</strong> 280 HP</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$1,650</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Turbo 6: Garrett GT2871R -->
-<div class="turbo-card" 
-     data-id="garrett-gt2871r-2021" 
-     data-name="Garrett GT2871R Turbocharger" 
-     data-price="2400"
-     data-image="/images/turbos/garrett-gt2871r.jpg">
-    <h3>Garrett GT2871R Turbocharger</h3>
-    <div class="turbo-details">
-        <p><strong>Brand:</strong> Garrett</p>
-        <p><strong>Model:</strong> GT2871R</p>
-        <p><strong>Year:</strong> 2021</p>
-        <p><strong>Condition:</strong> Like New</p>
-        <p><strong>Max Power:</strong> 400 HP</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,400</p>
-    </div>
-    <div class="turbo-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
-</div>
+                <!-- Turbo 5: Mitsubishi TD04 -->
+                <div class="product-card" 
+                     data-id="mitsubishi-td04-2020" 
+                     data-name="Mitsubishi TD04 Turbocharger" 
+                     data-price="1400"
+                     data-image="/images/turbos/mitsubishi-td04.jpg">
+                    <div class="product-image">
+                        <img src="/images/turbos/mitsubishi-td04.jpg" alt="Mitsubishi TD04 Turbocharger" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHVyYm9jaGFyZ2VyPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mitsubishi TD04 Turbocharger</h3>
+                        <div class="product-details">
+                            <p><strong>Brand:</strong> Mitsubishi</p>
+                            <p><strong>Model:</strong> TD04</p>
+                            <p><strong>Year:</strong> 2020</p>
+                            <p><strong>Condition:</strong> Rebuilt</p>
+                            <p><strong>Max Power:</strong> 250 HP</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$1,400</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="footer" style="text-align: center; margin-top: 30px; color: #666;">
-        <p>© 2025 Parts Genie - All rights reserved</p>
-        <p>Contact us: (555) 123-4567 | info@partgenie.com</p>
-    </div>
+                <!-- Turbo 6: Garrett GT2871R -->
+                <div class="product-card" 
+                     data-id="garrett-gt2871r-2021" 
+                     data-name="Garrett GT2871R Turbocharger" 
+                     data-price="2400"
+                     data-image="/images/turbos/garrett-gt2871r.jpg">
+                    <div class="product-image">
+                        <img src="/images/turbos/garrett-gt2871r.jpg" alt="Garrett GT2871R Turbocharger" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHVyYm9jaGFyZ2VyPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Garrett GT2871R Turbocharger</h3>
+                        <div class="product-details">
+                            <p><strong>Brand:</strong> Garrett</p>
+                            <p><strong>Model:</strong> GT2871R</p>
+                            <p><strong>Year:</strong> 2021</p>
+                            <p><strong>Condition:</strong> Like New</p>
+                            <p><strong>Max Power:</strong> 400 HP</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$2,400</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Turbo 7: BorgWarner K04 -->
+                <div class="product-card" 
+                     data-id="borgwarner-k04-2020" 
+                     data-name="BorgWarner K04 Turbocharger" 
+                     data-price="1500"
+                     data-image="/images/turbos/borgwarner-k04.jpg">
+                    <div class="product-image">
+                        <img src="/images/turbos/borgwarner-k04.jpg" alt="BorgWarner K04 Turbocharger" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHVyYm9jaGFyZ2VyPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>BorgWarner K04 Turbocharger</h3>
+                        <div class="product-details">
+                            <p><strong>Brand:</strong> BorgWarner</p>
+                            <p><strong>Model:</strong> K04</p>
+                            <p><strong>Year:</strong> 2020</p>
+                            <p><strong>Condition:</strong> Good</p>
+                            <p><strong>Max Power:</strong> 270 HP</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$1,500</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Turbo 8: IHI RHF5 -->
+                <div class="product-card" 
+                     data-id="ihi-rhf5-2019" 
+                     data-name="IHI RHF5 Turbocharger" 
+                     data-price="1300"
+                     data-image="/images/turbos/ihi-rhf5.jpg">
+                    <div class="product-image">
+                        <img src="/images/turbos/ihi-rhf5.jpg" alt="IHI RHF5 Turbocharger" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiI+VHVyYm9jaGFyZ2VyPC90ZXh0Pgo8L3N2Zz4K'">
+                    </div>
+                    <div class="product-info">
+                        <h3>IHI RHF5 Turbocharger</h3>
+                        <div class="product-details">
+                            <p><strong>Brand:</strong> IHI</p>
+                            <p><strong>Model:</strong> RHF5</p>
+                            <p><strong>Year:</strong> 2019</p>
+                            <p><strong>Condition:</strong> Good</p>
+                            <p><strong>Max Power:</strong> 220 HP</p>
+                            <p><strong>Warranty:</strong> 90 days</p>
+                            <p class="price">$1,300</p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PartsGenie - All rights reserved</p>
+            <p>Contact us: (555) 123-4567 | info@partsgenie.com</p>
+        </div>
+    </footer>
+
     <script src="cart.js"></script>
-
 </body>
 </html>

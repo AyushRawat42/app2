@@ -1,80 +1,125 @@
-const express=require('express');
-const app=express();
+const express = require('express');
+const app = express();
+
 require('dotenv').config();
-const User=require('./Model/user')
-const Bill=require('./Model/checkout')
-const db=require('./db');
-const bodyParser=require('body-parser')
+
+const User = require('./Model/user')
+const Bill = require('./Model/checkout')
+const db = require('./db');
+const bodyParser = require('body-parser')
+
 app.use(bodyParser.json())
-const PORT= process.env.port ||3000
+
+const PORT = process.env.PORT || 3000
+
 const path = require('path');
 const cors = require('cors');
-app.use(cors()); 
+
+app.use(cors());
+
+// Static file serving from public folder
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Root route serves index.html
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-
-// app.post('/signup',async (req,res) => {
-//   try{
-//     const data=req.body;
-//     const newUser=new User(data);
-//     const reponse= await newUser.save();
-//     console.log("User Save");
-
-//     const payload={
-//       id:reponse.id
-//     }
-//     console.log(payload)
-//     res.status(200).json({response:reponse});
-//   //  const token= generateToken(payload)
-//   //  res.status(200).json({response:reponse,token:token});
-//   }
-//   catch(err){
-//       console.error(err);
-//       res.status(500).json({error:"Unable to sign up"});
-//   }
-// });
-
-
+// Contact form submission
 app.post('/submit', async (req, res) => {
-  try {
-    // Access the incoming data from req.body
-    const { username, email,phone,part,year,model } = req.body;
-console.log(req.body)
-    // Create a new user document
-    const newUser = new User({username, email,phone,part,year,model});
+    try {
+        const data = req.body;
+        console.log('Contact form data received:', data);
+        
+        if (!data.name || !data.email) {
+            return res.status(400).json({ 
+                error: 'Name and email are required' 
+            });
+        }
 
-    // Save the new user to the database
-    await newUser.save();
+        const newUser = new User({
+            username: data.name,
+            email: data.email,
+            phone: data.phone || 0,
+            part: data.part || 'Engine',
+            year: data.year,
+            model: data.model,
+            message: data.message
+        });
 
-    // Send a success response back to the client
-    res.status(201).json({ message: 'User added successfully!', user: newUser });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error adding user.' });
-  }
+        const response = await newUser.save();
+        console.log("Contact inquiry saved");
+        
+        res.status(200).json({
+            success: true,
+            message: "Contact inquiry submitted successfully",
+            response: response
+        });
+        
+    } catch(err) {
+        console.error('Contact form error:', err);
+        res.status(500).json({ 
+            error: 'Failed to submit contact form',
+            details: err.message 
+        });
+    }
 });
 
+// Checkout form submission
 app.post('/submitbill', async (req, res) => {
-  try {
-    // Access the incoming data from req.body
-    const { FirstName,LastName,Addressline1,Addressline2,City,State,ZIP,Phone,Email,FirstName2,LastName2,Addressline1b,Addressline2b,City2,State2,ZIP2,Cardnum,Namecard,Expiry,CVV } = req.body;
-console.log(req.body)
-    // Create a new user document
-    const newBill = new Bill({FirstName,LastName,Addressline1,Addressline2,City,State,ZIP,Phone,Email,FirstName2,LastName2,Addressline1b,Addressline2b,City2,State2,ZIP2,Cardnum,Namecard,Expiry,CVV });
+    try {
+        const data = req.body;
+        console.log('Checkout data received:', data);
+        
+        if (!data.firstName || !data.lastName || !data.email) {
+            return res.status(400).json({ 
+                error: 'First name, last name, and email are required' 
+            });
+        }
 
-    // Save the new user to the database
-    await newBill.save();
-
-    // Send a success response back to the client
-    res.status(201).json({ message: 'Bill added successfully!', Bill: newBill });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error adding bill.' });
-  }
+        const newBill = new Bill(data);
+        const response = await newBill.save();
+        console.log("Order submitted successfully");
+        
+        res.status(200).json({
+            success: true,
+            message: "Order submitted successfully",
+            orderId: response._id,
+            response: response
+        });
+        
+    } catch(err) {
+        console.error('Checkout error:', err);
+        res.status(500).json({ 
+            error: 'Failed to process order',
+            details: err.message 
+        });
+    }
 });
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ 
+        error: 'Something went wrong!',
+        message: err.message 
+    });
+});
+
+// 404 handler
+app.use((req, res) => {
+    console.log('404 - File not found:', req.url);
+    res.status(404).json({ 
+        error: 'Page not found',
+        requestedPath: req.url
+    });
+});
+
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
+    console.log(`Visit: http://localhost:${PORT}`);
+    console.log('Files should be accessible at:');
+    console.log(`- http://localhost:${PORT}/cart.html`);
+    console.log(`- http://localhost:${PORT}/shop.html`);
+    console.log(`- http://localhost:${PORT}/about.html`);
 });

@@ -1,24 +1,22 @@
-const mongoose=require('mongoose')
+const mongoose = require('mongoose')
 require('dotenv').config();
-const mongoURL=process.env.MONGODB_URL_LOCAL;
 
-mongoose.connect(mongoURL,{
-    useNewUrlParser:true,
-    useUnifiedTopology: true,
-})
-const db=mongoose.connection;
+const mongoURL = process.env.MONGODB_URL_LOCAL;
 
-db.on('connected',()=>{
-    console.log("Connected to mongoDC");
+mongoose.connect(mongoURL);  // Remove the deprecated options
+
+const db = mongoose.connection;
+
+db.on('connected', () => {
+    console.log("Connected to MongoDB");
 });
 
-
-db.on('error',(err)=>{
-    console.error("MongoDB Connection server",err);
+db.on('error', (err) => {
+    console.error("MongoDB Connection Error:", err);
 });
 
-db.on('disconnected',()=>{
-    console.log("mongoDb Disconnected");
+db.on('disconnected', () => {
+    console.log("MongoDB Disconnected");
 });
 
-module.exports=db;
+module.exports = db;

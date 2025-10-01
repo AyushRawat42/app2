@@ -1,96 +1,108 @@
-const mongose=require("mongoose")
-const bcrypt=require('bcrypt');
-const BillSchema=new mongose.Schema({
+const mongoose = require("mongoose");  // Fixed: mongoose spelling
+
+const BillSchema = new mongoose.Schema({  // Fixed: mongoose spelling
+    // Shipping Information
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
+    addressLine1: {
+        type: String,
+        required: true
+    },
+    addressLine2: {
+        type: String,
+    },
+    city: {
+        type: String,
+        required: true
+    },
+    state: {
+        type: String,
+        required: true
+    },
+    zipCode: {
+        type: String,
+        required: true
+    },
+    phone: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
     
-    FirstName:{
-      type:String,
-      required:true
+    // Billing Information (if different from shipping)
+    billingSame: {
+        type: Boolean,
+        default: true
     },
-  
-  
-    LastName:{
-        type:String,
-        required:true
+    billingFirstName: {
+        type: String,
     },
-    Addressline1:{
-        type:String,
-        required:true
-     
+    billingLastName: {
+        type: String,
     },
-  Addressline2:{
-    type:String,
-  },
-  City:{
-    type:String,
-    required:true
- },
-  State:{
-    type:String,
-    required:true
- 
-  },
-  ZIP:{
-    type:Number,
-    required:true
-  },
-  Phone:{
-    type:Number,
-    required:true
-  },
-  Email:{
-    type:String,
-    required:true
-  },
-  FirstName2:{
-    type:String,
-    required:true
-  },
-
-
-  LastName2:{
-      type:String,
-      required:true
-  },
-  Addressline1b:{
-      type:String,
-      required:true
-   
-  },
-Addressline2b:{
-  type:String,
-},
-City2:{
-  type:String,
-  required:true
-},
-State2:{
-  type:String,
-  required:true
-
-},
-ZIP2:{
-  type:Number,
-  required:true
-},
-Cardnum:{
-    type:Number,
-  required:true
-},
-Namecard:{
-    type:String,
-  required:true
-},
-Expiry:{
-    type:String,
-  required:true
-},
-CVV:{
-    type:Number,
-  required:true
-}
-
+    billingAddressLine1: {
+        type: String,
+    },
+    billingAddressLine2: {
+        type: String,
+    },
+    billingCity: {
+        type: String,
+    },
+    billingState: {
+        type: String,
+    },
+    billingZipCode: {
+        type: String,
+    },
+    
+    // Payment Information (Note: In production, never store card details in database)
+    cardNumber: {
+        type: String,
+        required: true
+    },
+    nameOnCard: {
+        type: String,
+        required: true
+    },
+    expiryDate: {
+        type: String,
+        required: true
+    },
+    cvv: {
+        type: String,
+        required: true
+    },
+    
+    // Order Information
+    cartItems: [{
+        productId: String,
+        name: String,
+        price: Number,
+        quantity: Number,
+        image: String
+    }],
+    totalAmount: {
+        type: Number,
+        required: true
+    },
+    orderStatus: {
+        type: String,
+        enum: ['pending', 'processing', 'shipped', 'delivered', 'cancelled'],
+        default: 'pending'
+    }
+}, {
+    timestamps: true
 });
 
-
-const Bill=mongose.model('Bill',BillSchema)
-module.exports=Bill;
+const Bill = mongoose.model('Bill', BillSchema);  // Fixed: mongoose spelling
+module.exports = Bill;

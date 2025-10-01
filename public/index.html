@@ -6,780 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PartsGenie</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="style.css">
-    <source src="cart.js">
-    <style>
-        
-        .why-choose-us {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-        }
-        
-        .why-choose-us h2 {
-            text-align: center;
-            
-            font-size: 3rem;
-        margin-bottom: 15px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        color: #fff;
-        }
-        
-        .benefit-item {
-            display: inline-block;
-            width: 30%;
-            margin: 1.5%;
-            padding: 20px;
-            vertical-align: top;
-            box-sizing: border-box;
-            background: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .benefit-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .benefit-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-        
-        .benefit-item h3 {
-            color: #e74c3c;
-            margin-top: 0;
-            font-size: 18px;
-        }
-        
-        .benefit-item p {
-            color: #555;
-            line-height: 1.5;
-        }
-        
-        @media (max-width: 768px) {
-            .benefit-item {
-                width: 100%;
-                margin: 10px 0;
-            }
-        }
-
-        /* motto section */
-        .motto-banner {
-        background-image: url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 400px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        position: relative;
-        color: white;
-    }
-    
-    .motto-banner::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-    
-    .motto-content {
-        position: relative;
-        z-index: 1;
-        padding: 20px;
-        max-width: 800px;
-    }
-    
-    .motto-banner h1 {
-        font-size: 3rem;
-        margin-bottom: 15px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        color: #fff;
-    }
-    
-    .motto {
-        font-size: 1.8rem;
-        font-weight: bold;
-        margin-bottom: 30px;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        color: #f1c40f;
-    }
-    
-    .cta-button {
-        display: inline-block;
-        padding: 12px 30px;
-        background-color: #e74c3c;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 4px;
-        font-size: 1.2rem;
-        transition: all 0.3s ease;
-    }
-    
-    .cta-button:hover {
-        background-color: #c0392b;
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-    
-    @media (max-width: 768px) {
-        .motto-banner {
-            height: 300px;
-        }
-        
-        .motto-banner h1 {
-            font-size: 2rem;
-        }
-        
-        .motto {
-            font-size: 1.3rem;
-        }
-    }
-
-    /* carousel */
-    .brand-carousel-container {
-        max-width: 1200px;
-        margin: 40px auto;
-        padding: 20px;
-        text-align: center;
-        font-family: Arial, sans-serif;
-    }
-    
-    .brand-carousel-container h2 {
-        text-align: center;
-            
-            font-size: 3rem;
-        margin-bottom: 15px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        color: #fff;
-    }
-    
-    .brand-carousel {
-        display: flex;
-        overflow: hidden;
-        position: relative;
-        height: 100px;
-        align-items: center;
-        background: #f5f5f5;
-        border-radius: 8px;
-        padding: 10px 0;
-    }
-    
-    .brand-slide {
-        flex: 0 0 auto;
-        padding: 0 30px;
-        animation: slide 30s linear infinite;
-    }
-    
-    .brand-slide img {
-        height: 60px;
-        width: auto;
-        max-width: 120px;
-        object-fit: contain;
-        filter: grayscale(100%);
-        opacity: 0.7;
-        transition: all 0.3s ease;
-    }
-    
-    .brand-slide img:hover {
-        filter: grayscale(0%);
-        opacity: 1;
-        transform: scale(1.1);
-    }
-    
-    @keyframes slide {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .brand-slide {
-            padding: 0 20px;
-        }
-        
-        .brand-slide img {
-            height: 40px;
-        }
-    }
-
-    /* customer feedback */
-    .customer-feedback-section {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 30px 20px;
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-    
-        .customer-feedback-section h2 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 40px;
-            font-size: 32px;
-            position: relative;
-        }
-    
-        .customer-feedback-section h2:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: #e74c3c;
-            margin: 15px auto 0;
-        }
-    
-        .testimonials-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
-        }
-    
-        .testimonial-card {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-    
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
-    
-        .rating {
-            color: #f1c40f;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-    
-        .feedback {
-            color: #555;
-            line-height: 1.6;
-            font-size: 16px;
-            margin-bottom: 20px;
-            font-style: italic;
-            position: relative;
-        }
-    
-        .feedback:before, .feedback:after {
-            content: '"';
-            color: #e74c3c;
-            font-size: 24px;
-            opacity: 0.3;
-        }
-    
-        .customer-info {
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-            color: #777;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-    
-        .name {
-            font-weight: bold;
-            color: #333;
-        }
-    
-        @media (max-width: 768px) {
-            .testimonials-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .customer-feedback-section {
-                padding: 20px 15px;
-            }
-            
-            .testimonial-card {
-                padding: 20px;
-            }
-        }
-
-        /* shop by category */
-        .shop-by-category {
-        max-width: 1200px;
-        margin: 60px auto;
-        padding: 0 20px;
-        font-family: 'Arial', sans-serif;
-    }
-    
-    .shop-by-category h2 {
-        text-align: center;
-        color: #ffffff;
-        text-align: center;
-            
-            font-size: 3rem;
-        margin-bottom: 15px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        
-    }
-    .shop-by-category p{
-       
-        text-align: center;
-            
-            font-size: 1.5rem;
-        margin-bottom: 15px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        color: #fff;
-    }
-    .subtitle {
-        text-align: center;
-        color: #7f8c8d;
-        font-size: 18px;
-        margin-bottom: 40px;
-    }
-    
-    .category-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-    }
-    
-    .category-card {
-        background: #fff;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .category-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    }
-    
-    .category-image {
-        position: relative;
-        height: 200px;
-        overflow: hidden;
-    }
-    
-    .category-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-    
-    .category-card:hover .category-image img {
-        transform: scale(1.05);
-    }
-    
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
-    }
-    
-    .category-card h3 {
-        color: #2c3e50;
-        font-size: 22px;
-        margin: 20px 20px 10px;
-    }
-    
-    .category-card p {
-        color: #7f8c8d;
-        margin: 0 20px 20px;
-        line-height: 1.5;
-    }
-    
-    .shop-btn {
-        display: inline-block;
-        margin: 0 20px 25px;
-        padding: 10px 20px;
-        background-color: #e74c3c;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-    }
-    
-    .shop-btn:hover {
-        background-color: #c0392b;
-    }
-    
-    .shop-btn span {
-        margin-left: 5px;
-        transition: transform 0.3s ease;
-    }
-    
-    .shop-btn:hover span {
-        transform: translateX(3px);
-    }
-    
-    @media (max-width: 768px) {
-        .category-grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .shop-by-category {
-            margin: 40px auto;
-        }
-    }
-
-     /* Featured Products Styling */
-
-     /* contact us section */
-     .hero-message {
-        max-width: 1200px;
-        margin: 40px auto;
-        padding: 30px;
-        text-align: center;
-        font-family: 'Arial', sans-serif;
-        background-color: #E9F1FA;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        position: sticky;
-        background-image: url("images/bg6.webp");
-    }
-    
-    .hero-heading {
-        font-size: 42px;
-        font-weight: 800;
-        color: #ffffff;
-        margin-bottom: 20px;
-        line-height: 1.2;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-    }
-    
-    .hero-subtext {
-        font-size: 22px;
-        font-weight: 400;
-        color: #ffffff;
-        line-height: 1.5;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    
-    @media (max-width: 768px) {
-        .hero-heading {
-            font-size: 32px;
-        }
-        
-        .hero-subtext {
-            font-size: 18px;
-        }
-        
-        .hero-message {
-            padding: 20px;
-            margin: 20px auto;
-        }
-    }
-     .featured-products {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 20px;
-        /* background: linear-gradient(to bottom, #f8f9fa, #ffffff); */
-        background-color: rgb(113, 154, 228);
-        font-family: 'Arial', sans-serif;
-        background-size: auto;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-    }
-    
-    .featured-header {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    
-    .featured-header h2 {
-        font-size: 46px;
-        color: #ffffff;
-        margin-bottom: 10px;
-        text-emphasis-style: bold;
-    }
-    
-    .featured-header p {
-        font-size: 28px;
-        color: #ffffff;
-        margin-bottom: 15px;
-    }
-    
-    .products-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
-    }
-    
-    .product-card {
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        position: relative;
-    }
-    
-    .product-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    }
-    
-    .product-badge {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: #e74c3c;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 4px;
-        font-size: 12px;
-        font-weight: bold;
-        z-index: 2;
-    }
-    
-    .product-image {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-    
-    .product-card:hover .product-image {
-        transform: scale(1.03);
-    }
-    
-    .product-details {
-        padding: 20px;
-    }
-    
-    .product-details h3 {
-        font-size: 20px;
-        color: #2c3e50;
-        margin-bottom: 10px;
-    }
-    
-    .product-description {
-        color: #7f8c8d;
-        margin-bottom: 15px;
-        line-height: 1.5;
-    }
-    
-    .product-meta {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-    
-    .price {
-        font-size: 22px;
-        font-weight: bold;
-        color: #e74c3c;
-        margin-right: 10px;
-    }
-    
-    .original-price {
-        font-size: 14px;
-        color: #95a5a6;
-        text-decoration: line-through;
-    }
-    
-    .cta-button {
-        display: inline-block;
-        padding: 10px 20px;
-        background: #3498db;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: bold;
-        transition: background 0.3s ease;
-    }
-    
-    .cta-button:hover {
-        background: #2980b9;
-    }
-    
-    @media (max-width: 768px) {
-        .products-grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .featured-header h2 {
-            font-size: 28px;
-        }
-    }
-    /* pop-up */
-    .contact-popup {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 300px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            border: 1px solid #2c3e50;
-            animation: slideIn 0.5s ease-out;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        .popup-header {
-            background: #2c3e50;
-            color: white;
-            padding: 15px;
-            border-radius: 8px 8px 0 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .popup-header h3 {
-            margin: 0;
-            font-size: 18px;
-        }
-        
-        .close-popup {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        
-        .popup-content {
-            padding: 15px;
-        }
-        
-        .popup-content p {
-            margin: 0 0 15px 0;
-            color: #333;
-            line-height: 1.5;
-        }
-        
-        .popup-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .popup-btn {
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .popup-btn.primary {
-            background: #2c3e50;
-            color: white;
-        }
-        
-        .popup-btn.secondary {
-            background: #f5f5f5;
-            color: #333;
-            border: 1px solid #ddd;
-        }
-        
-        .popup-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-        
-        @keyframes slideIn {
-            from {
-                transform: translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        .cartlogo {
-            position: fixed;
-            z-index: 1000;
-            top: 20px;
-            right: 20px;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        
-    </style>
-    
 </head>
-<body style="background-image: url('https://wallpapercave.com/wp/wp12300932.jpg'); background-attachment: fixed;">
-    <!-- Header -->
+<body class="body">
+     <!-- Header -->
     <header>
-      
+        <div class="addressline">
+              <pre>1875 W Main St Sac City Iowa     service/parts: 223-456-234      helpdesk:098-8786-876</pre>
+        </div>
         <div class="logo">
             <h1>PartsGenie</h1>
-            <p>Affordable Engines, Transmissions, and Turbos</p>
+            <p>Tested. Trusted. Delivered.</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="pages/shop.html">Shop</a></li>
-                <li><a href="pages/about.html">About Us</a></li>
-                <li><a href="pages/contact.html">Contact</a></li>
-                <li><a href="pages/login.html">Get Quote</a></li>
-               <li> <a href="pages/cart.html" class="cart-link">
-                    Cart (<span id="cart-count">0</span>)
-                    </a>
-                </li>
-            </ul>
-        </nav>
     </header>
-
-    <div class="cartlogo">
-        <a href="/public/pages/cart.html"><img src="https://thumb.ac-illust.com/d6/d6de154e29d21fbba350dd07853a895b_t.jpeg" alt="" style="height: 60px;"></a>
+     
+    <video autoplay muted loop playsinline id="bg-video">
+            <source src="BV1.mp4" type="video/mp4">
+             Your browser does not support the video tag.
+    </video>
+   <div class="hometab">
+    <nav>
+        <ul>
+            <li><a href="/public/index.html">Home 🏠</a></li>
+            <li><a href="/public/pages/shop.html">Shop 🔧</a></li>
+            <li><a href="/public/pages/login.html" onclick="alert('Quote system coming soon!')">Get Quote 💰</a></li>
+            <li>
+                <a href="/cart.html" class="cart-link">
+                    Cart 🛒
+                    <span class="cart-count">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+    <div class="content">
+  
+       <div class="cartlogo">
+        <a href="/public/pages/cart.html"><img src="https://thumb.ac-illust.com/d6/d6de154e29d21fbba350dd07853a895b_t.jpeg" alt=""></a>
     </div>
-
-    <!-- Search Bar -->
-    <!-- <section class="search-bar">
-        <input type="text" placeholder="Search for parts..." id="search-input">
-        <button onclick="searchProducts()">Search</button>
-    </section> -->
-
-    <!-- contact us section -->
-    <!-- <div class="hero-message">
-        <h1 class="hero-heading">Quality Used Auto Parts at Affordable Prices</h1>
-        <p class="hero-subtext">Specializing in used engines, transmissions, and turbos for all makes and models. All parts are thoroughly tested and come with a warranty.</p>
-        <br>
-        <br>
-        <a href="/public/pages/login.html" class="cta-button">GET YOUR QUOTE</a>
-    </div> -->
-   <!-- Featured Products -->
-   
          <!-- contact us section -->
     <div class="hero-message" style="background-image: url('https://media.istockphoto.com/id/188052258/photo/car-components.jpg?s=2048x2048&w=is&k=20&c=spQCN4GKcd_aeFYTuBq6jfUYerMh_pMQNeQbi8IjxSQ=');">
+        
         <h1 class="hero-heading">Quality Used Auto Parts at Affordable Prices</h1>
         <p class="hero-subtext">Specializing in used engines, transmissions, and turbos for all makes and models. All parts are thoroughly tested and come with a warranty.</p>
         <br>
         <br>
         <a href="/public/pages/login.html" class="cta-button">GET YOUR QUOTE</a>
     </div>
-        <div class="featured-products" style="background-image: url('https://images.pexels.com/photos/4488637/pexels-photo-4488637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+      <!-- Featured Products -->
+        <div class="featured-products">
             <div class="featured-header">
                 <h2>Featured Auto Parts</h2>
                 <p>Top-quality used parts with warranties, shipped nationwide</p>
@@ -884,6 +162,14 @@
         </div>
     </div>
 
+    <div class="partnership">
+        <h1>Own a Garage or Repair Shop? We’ve got your back!</h1>
+        <p>Join our network of local auto-shops who rely on us for fast, affordable, and quality car parts—anytime, anywhere. You fix the cars. We’ll handle the parts. OEM, Used and aftermarket parts available 24/7.<br>
+                Fully Tested | Certified by our Mechanics | Same-day dispatch | Easy ordering | Fair prices <br>
+    Dedicated support for mechanics & garage owners.</p>
+        <a href="/public/pages/partner.html">Join Us</a>
+    </div>
+
     <!-- carousel -->
     <div class="brand-carousel-container">
         <h2>Our Parts Fit These Brands</h2>
@@ -923,7 +209,7 @@
 
     <!-- why choose us -->
     <div class="why-choose-us">
-        <h2>Why Choose Our Used Auto Parts?</h2>
+        <h2>Why Choose PartsGenie?</h2>
         
         <div class="benefit-item">
             <div class="benefit-icon">🚗</div>
@@ -963,7 +249,7 @@
     </div>
     
     <!-- customer feedback -->
-    <div class="customer-feedback-section">
+    <div class="customer-feedback-section" style="background-image: url(images/customer.jpg);">
         <h2>What Our Customers Say</h2>
         <div class="testimonials-container">
             <!-- Testimonial 1 -->
@@ -1016,16 +302,6 @@
                 </div>
             </div>
     
-            <!-- Testimonial 6 -->
-            <!-- <div class="testimonial-card">
-                <div class="rating">★★★★★</div>
-                <p class="feedback">"The website's part matching system is incredibly accurate. Found a door assembly for my Prius that fit like it was made for it."</p>
-                <div class="customer-info">
-                    <span class="name">Emily S.</span>
-                    <span class="location">Seattle, WA</span>
-                </div>
-            </div> -->
-    
             <!-- Testimonial 7 -->
             <div class="testimonial-card">
                 <div class="rating">★★★★☆</div>
@@ -1034,36 +310,7 @@
                     <span class="name">David P.</span>
                     <span class="location">Boston, MA</span>
                 </div>
-            </div>
-    
-            <!-- Testimonial 8 -->
-            <!-- <div class="testimonial-card">
-                <div class="rating">★★★★★</div>
-                <p class="feedback">"Saved my business hundreds on fleet repairs. Quality used parts delivered right to our shop when we need them."</p>
-                <div class="customer-info">
-                    <span class="name">Carlos V.</span>
-                    <span class="location">Miami, FL</span>
-                </div>
-            </div> -->
-    
-            <!-- Testimonial 9 -->
-            <!-- <div class="testimonial-card">
-                <div class="rating">★★★★★</div>
-                <p class="feedback">"The warranty gave me peace of mind. Didn't need it though - the alternator has been working flawlessly for 6 months now."</p>
-                <div class="customer-info">
-                    <span class="name">Jennifer L.</span>
-                    <span class="location">Dallas, TX</span>
-                </div>
-            </div>
-     -->
-            <!-- Testimonial 10 -->
-            <!-- <div class="testimonial-card">
-                <div class="rating">★★★★★</div>
-                <p class="feedback">"Unbelievable deal on a complete navigation system for my luxury car. Works perfectly and looks brand new!"</p>
-                <div class="customer-info">
-                    <span class="name">Thomas W.</span>
-                    <span class="location">San Diego, CA</span>
-                </div> -->
+             </div>
             </div>
         </div>
     </div>
@@ -1084,12 +331,11 @@
                 <button class="popup-btn secondary" onclick="window.location.href='../public/pages/login.html'">
                     Get Your Quote in 10 minutes
                 </button>
-                <!-- <button class="popup-btn secondary" onclick="window.location.href='/live-chat.html'">
-                    Live Chat
-                </button> -->
             </div>
         </div>
-    </div>
+    </div>    
+     
+  
 
     <script>
         // Show popup every 30 seconds
@@ -1139,8 +385,12 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 PartGenie. All rights reserved.</p>
+        <a href="pages/contact.html">Contact Us</a> <a href="pages/about.html">About Us</a>
+        <p>&copy; 2025 PartsGenie. All rights reserved.</p>
+
     </footer>
+    </div>
+    
 
     <!-- JavaScript -->
     <script>
@@ -1150,5 +400,6 @@
             // Add logic to filter and display products based on the search query
         }
     </script>
+    <script src="cart.js"></script>
 </body>
 </html>

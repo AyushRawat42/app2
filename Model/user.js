@@ -1,61 +1,40 @@
-const mongose=require("mongoose")
-const bcrypt=require('bcrypt');
-const userSchema=new mongose.Schema({
-    
-    username:{
-      type:String,
-      required:true
+const mongoose = require("mongoose");  // Fixed: mongoose spelling
+const bcrypt = require('bcrypt');
+
+const userSchema = new mongoose.Schema({  // Fixed: mongoose spelling
+    username: {
+        type: String,
+        required: true
     },
-  
-  
-    phone:{
-        type:Number,
-        required:true
+    phone: {
+        type: Number,
+        required: true
     },
-    email:{
-        type:String,
-     
+    email: {
+        type: String,
+        required: true  // Made required for contact form
     },
-  part:{
-    type:String,
-     enum:['Engine','Transmission','Turbo'],
-        default:'engine',
-        required:true
-  },
-  year:{
-    type:Number,
- 
- 
-  },
-  model:{
-    type:String,
-  
- 
-  }
+    part: {
+        type: String,
+        enum: ['Engine', 'Transmission', 'Turbo', 'Other'],
+        default: 'Engine',
+        required: true
+    },
+    year: {
+        type: Number,
+    },
+    model: {
+        type: String,
+    },
+    message: {  // Added message field for contact form
+        type: String
+    }
+}, {
+    timestamps: true  // Add createdAt and updatedAt automatically
 });
 
-userSchema.pre('save',async function(next){
-    const user=this;
-    if(!user.isModified('password')) return next();
+// Note: Removed password hashing since this is for contact inquiries, not user accounts
+// If you need user authentication later, we'll create a separate schema
 
-    try{
-
-        const salt=await bcrypt.genSalt(10);
-        const hashedPass=await bcrypt.hash(user.password,salt)
-        user.passworrd=hashedPass;
-        next();
-    }catch(err){
-        return next(err);
-    }
-})
-
-userSchema.methods.comparePassword=async function(candidatePassword){
-    try{
-        const isMatch=await bcrypt.compare(candidatePassword,this.password);
-        return isMatch;
-    }catch(err){
-        throw err;
-    }
-}
-const User=mongose.model('User',userSchema)
-module.exports=User;
+const User = mongoose.model('User', userSchema);  // Fixed: mongoose spelling
+module.exports = User;

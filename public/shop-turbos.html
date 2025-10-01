@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parts Genie - Used Turbos</title>
+    <script src="cart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #E9F1FA;
+        }
+
+        .header {
+            background-color: #c0392b; /* Dark red header */
+            color: white;
+            padding: 15px;
+            /* text-align: center; */
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+
+        .turbo-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .turbo-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .turbo-title {
+            color: #8B0000;
+            margin-top: 0;
+        }
+
+        .turbo-details {
+            list-style: none;
+            padding: 0;
+        }
+
+        .turbo-details li {
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .search-form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .search-form form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        input[type="text"], select {
+            padding: 8px;
+            margin: 0 5px;
+            width: 200px;
+        }
+
+        button {
+            background-color: #c0392b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        @media (max-width: 768px) {
+            .search-form form {
+                flex-direction: column;
+                width: 90%;
+            }
+            
+            input[type="text"], select, button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 style="text-align: center;">Parts Genie </h1>
+        <p style="text-align: center;">Quality Used Turbos</p>
+        <a href="../index.html" style="color: #f5f5f5; text-align: left;"  >Back to Homepage </a>
+        <!-- <div class="back-home">
+            <a href="../index.html">Back to Homepage</a>
+        </div> -->
+    </div>
+
+    <!-- <div class="search-form">
+        <form>
+            <input type="text" placeholder="Manufacturer">
+            <input type="text" placeholder="Vehicle Model">
+            <select>
+                <option value="">Turbo Type</option>
+                <option>Single Turbo</option>
+                <option>Twin Turbo</option>
+                <option>Variable Geometry</option>
+                <option>Ball Bearing</option>
+            </select>
+            <button type="submit">Search Turbos</button>
+        </form>
+    </div> -->
+
+    <div class="turbo-list">
+       <!-- Turbo 1: Garrett GT2860RS -->
+<div class="turbo-card" 
+     data-id="garrett-gt2860rs-2020" 
+     data-name="Garrett GT2860RS Turbocharger" 
+     data-price="1800"
+     data-image="/images/turbos/garrett-gt2860rs.jpg">
+    <h3>Garrett GT2860RS Turbocharger</h3>
+    <div class="turbo-details">
+        <p><strong>Brand:</strong> Garrett</p>
+        <p><strong>Model:</strong> GT2860RS</p>
+        <p><strong>Year:</strong> 2020</p>
+        <p><strong>Condition:</strong> Rebuilt</p>
+        <p><strong>Max Power:</strong> 340 HP</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$1,800</p>
+    </div>
+    <div class="turbo-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Turbo 2: BorgWarner K03 -->
+<div class="turbo-card" 
+     data-id="borgwarner-k03-2019" 
+     data-name="BorgWarner K03 Turbocharger" 
+     data-price="1200"
+     data-image="/images/turbos/borgwarner-k03.jpg">
+    <h3>BorgWarner K03 Turbocharger</h3>
+    <div class="turbo-details">
+        <p><strong>Brand:</strong> BorgWarner</p>
+        <p><strong>Model:</strong> K03</p>
+        <p><strong>Year:</strong> 2019</p>
+        <p><strong>Condition:</strong> Good</p>
+        <p><strong>Max Power:</strong> 200 HP</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$1,200</p>
+    </div>
+    <div class="turbo-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Turbo 3: IHI VF52 -->
+<div class="turbo-card" 
+     data-id="ihi-vf52-2020" 
+     data-name="IHI VF52 Turbocharger" 
+     data-price="2200"
+     data-image="/images/turbos/ihi-vf52.jpg">
+    <h3>IHI VF52 Turbocharger</h3>
+    <div class="turbo-details">
+        <p><strong>Brand:</strong> IHI</p>
+        <p><strong>Model:</strong> VF52</p>
+        <p><strong>Year:</strong> 2020</p>
+        <p><strong>Condition:</strong> Excellent</p>
+        <p><strong>Max Power:</strong> 300 HP</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$2,200</p>
+    </div>
+    <div class="turbo-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Turbo 4: Holset HX35W -->
+<div class="turbo-card" 
+     data-id="holset-hx35w-2019" 
+     data-name="Holset HX35W Turbocharger" 
+     data-price="1650"
+     data-image="/images/turbos/holset-hx35w.jpg">
+    <h3>Holset HX35W Turbocharger</h3>
+    <div class="turbo-details">
+        <p><strong>Brand:</strong> Holset</p>
+        <p><strong>Model:</strong> HX35W</p>
+        <p><strong>Year:</strong> 2019</p>
+        <p><strong>Condition:</strong> Good</p>
+        <p><strong>Max Power:</strong> 280 HP</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$1,650</p>
+    </div>
+    <div class="turbo-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Turbo 5: Mitsubishi TD04 -->
+<div class="turbo-card" 
+     data-id="mitsubishi-td04-2020" 
+     data-name="Mitsubishi TD04 Turbocharger" 
+     data-price="1400"
+     data-image="/images/turbos/mitsubishi-td04.jpg">
+    <h3>Mitsubishi TD04 Turbocharger</h3>
+    <div class="turbo-details">
+        <p><strong>Brand:</strong> Mitsubishi</p>
+        <p><strong>Model:</strong> TD04</p>
+        <p><strong>Year:</strong> 2020</p>
+        <p><strong>Condition:</strong> Rebuilt</p>
+        <p><strong>Max Power:</strong> 250 HP</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$1,400</p>
+    </div>
+    <div class="turbo-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Turbo 6: Garrett GT2871R -->
+<div class="turbo-card" 
+     data-id="garrett-gt2871r-2021" 
+     data-name="Garrett GT2871R Turbocharger" 
+     data-price="2400"
+     data-image="/images/turbos/garrett-gt2871r.jpg">
+    <h3>Garrett GT2871R Turbocharger</h3>
+    <div class="turbo-details">
+        <p><strong>Brand:</strong> Garrett</p>
+        <p><strong>Model:</strong> GT2871R</p>
+        <p><strong>Year:</strong> 2021</p>
+        <p><strong>Condition:</strong> Like New</p>
+        <p><strong>Max Power:</strong> 400 HP</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$2,400</p>
+    </div>
+    <div class="turbo-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+</div>
+
+    <div class="footer" style="text-align: center; margin-top: 30px; color: #666;">
+        <p>© 2025 Parts Genie - All rights reserved</p>
+        <p>Contact us: (555) 123-4567 | info@partgenie.com</p>
+    </div>
+    <script src="cart.js"></script>
+
+</body>
+</html>

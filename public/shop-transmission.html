@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parts Genie - Used Transmissions</title>
+    <script src="cart.js"></script>
+    <style>
+        /* Same styling as engines page with color adjustments */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #E9F1FA;
+        }
+
+        .header {
+            background-color: #c0392b; /* Different color for differentiation */
+            color: white;
+            padding: 15px;
+            /* text-align: center; */
+            margin-bottom: 20px;
+            font-size: 25px;
+
+        }
+
+        .transmission-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .transmission-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .transmission-title {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        .transmission-details {
+            list-style: none;
+            padding: 0;
+        }
+
+        .transmission-details li {
+            margin-bottom: 8px;
+        }
+
+        /* Keep same price and button styling */
+        .price {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: #c0392b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+        .search-form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        width: 100%;
+        }
+
+        .search-form form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        input[type="text"], select {
+            padding: 8px;
+            margin: 0 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 style="text-align: center;">Parts Genie </h1>
+        <p style="text-align: center;">Quality Used Transmissions</p>
+        <a href="../index.html" style="color: #f5f5f5; text-align: left;"  >Back to Homepage </a>
+        <!-- <div class="back-home">
+            <a href="../index.html">Back to Homepage</a>
+        </div> -->
+    </div>
+
+    <!-- <div class="search-form">
+        <form>
+            <input type="text" placeholder="Search by make/model">
+            <input type="text" placeholder="Search by year">
+            <select>
+                <option value="">Transmission Type</option>
+                <option>Automatic</option>
+                <option>Manual</option>
+                <option>CVT</option>
+                <option>DCT</option>
+            </select>
+            <button type="submit">Search Transmissions</button>
+        </form>
+    </div> -->
+
+    <div class="transmission-list">
+       <!-- Transmission 1: Ford 10R80 -->
+<div class="transmission-card" 
+     data-id="ford-10r80-auto-2020" 
+     data-name="Ford 10R80 10-Speed Automatic" 
+     data-price="2800"
+     data-image="/images/transmissions/ford-10r80.jpg">
+    <h3>Ford 10R80 10-Speed Automatic</h3>
+    <div class="transmission-details">
+        <p><strong>Type:</strong> Automatic</p>
+        <p><strong>Speeds:</strong> 10-Speed</p>
+        <p><strong>Year:</strong> 2020</p>
+        <p><strong>Mileage:</strong> 35,000 miles</p>
+        <p><strong>Condition:</strong> Excellent</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$2,800</p>
+    </div>
+    <div class="transmission-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Transmission 2: Toyota A650E -->
+<div class="transmission-card" 
+     data-id="toyota-a650e-auto-2019" 
+     data-name="Toyota A650E 5-Speed Automatic" 
+     data-price="2200"
+     data-image="/images/transmissions/toyota-a650e.jpg">
+    <h3>Toyota A650E 5-Speed Automatic</h3>
+    <div class="transmission-details">
+        <p><strong>Type:</strong> Automatic</p>
+        <p><strong>Speeds:</strong> 5-Speed</p>
+        <p><strong>Year:</strong> 2019</p>
+        <p><strong>Mileage:</strong> 42,000 miles</p>
+        <p><strong>Condition:</strong> Good</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$2,200</p>
+    </div>
+    <div class="transmission-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Transmission 3: GM 8L90 -->
+<div class="transmission-card" 
+     data-id="gm-8l90-auto-2020" 
+     data-name="GM 8L90 8-Speed Automatic" 
+     data-price="3200"
+     data-image="/images/transmissions/gm-8l90.jpg">
+    <h3>GM 8L90 8-Speed Automatic</h3>
+    <div class="transmission-details">
+        <p><strong>Type:</strong> Automatic</p>
+        <p><strong>Speeds:</strong> 8-Speed</p>
+        <p><strong>Year:</strong> 2020</p>
+        <p><strong>Mileage:</strong> 28,000 miles</p>
+        <p><strong>Condition:</strong> Excellent</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$3,200</p>
+    </div>
+    <div class="transmission-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Transmission 4: Honda CVT -->
+<div class="transmission-card" 
+     data-id="honda-cvt-auto-2021" 
+     data-name="Honda CVT Automatic" 
+     data-price="2600"
+     data-image="/images/transmissions/honda-cvt.jpg">
+    <h3>Honda CVT Automatic</h3>
+    <div class="transmission-details">
+        <p><strong>Type:</strong> CVT</p>
+        <p><strong>Speeds:</strong> Continuously Variable</p>
+        <p><strong>Year:</strong> 2021</p>
+        <p><strong>Mileage:</strong> 18,000 miles</p>
+        <p><strong>Condition:</strong> Like New</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$2,600</p>
+    </div>
+    <div class="transmission-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Transmission 5: BMW ZF 8HP -->
+<div class="transmission-card" 
+     data-id="bmw-zf-8hp-auto-2020" 
+     data-name="BMW ZF 8HP 8-Speed Automatic" 
+     data-price="3800"
+     data-image="/images/transmissions/bmw-zf-8hp.jpg">
+    <h3>BMW ZF 8HP 8-Speed Automatic</h3>
+    <div class="transmission-details">
+        <p><strong>Type:</strong> Automatic</p>
+        <p><strong>Speeds:</strong> 8-Speed</p>
+        <p><strong>Year:</strong> 2020</p>
+        <p><strong>Mileage:</strong> 31,000 miles</p>
+        <p><strong>Condition:</strong> Excellent</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$3,800</p>
+    </div>
+    <div class="transmission-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Transmission 6: Subaru Lineartronic CVT -->
+<div class="transmission-card" 
+     data-id="subaru-lineartronic-cvt-2020" 
+     data-name="Subaru Lineartronic CVT" 
+     data-price="2400"
+     data-image="/images/transmissions/subaru-lineartronic.jpg">
+    <h3>Subaru Lineartronic CVT</h3>
+    <div class="transmission-details">
+        <p><strong>Type:</strong> CVT</p>
+        <p><strong>Speeds:</strong> Continuously Variable</p>
+        <p><strong>Year:</strong> 2020</p>
+        <p><strong>Mileage:</strong> 39,000 miles</p>
+        <p><strong>Condition:</strong> Good</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$2,400</p>
+    </div>
+    <div class="transmission-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Transmission 7: Nissan XTRONIC CVT -->
+<div class="transmission-card" 
+     data-id="nissan-xtronic-cvt-2019" 
+     data-name="Nissan XTRONIC CVT" 
+     data-price="2100"
+     data-image="/images/transmissions/nissan-xtronic.jpg">
+    <h3>Nissan XTRONIC CVT</h3>
+    <div class="transmission-details">
+        <p><strong>Type:</strong> CVT</p>
+        <p><strong>Speeds:</strong> Continuously Variable</p>
+        <p><strong>Year:</strong> 2019</p>
+        <p><strong>Mileage:</strong> 48,000 miles</p>
+        <p><strong>Condition:</strong> Good</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$2,100</p>
+    </div>
+    <div class="transmission-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+
+<!-- Transmission 8: Dodge 8HP70 -->
+<div class="transmission-card" 
+     data-id="dodge-8hp70-auto-2020" 
+     data-name="Dodge 8HP70 8-Speed Automatic" 
+     data-price="3000"
+     data-image="/images/transmissions/dodge-8hp70.jpg">
+    <h3>Dodge 8HP70 8-Speed Automatic</h3>
+    <div class="transmission-details">
+        <p><strong>Type:</strong> Automatic</p>
+        <p><strong>Speeds:</strong> 8-Speed</p>
+        <p><strong>Year:</strong> 2020</p>
+        <p><strong>Mileage:</strong> 33,000 miles</p>
+        <p><strong>Condition:</strong> Excellent</p>
+        <p><strong>Warranty:</strong> 90 days</p>
+        <p class="price">$3,000</p>
+    </div>
+    <div class="transmission-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-details">View Details</button>
+    </div>
+</div>
+</div>
+
+    <div class="footer" style="text-align: center; margin-top: 30px; color: #666;">
+        <p>© 2025 Parts Genie - All rights reserved</p>
+        <p>Contact us: (555) 123-4567 | info@partgenie.com</p>
+    </div>
+    <script src="cart.js"></script>
+
+</body>
+</html>

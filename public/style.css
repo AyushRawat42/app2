@@ -9,7 +9,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Video Background */
+/* Background Video - Visible on ALL devices including mobile */
 #bg-video {
     position: fixed;
     top: 0;
@@ -18,7 +18,25 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    opacity: 1;
+    opacity: 0.4;
+    pointer-events: none; /* Prevents video from blocking clicks */
+}
+
+/* Mobile specific - KEEP video visible */
+@media (max-width: 768px) {
+    #bg-video {
+        display: block; /* Make sure it's visible */
+        object-fit: cover; /* Ensure it covers properly */
+        opacity: 0.3; /* Slightly dimmer on mobile for better readability */
+    }
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+    #bg-video {
+        display: block;
+        opacity: 0.25; /* Even dimmer for readability on small screens */
+    }
 }
 
 
@@ -1020,18 +1038,5 @@ footer a {
     .cta-button {
         padding: 10px 20px;
         font-size: 1rem;
-    }
-}
-/* Mobile Video Optimization */
-@media (max-width: 768px) {
-    #bg-video {
-        display: none; /* Hide video on mobile to save bandwidth */
-    }
-    
-    body {
-        background-color: #E9F1FA; /* Fallback color for mobile */
-        background-image: url('images/mobile-bg.jpg'); /* Optional static image */
-        background-size: cover;
-        background-position: center;
     }
 }

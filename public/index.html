@@ -15,13 +15,16 @@
 
      
     <video id="bg-video" autoplay muted loop playsinline>
-        <source src="videos/your-video.mp4" type="video/mp4">
+        <source src="/public/BV1.mp4" type="video/mp4">
     </video>
      <!-- Header -->
     <header>
         <div class="logo">
             <h1>PartsGenie</h1>
             <p>Tested. Trusted. Delivered.</p>
+        </div>
+        <div class="addressline">
+              <pre>service/parts: 223-456-234      helpdesk:098-8786-876</pre>
         </div>
     </header>
    <div class="hometab">
@@ -40,12 +43,8 @@
     </nav>
 </div>
     <div class="content">
-  
-       <div class="cartlogo">
-        <a href="/public/pages/cart.html"><img src="https://thumb.ac-illust.com/d6/d6de154e29d21fbba350dd07853a895b_t.jpeg" alt=""></a>
-    </div>
          <!-- contact us section -->
-    <div class="hero-message" style="background-image: url('https://media.istockphoto.com/id/188052258/photo/car-components.jpg?s=2048x2048&w=is&k=20&c=spQCN4GKcd_aeFYTuBq6jfUYerMh_pMQNeQbi8IjxSQ=');">
+    <div class="hero-message" style="background-image: url('https://images.unsplash.com/photo-1522598140461-ec9911e01c53?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
         
         <h1 class="hero-heading">Quality Used Auto Parts at Affordable Prices</h1>
         <p class="hero-subtext">Specializing in used engines, transmissions, and turbos for all makes and models. All parts are thoroughly tested and come with a warranty.</p>
@@ -178,7 +177,7 @@
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6b2FkwYqSTo9hbYh2_B9zsKDHe3fryAuSCQ&s" alt="Toyota">
             </div>
             <div class="brand-slide">
-                <img src="https://images.seeklogo.com/logo-png/26/2/chevrolet-logo-png_seeklogo-260170.png?v=1954738238805873616" alt="Chevrolet">
+                <img src="https://1000logos.net/wp-content/uploads/2019/12/Chevrolet-logo.png" alt="Chevrolet">
             </div>
             <div class="brand-slide">
                 <img src="https://w7.pngwing.com/pngs/978/480/png-transparent-honda-logo-car-toyota-honda-cr-v-honda-angle-trademark-rectangle.png" alt="Honda">
@@ -187,7 +186,7 @@
                 <img src="https://wallpapers.com/images/hd/nissan-automotive-brand-logo-gcfu8m53losfzum1.png" alt="Nissan">
             </div>
             <div class="brand-slide">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Jeep_logo.svg/800px-Jeep_logo.svg.png" alt="Jeep">
+                <img src="https://i.pinimg.com/736x/95/68/45/9568451d05ba6ad8940b3503a149c649.jpg" alt="Jeep">
             </div>
             <div class="brand-slide">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/800px-Mercedes-Logo.svg.png" alt="Mercedes-Benz">
@@ -196,7 +195,7 @@
                 <img src="https://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19707.png" alt="BMW">
             </div>
             <div class="brand-slide">
-                <img src="https://images.seeklogo.com/logo-png/15/2/volkswagen-logo-png_seeklogo-150537.png" alt="Volkswagen">
+                <img src="https://www.vhv.rs/dpng/d/432-4322124_volkswagen-logo-png-image-file-volkswagen-logo-transparent.png" alt="Volkswagen">
             </div>
             <div class="brand-slide">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Hyundai_logo_black.png/800px-Hyundai_logo_black.png" alt="Hyundai">
@@ -335,48 +334,41 @@
   
 
     <script>
-        // Show popup every 30 seconds
-        let popupTimer;
-        const contactPopup = document.getElementById('contactPopup');
-        const closePopup = document.getElementById('closePopup');
-        
-        function showPopup() {
-            contactPopup.style.display = 'block';
-            // Reset the timer when popup is shown
-            resetPopupTimer();
+    // Contact Popup - Shows Every 15 Seconds (Even After Closing)
+    const contactPopup = document.getElementById('contactPopup');
+    const closePopup = document.getElementById('closePopup');
+
+    // Show popup function
+    function showPopup() {
+        contactPopup.style.display = 'block';
+    }
+
+    // Hide popup function
+    function hidePopup() {
+        contactPopup.style.display = 'none';
+    }
+
+    // Close button event
+    closePopup.addEventListener('click', hidePopup);
+
+    // Click outside popup to close
+    window.addEventListener('click', function(e) {
+        if (e.target === contactPopup) {
+            hidePopup();
         }
-        
-        function hidePopup() {
-            contactPopup.style.display = 'none';
-        }
-        
-        function resetPopupTimer() {
-            clearTimeout(popupTimer);
-            popupTimer = setTimeout(showPopup, 30000); // 30 seconds
-        }
-        
-        // Close button event
-        closePopup.addEventListener('click', hidePopup);
-        
-        // Show popup after 30 seconds when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            popupTimer = setTimeout(showPopup, 30000); // 30 seconds
-            
-            // Also show if user tries to leave the page
-            window.addEventListener('mouseout', function(e) {
-                if (e.clientY < 0) {
-                    showPopup();
-                }
-            });
-        });
-        
-        // Show popup when user reaches bottom of page
-        window.addEventListener('scroll', function() {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                showPopup();
-            }
-        });
-    </script>
+    });
+
+    // Show popup every 15 seconds - ALWAYS
+    setInterval(function() {
+        showPopup();
+    }, 15000); // 15 seconds = 15000 milliseconds
+
+    // Also show popup on page load after 15 seconds
+    setTimeout(function() {
+        showPopup();
+    }, 15000);
+</script>
+
     
 
 
@@ -384,11 +376,10 @@
     <footer>
         <a href="/contact.html">Contact Us</a> <a href="/about.html">About Us</a>
         <p>&copy; 2025 PartsGenie. All rights reserved.</p>
-    </footer>
-    </div>
-     <div class="addressline">
-              <pre>1875 W Main St Sac City Iowa     service/parts: 223-456-234      helpdesk:098-8786-876</pre>
+        <div class="addressline">
+              <pre>1875 W Main St Sac City Iowa</pre>
         </div>
+    </footer>
     
 
     <!-- JavaScript -->

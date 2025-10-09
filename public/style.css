@@ -18,7 +18,7 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    opacity: 0.4;
+    opacity: 1;
     pointer-events: none; /* Prevents video from blocking clicks */
 }
 
@@ -27,7 +27,7 @@
     #bg-video {
         display: block; /* Make sure it's visible */
         object-fit: cover; /* Ensure it covers properly */
-        opacity: 0.3; /* Slightly dimmer on mobile for better readability */
+        opacity: 1; /* Slightly dimmer on mobile for better readability */
     }
 }
 
@@ -35,7 +35,7 @@
 @media (max-width: 480px) {
     #bg-video {
         display: block;
-        opacity: 0.25; /* Even dimmer for readability on small screens */
+        opacity: 1; /* Even dimmer for readability on small screens */
     }
 }
 

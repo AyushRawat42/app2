@@ -342,7 +342,6 @@ header .logo p {
     padding: 20px;
     font-family: Arial, sans-serif;
     background-color: white;
-    background-image: url(/public/images/whyus.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -707,13 +706,13 @@ header .logo p {
 
 /* PARTNERSHIP SECTION */
 .partnership {
-    background-image: url(https://images.unsplash.com/photo-1549636367-13c144c47063?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-image: url(https://images.unsplash.com/photo-1727893119356-1702fe921cf9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2050);
     padding: 80px 20px;
     margin-top: 100px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: burlywood;
+    color: #e74c3c;
     font-size: 20px;
     box-sizing: border-box;
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, 0px 0px 6px black;

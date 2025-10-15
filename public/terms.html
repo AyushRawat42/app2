@@ -1,1 +1,311 @@
-<h1>terms</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - PartsGenie</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Styling - Matching index.html */
+        header {
+            position: relative;
+            background-color: #c0392b;
+            color: white;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .addressline {
+            background-color: #a93226;
+            padding: 8px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .addressline pre {
+            color: white;
+            font-family: inherit;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .logo {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .logo h1 a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .hometab {
+            background-color: transparent;
+            padding: 1rem 0;
+        }
+
+        .hometab nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hometab nav ul li {
+            margin: 0;
+        }
+
+        .hometab nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+            border-radius: 4px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .hometab nav ul li a:hover {
+            background-color: rgba(192, 57, 43, 0.8);
+        }
+
+        /* Content Container */
+        .terms-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .terms-container h1 {
+            color: #c0392b;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #c0392b;
+            padding-bottom: 15px;
+        }
+
+        .terms-container h2 {
+            color: #c0392b;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .terms-container p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .terms-container ul {
+            margin: 15px 0 15px 40px;
+            color: #555;
+        }
+
+        .terms-container ul li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .effective-date {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: #c0392b;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #a93226;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 2rem;
+            }
+
+            .hometab nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .terms-container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .terms-container h1 {
+                font-size: 2rem;
+            }
+
+            .terms-container h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - Matching index.html -->
+    <header>
+        <div class="addressline">
+            <pre> service/parts: 223-456-234 | helpdesk: 098-8786-876</pre>
+        </div>
+        <div class="logo">
+            <h1><a href="index.html">PartsGenie</a></h1>
+            <p>Tested. Trusted. Delivered.</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="hometab">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="login.html">Get Quote</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Terms & Conditions Content -->
+    <div class="terms-container">
+        <h1>Terms & Conditions</h1>
+        <p class="effective-date">Effective Date: October 15, 2025</p>
+
+        <p>By accessing this website, you are agreeing to be bound by these terms and conditions. If you do not agree with all the terms and conditions stated on this page, please do not continue to use PartsGenie.</p>
+
+        <p>The following terms apply throughout these Terms and Conditions, Privacy Policy, and Disclaimer Notice, as well as to all agreements: "Client," "You," and "Your" refer to you, the individual accessing this website and agreeing to the Company's terms. "The Company," "Ourselves," "We," "Our," and "Us" refer to our organization. "Party," "Parties," or "Us" refers collectively to both the Client and the Company. These terms encompass the offer, acceptance, and consideration of payment necessary to provide services to the Client in the most appropriate way, specifically to meet the Client's needs regarding the Company's stated services. Any use of the above terminology, whether in singular, plural, capitalized form, or gender-specific pronouns such as he/she/they, shall be interpreted as interchangeable and referring to the same.</p>
+
+        <h2>Cookies</h2>
+        <p>We use cookies on this website. By accessing PartsGenie, you consent to the use of cookies in accordance with the PartsGenie Privacy Policy.</p>
+
+        <p>Cookies are commonly used on interactive websites to help retrieve user information for each visit. On our site, cookies are used to support the functionality of specific areas, making it more convenient for visitors. Additionally, some of our affiliate and advertising partners may also utilize cookies.</p>
+
+        <h2>License</h2>
+        <p>Unless explicitly stated otherwise, PartsGenie and/or its licensors hold the intellectual property rights to all content available on the PartsGenie website. All rights are reserved. You are permitted to access and use materials from PartsGenie for your personal use only, subject to the restrictions outlined in these terms and conditions.</p>
+
+        <p><strong>You are prohibited from:</strong></p>
+        <ul>
+            <li>Republishing material from PartsGenie</li>
+            <li>Selling, renting, or sub-licensing material from PartsGenie</li>
+            <li>Reproducing, duplicating, or copying material from PartsGenie</li>
+            <li>Redistributing content from PartsGenie</li>
+        </ul>
+
+        <h2>Hyperlinking to our Content</h2>
+        <p>The following organizations are permitted to link to our Website without prior written approval:</p>
+        <ul>
+            <li>Government agencies</li>
+            <li>Search engines</li>
+            <li>News organizations</li>
+            <li>Online directory distributors, linking to our Website in the same way they hyperlink to other businesses listed</li>
+            <li>System-wide Accredited Businesses (excluding non-profit organizations soliciting donations, charity shopping malls, and charity fundraising groups, which are not allowed to link to our site)</li>
+        </ul>
+
+        <p>These organizations may link to our homepage, publications, or other website content as long as the link: (a) is not misleading in any way; (b) does not falsely suggest sponsorship, endorsement, or approval of the linking organization and its products or services; and (c) fits appropriately within the context of the linking site.</p>
+
+        <p>We may also review and approve link requests from the following types of organizations:</p>
+        <ul>
+            <li>Well-known consumer or business information sources</li>
+            <li>Dot-com community websites</li>
+            <li>Associations or groups representing charities</li>
+            <li>Online directory distributors</li>
+            <li>Internet portals</li>
+            <li>Accounting, law, and consulting firms</li>
+            <li>Educational institutions and trade associations</li>
+        </ul>
+
+        <h2>iFrames</h2>
+        <p>You are not permitted to create frames around our web pages that modify the visual presentation or appearance of our Website without prior written consent.</p>
+
+        <h2>Content Liability</h2>
+        <p>We disclaim any responsibility for content displayed on your website. You agree to indemnify and hold us harmless against any claims arising from your website. No link shall be permitted on any website that may be construed as defamatory, obscene, criminal, or that infringes, violates, or encourages the infringement or violation of any third-party rights.</p>
+
+        <h2>Reservation of Rights</h2>
+        <p>We reserve the right, at any time, to request the removal of any or all links to our Website. Upon such a request, you agree to promptly remove all links to our Website. We further reserve the right to amend these terms and our linking policy without prior notice. By continuing to link to our Website, you acknowledge and accept these updated terms and conditions.</p>
+
+        <h2>Removal of Links from Our Website</h2>
+        <p>Should you identify any link on our Website that you deem offensive, you are encouraged to contact us at your convenience. While we will review and consider removal requests, we are under no obligation to act on such requests or to respond directly. We make no representations regarding the accuracy, completeness, or timeliness of the information presented on this Website. Furthermore, we do not guarantee the continuous availability of the Website or that its content will always be current.</p>
+
+        <h2>Disclaimer</h2>
+        <p>To the fullest extent allowed by applicable law, we disclaim all representations, warranties, and conditions related to our Website and its use. Nothing in this disclaimer shall:</p>
+        <ul>
+            <li>Limit or exclude either our liability or your liability for death or personal injury;</li>
+            <li>Limit or exclude either our liability or your liability for fraud or fraudulent misrepresentation;</li>
+            <li>Limit any of our or your liabilities in a manner not permitted by applicable law; or</li>
+            <li>Exclude any of our or your liabilities that cannot be excluded under applicable law.</li>
+        </ul>
+
+        <p style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="back-link">Back to Home</a>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+              <pre>1875 W Main St Sac City Iowa</pre>
+        </div>
+        <p>&copy; 2025 PartsGenie. All rights reserved. | <a href="terms.html" style="color: white;">Terms & Conditions</a></p>
+    </footer>
+</body>
+</html>

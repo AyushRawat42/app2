@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 
-const User = require('./Model/userser');
+const User = require('./Model/user');
 const Order = require('./Model/order');
 const Partner = require('./Model/partner');
 const db = require('./db');

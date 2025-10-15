@@ -380,102 +380,67 @@
     </div>
     
     <script>
-        document.getElementById('sameAsShipping').addEventListener('change', function() {
-            const billingFields = document.getElementById('billingFields');
-            if (this.checked) {
-                billingFields.style.display = 'none';
-            } else {
-                billingFields.style.display = 'block';
-            }
-        });
-        
-        document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                const creditCardFields = document.getElementById('creditCardFields');
-                if (this.value === 'credit') {
-                    creditCardFields.style.display = 'block';
-                } else {
-                    creditCardFields.style.display = 'none';
-                }
-            });
-        });
-        
-        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Form validation and submission logic would go here
-            alert('Order placed successfully!');
-        });
-
-
-         // When the form is submitted
-         document.getElementById("checkoutForm").addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent form from reloading the page
-      
-          // Collect data from the form
-          const FirstName = document.getElementById("FirstName").value;
-          const LastName = document.getElementById("LastName").value;
-          const Addressline1 = document.getElementById("Addressline1").value;
-          const Addressline2 = document.getElementById("Addressline2").value;
-          const City= document.getElementById("City").value;
-          const State= document.getElementById("State").value;
-          const Phone= document.getElementById("Phone").value;
-          const Email= document.getElementById("Email").value;
-          const ZIP=document.getElementById("ZIP").value;
-          const FirstName2= document.getElementById("FirstName2").value;
-          const LastName2= document.getElementById("LastName2").value;
-          const Addressline1b= document.getElementById("Addressline1b").value;
-          const Addressline2b= document.getElementById("Addressline2b").value;
-          const City2= document.getElementById("City2").value;
-          const State2= document.getElementById("State2").value;
-          const ZIP2= document.getElementById("ZIP2").value;
-          const Cardnum= document.getElementById("Cardnum").value;
-          const Namecard= document.getElementById("Namecard").value;
-          const Expiry= document.getElementById("Expiry").value;
-          const CVV= document.getElementById("CVV").value;
-          // Create an object with the form data
-          const data = {
-            FirstName:FirstName,
-            LastName:LastName,
-            Addressline1:Addressline1,
-            Addressline2:Addressline2,
-            City:City,
-            State:State,
-            ZIP:ZIP,
-                        Phone:Phone,
-            Email:Email,
-            FirstName2:FirstName2,
-            LastName2:LastName2,
-            Addressline1b:Addressline1b,
-            Addressline2b:Addressline2b,
-            City2:City2,
-            State2:State2,
-            ZIP2:ZIP2,
-            Cardnum:Cardnum,
-            Namecard:Namecard,
-            Expiry:Expiry,
-            CVV:CVV
-
-
-          };
-  console.log(data)
-          // Send the data to the backend using fetch
-          fetch("http://localhost:3000/submitbill", {
-            method: "POST",
+document.getElementById('checkoutForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Get cart items from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
+    const totalAmount = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    
+    const orderData = {
+        shipping: {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            address1: document.getElementById('address1').value,
+            address2: document.getElementById('address2').value,
+            city: document.getElementById('city').value,
+            state: document.getElementById('state').value,
+            zipCode: document.getElementById('zipCode').value,
+            phone: document.getElementById('phone').value,
+            email: document.getElementById('email').value
+        },
+        billing: {
+            firstName: document.getElementById('billingFirstName').value,
+            lastName: document.getElementById('billingLastName').value,
+            address1: document.getElementById('billingAddress1').value,
+            address2: document.getElementById('billingAddress2').value,
+            city: document.getElementById('billingCity').value,
+            state: document.getElementById('billingState').value,
+            zipCode: document.getElementById('billingZipCode').value
+        },
+        payment: {
+            cardNumber: document.getElementById('cardNumber').value,
+            cardholderName: document.getElementById('cardholderName').value
+        },
+        items: cartItems,
+        totalAmount: totalAmount
+    };
+    
+    try {
+        const response = await fetch('https://app2-production-b6e2.up.railway.app/api/checkout', {
+            method: 'POST',
             headers: {
-              "Content-Type": "application/json"
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data) // Convert the data to JSON format
-          })
-          .then(response => response.json())
-          .then(data => {
-            console.log("Success:", data);
-          })
-          .catch(error => {
-            console.error("Error:", error);
-          });
+            body: JSON.stringify(orderData)
         });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            alert(`Order placed successfully! Order #${data.orderNumber}`);
+            localStorage.removeItem('cart'); // Clear cart
+            window.location.href = 'index.html';
+        } else {
+            alert(data.error || 'Checkout failed');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Connection error. Please try again.');
+    }
+});
+</script>
 
-    </script>
     <script src="checkout.js"></script>
     <script src="cart.js"></script>
 

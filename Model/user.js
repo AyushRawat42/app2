@@ -1,40 +1,29 @@
-const mongoose = require("mongoose");  // Fixed: mongoose spelling
-const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({  // Fixed: mongoose spelling
-    username: {
+const userSchema = new mongoose.Schema({
+    name: {
         type: String,
-        required: true
-    },
-    phone: {
-        type: Number,
         required: true
     },
     email: {
         type: String,
-        required: true  // Made required for contact form
+        required: true,
+        unique: true
     },
-    part: {
+    password: {
         type: String,
-        enum: ['Engine', 'Transmission', 'Turbo', 'Other'],
-        default: 'Engine',
         required: true
     },
-    year: {
-        type: Number,
-    },
-    model: {
+    phone: String,
+    role: {
         type: String,
+        default: 'customer',
+        enum: ['customer', 'admin', 'partner']
     },
-    message: {  // Added message field for contact form
-        type: String
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
-}, {
-    timestamps: true  // Add createdAt and updatedAt automatically
 });
 
-// Note: Removed password hashing since this is for contact inquiries, not user accounts
-// If you need user authentication later, we'll create a separate schema
-
-const User = mongoose.model('User', userSchema);  // Fixed: mongoose spelling
-module.exports = User;
+module.exports = mongoose.model('User', userSchema);

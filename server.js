@@ -6,7 +6,7 @@ const User = require('./Model/user');
 const Order = require('./Model/order');
 const Partner = require('./Model/partner');
 const db = require('./db');
-
+const Quote = require('./Model/quote');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcryptjs'); // Use bcryptjs
@@ -151,6 +151,43 @@ app.post('/api/partner', async (req, res) => {
     } catch (err) {
         console.error('Partner application error:', err);
         res.status(500).json({ error: 'Server error submitting partner application' });
+    }
+});
+
+// Quote Request Endpoint
+app.post('/api/quote', async (req, res) => {
+    try {
+        const { name, phone, email, partType, makeYear, makeModel } = req.body;
+
+        const newQuote = new Quote({
+            name,
+            phone,
+            email,
+            partType,
+            makeYear,
+            makeModel
+        });
+
+        const savedQuote = await newQuote.save();
+
+        res.status(201).json({
+            success: true,
+            message: 'Quote request submitted successfully! We will contact you soon.',
+            quoteId: savedQuote._id
+        });
+    } catch (err) {
+        console.error('Quote submission error:', err);
+        res.status(500).json({ error: 'Server error submitting quote request' });
+    }
+});
+
+// Get all quotes (admin endpoint - optional)
+app.get('/api/quotes', async (req, res) => {
+    try {
+        const quotes = await Quote.find().sort({ submittedAt: -1 });
+        res.json(quotes);
+    } catch (err) {
+        res.status(500).json({ error: 'Error fetching quotes' });
     }
 });
 

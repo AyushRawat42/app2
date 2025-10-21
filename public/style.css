@@ -715,7 +715,7 @@ header .logo p {
     color: #e74c3c;
     font-size: 20px;
     box-sizing: border-box;
-    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, 0px 0px 6px black;
+    /* text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, 0px 0px 6px black; */
 }
 
 .partnership h1 {

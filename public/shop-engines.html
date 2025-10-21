@@ -1,596 +1,930 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Used Engines - PartsGenie</title> <style> /* Global Styles */ * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } body { background-color:#E9F1FA; color:#333; line-height:1.6; } /* Header */ header { background:linear-gradient(135deg,#c0392b 0%,#c0392b 100%); color:#fff; position:sticky; top:0; z-index:100; box-shadow:0 2px 10px rgba(0,0,0,0.1); } .addressline { background-color:rgba(0,0,0,0.1); padding:0.5rem 2rem; font-size:0.9rem; } .logo { padding:1rem 2rem; text-align:center; } .logo h1 { font-size:2rem; margin-bottom:0.5rem; } .logo p { font-style:italic; opacity:0.9; } nav { background-color:rgba(0,0,0,0.1); padding:1rem 2rem; } nav ul { display:flex; justify-content:center; list-style:none; gap:2rem; } nav a { color:#fff; text-decoration:none; font-weight:500; font-size:1.1rem; padding:0.5rem 1rem; border-radius:4px; transition:all 0.3s ease; text-transform:uppercase; letter-spacing:1px; position:relative; } nav a:hover { background-color:#e63946; color:#fff; } .cart-count { background:#ff4444; color:#fff; border-radius:50%; padding:2px 6px; font-size:0.8rem; position:absolute; top:-5px; right:-5px; min-width:18px; text-align:center; } /* Main */ .container { max-width:1200px; margin:2rem auto; padding:0 2rem; } .page-title { background:#fff; padding:2rem; border-radius:8px; margin-bottom:2rem; text-align:center; box-shadow:0 2px 4px rgba(0,0,0,0.1); } .page-title h1 { color:#e63946; font-size:2.5rem; margin-bottom:0.5rem; } .page-title p { color:#666; font-size:1.2rem; } /* Search */ .search-form { background:#fff; padding:2rem; border-radius:8px; margin-bottom:2rem; box-shadow:0 2px 4px rgba(0,0,0,0.1); } .search-form h3 { color:#333; margin-bottom:1rem; text-align:center; } .search-controls { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; align-items:center; } .search-controls input, .search-controls select { padding:0.75rem; border:2px solid #ddd; border-radius:4px; font-size:1rem; min-width:200px; } .search-controls input:focus, .search-controls select:focus { outline:none; border-color:#e63946; } .search-btn { background:#e63946; color:#fff; border:none; padding:0.75rem 1.5rem; font-size:1rem; font-weight:bold; border-radius:4px; cursor:pointer; transition:background-color 0.3s ease; } .search-btn:hover { background:#c0392b; } /* Engine Grid */ .engine-list { display:grid; grid-template-columns:repeat(auto-fill, minmax(350px,1fr)); gap:2rem; margin-bottom:2rem; } .engine-item { background:#fff; border:1px solid #ddd; padding:1.5rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); transition:all 0.3s ease; position:relative; } .engine-item:hover { transform:translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,0.15); } .engine-title { color:#e63946; margin-bottom:1rem; font-size:1.3rem; } .engine-image { width:100%; height:200px; object-fit:cover; border-radius:4px; margin-bottom:1rem; border:1px solid #eee; } .engine-details { list-style:none; margin-bottom:1.5rem; } .engine-details li { margin-bottom:0.5rem; display:flex; justify-content:space-between; } .engine-details strong { color:#333; } .price { color:#e63946; font-weight:bold; font-size:1.3rem; text-align:center; margin:1rem 0; padding:0.5rem; background:#f8f9fa; border-radius:4px; } .button-group { display:flex; gap:0.5rem; margin-top:1rem; } .btn { flex:1; padding:0.75rem 1rem; border:none; border-radius:4px; font-size:1rem; font-weight:bold; cursor:pointer; transition:all 0.3s ease; text-decoration:none; text-align:center; display:inline-block; } .add-to-cart { background:#e63946; color:#fff; } .add-to-cart:hover { background:#c0392b; transform:translateY(-1px); } .view-details { background:#f8f9fa; color:#333; border:2px solid #ddd; } .view-details:hover { background:#e9ecef; border-color:#c0392b; color:#c0392b; } /* Footer */ footer { background:linear-gradient(135deg,#c0392b 0%,#c0392b 100%); color:#fff; text-align:center; padding:2rem; margin-top:3rem; } footer p { margin-bottom:0.5rem; letter-spacing:1px; } /* Responsive */ @media (max-width:768px) { .container { padding:0 1rem; } nav ul { flex-wrap:wrap; gap:1rem; } .engine-list { grid-template-columns:1fr; } .search-controls { flex-direction:column; align-items:stretch; } .search-controls input, .search-controls select { min-width:auto; } .button-group { flex-direction:column; } } @media (max-width:480px) { .addressline { display:none; } .logo h1 { font-size:1.5rem; } nav ul { flex-direction:column; align-items:center; gap:0.5rem; } } </style> </head> <body> <!-- Header --> <header> <div class="addressline"> <pre>1875 W Main St Sac City Iowa service/parts: 223-456-234 helpdesk:098-8786-876</pre> </div> <div class="logo"> <h1>PartsGenie</h1> <p>Tested. Trusted. Delivered.</p> </div> <nav> <ul> <li><a href="/index.html">Home 🏠</a></li> <li><a href="shop-engines.html">Shop 🔧</a></li> <li><a href="#" onclick="alert('Quote system coming soon!')">Get Quote 💰</a></li> <li> <a href="cart.html" class="cart-link"> Cart 🛒 <span class="cart-count">0</span> </a> </li> </ul> </nav> </header> <div class="container"> <!-- Page Title --> <div class="page-title"> <h1>Quality Used Engines</h1> <p>Professional tested engines with warranty - Fast nationwide shipping</p> </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Used Engines - PartsGenie</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-       <!-- Search Form -->
-<div class="search-form">
-  <h3>Find the Perfect Engine for Your Vehicle</h3>
-  <div class="search-controls">
-    <input type="text" id="searchMake" placeholder="Search by make/model" />
-    <input type="number" id="searchYear" placeholder="Year (e.g. 2015)" min="1990" max="2025" />
-    <select id="engineSize">
-      <option value="">Any Engine Size</option>
-      <option value="1.0">1.0L - 1.5L</option>
-      <option value="1.6">1.6L - 2.0L</option>
-      <option value="2.1">2.1L - 2.5L</option>
-      <option value="2.6">2.6L - 3.0L</option>
-      <option value="3.1">3.1L+</option>
-    </select>
-    <button class="search-btn" onclick="searchEngines()">Search Engines</button>
-  </div>
-</div>
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #0a1128;
+            background-color: #E9F1FA;
+        }
 
-<!-- Engine Grid -->
-<div class="engine-list" id="engineList">
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #c0392b;
+            color: white;
+            padding: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
- <!-- Engine 1: Ford EcoBoost 2.0L -->
-<div class="engine-card" 
-     data-id="ford-ecoboost-2-0l-2019" 
-     data-name="Ford EcoBoost 2.0L" 
-     data-price="1850"
-     data-image="/images/engines/ford-ecoboost.jpg">
-    <h3>Ford EcoBoost 2.0L</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2019</p>
-        <p><strong>Mileage:</strong> 42,000 miles</p>
-        <p><strong>Engine Code:</strong> LHB-42</p>
-        <p><strong>Condition:</strong> Low mileage, tested</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$1,850</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details" onclick="window.location.href='engine1.html'">View Details</button>
-    </div>
-</div>
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
 
-<!-- Engine 2: Toyota 2.5L 4-Cylinder -->
-<div class="engine-card" 
-     data-id="toyota-2-5l-4cyl-2020" 
-     data-name="Toyota 2.5L 4-Cylinder" 
-     data-price="2200"
-     data-image="/images/engines/toyota-2-5l.jpg">
-    <h3>Toyota 2.5L 4-Cylinder</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 35,000 miles</p>
-        <p><strong>Engine Code:</strong> 2AR-FE</p>
-        <p><strong>Condition:</strong> Excellent condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,200</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .logo h1 a {
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+        }
 
-<!-- Engine 3: Chevrolet 5.3L V8 -->
-<div class="engine-card" 
-     data-id="chevrolet-5-3l-v8-2018" 
-     data-name="Chevrolet 5.3L V8" 
-     data-price="3500"
-     data-image="/images/engines/chevrolet-5-3l.jpg">
-    <h3>Chevrolet 5.3L V8</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2018</p>
-        <p><strong>Mileage:</strong> 65,000 miles</p>
-        <p><strong>Engine Code:</strong> L83</p>
-        <p><strong>Condition:</strong> Good condition, tested</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,500</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
 
-<!-- Engine 4: Honda 1.5L Turbo -->
-<div class="engine-card" 
-     data-id="honda-1-5l-turbo-2021" 
-     data-name="Honda 1.5L Turbo" 
-     data-price="2800"
-     data-image="/images/engines/honda-1-5l.jpg">
-    <h3>Honda 1.5L Turbo</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2021</p>
-        <p><strong>Mileage:</strong> 25,000 miles</p>
-        <p><strong>Engine Code:</strong> L15B7</p>
-        <p><strong>Condition:</strong> Like new condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,800</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
 
-<!-- Engine 5: Dodge 3.6L Pentastar V6 -->
-<div class="engine-card" 
-     data-id="dodge-3-6l-pentastar-2021" 
-     data-name="Dodge 3.6L Pentastar V6" 
-     data-price="2950"
-     data-image="/images/engines/dodge-3-6l.jpg">
-    <h3>Dodge 3.6L Pentastar V6</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2021</p>
-        <p><strong>Mileage:</strong> 28,400 miles</p>
-        <p><strong>Engine Code:</strong> 3.6L V6 24V</p>
-        <p><strong>Condition:</strong> Like new condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,950</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
 
-<!-- Engine 6: BMW 2.0L TwinPower Turbo -->
-<div class="engine-card" 
-     data-id="bmw-2-0l-twinpower-2020" 
-     data-name="BMW 2.0L TwinPower Turbo" 
-     data-price="3200"
-     data-image="/images/engines/bmw-2-0l.jpg">
-    <h3>BMW 2.0L TwinPower Turbo</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 31,000 miles</p>
-        <p><strong>Engine Code:</strong> B48B20</p>
-        <p><strong>Condition:</strong> Excellent condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,200</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        nav a:hover {
+            opacity: 0.8;
+        }
 
-<!-- Engine 7: Nissan 3.5L V6 -->
-<div class="engine-card" 
-     data-id="nissan-3-5l-v6-2019" 
-     data-name="Nissan 3.5L V6" 
-     data-price="2650"
-     data-image="/images/engines/nissan-3-5l.jpg">
-    <h3>Nissan 3.5L V6</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2019</p>
-        <p><strong>Mileage:</strong> 48,000 miles</p>
-        <p><strong>Engine Code:</strong> VQ35DE</p>
-        <p><strong>Condition:</strong> Good condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,650</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .cart-count {
+            background: #ff4444;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
 
-<!-- Engine 8: Subaru 2.5L Boxer -->
-<div class="engine-card" 
-     data-id="subaru-2-5l-boxer-2020" 
-     data-name="Subaru 2.5L Boxer" 
-     data-price="2400"
-     data-image="/images/engines/subaru-2-5l.jpg">
-    <h3>Subaru 2.5L Boxer</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 38,000 miles</p>
-        <p><strong>Engine Code:</strong> FB25</p>
-        <p><strong>Condition:</strong> Excellent condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,400</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        /* Main Content */
+        .shop-main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
 
-<!-- Engine 9: Mazda 2.5L SKYACTIV -->
-<div class="engine-card" 
-     data-id="mazda-2-5l-skyactiv-2021" 
-     data-name="Mazda 2.5L SKYACTIV" 
-     data-price="2300"
-     data-image="/images/engines/mazda-2-5l.jpg">
-    <h3>Mazda 2.5L SKYACTIV</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2021</p>
-        <p><strong>Mileage:</strong> 22,000 miles</p>
-        <p><strong>Engine Code:</strong> PY-VPS</p>
-        <p><strong>Condition:</strong> Like new condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,300</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-<!-- Engine 10: Volkswagen 2.0L TSI -->
-<div class="engine-card" 
-     data-id="volkswagen-2-0l-tsi-2019" 
-     data-name="Volkswagen 2.0L TSI" 
-     data-price="2750"
-     data-image="/images/engines/volkswagen-2-0l.jpg">
-    <h3>Volkswagen 2.0L TSI</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2019</p>
-        <p><strong>Mileage:</strong> 41,000 miles</p>
-        <p><strong>Engine Code:</strong> EA888</p>
-        <p><strong>Condition:</strong> Good condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,750</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
 
-<!-- Engine 11: Hyundai 2.4L Theta II -->
-<div class="engine-card" 
-     data-id="hyundai-2-4l-theta-2018" 
-     data-name="Hyundai 2.4L Theta II" 
-     data-price="1950"
-     data-image="/images/engines/hyundai-2-4l.jpg">
-    <h3>Hyundai 2.4L Theta II</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2018</p>
-        <p><strong>Mileage:</strong> 55,000 miles</p>
-        <p><strong>Engine Code:</strong> G4KE</p>
-        <p><strong>Condition:</strong> Good condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$1,950</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
 
-<!-- Engine 12: Kia 2.0L GDI -->
-<div class="engine-card" 
-     data-id="kia-2-0l-gdi-2020" 
-     data-name="Kia 2.0L GDI" 
-     data-price="2100"
-     data-image="/images/engines/kia-2-0l.jpg">
-    <h3>Kia 2.0L GDI</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 33,000 miles</p>
-        <p><strong>Engine Code:</strong> G4NA</p>
-        <p><strong>Condition:</strong> Excellent condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,100</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
 
-<!-- Engine 13: Jeep 3.6L Pentastar -->
-<div class="engine-card" 
-     data-id="jeep-3-6l-pentastar-2019" 
-     data-name="Jeep 3.6L Pentastar" 
-     data-price="2850"
-     data-image="/images/engines/jeep-3-6l.jpg">
-    <h3>Jeep 3.6L Pentastar</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2019</p>
-        <p><strong>Mileage:</strong> 44,000 miles</p>
-        <p><strong>Engine Code:</strong> ERB</p>
-        <p><strong>Condition:</strong> Good condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,850</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        /* Search and Filter Section */
+        .search-filter-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
 
-<!-- Engine 14: GMC 6.2L V8 -->
-<div class="engine-card" 
-     data-id="gmc-6-2l-v8-2020" 
-     data-name="GMC 6.2L V8" 
-     data-price="4200"
-     data-image="/images/engines/gmc-6-2l.jpg">
-    <h3>GMC 6.2L V8</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 39,000 miles</p>
-        <p><strong>Engine Code:</strong> L87</p>
-        <p><strong>Condition:</strong> Excellent condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$4,200</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .search-container h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
 
-<!-- Engine 15: Acura 2.0L Turbo -->
-<div class="engine-card" 
-     data-id="acura-2-0l-turbo-2021" 
-     data-name="Acura 2.0L Turbo" 
-     data-price="3100"
-     data-image="/images/engines/acura-2-0l.jpg">
-    <h3>Acura 2.0L Turbo</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2021</p>
-        <p><strong>Mileage:</strong> 19,000 miles</p>
-        <p><strong>Engine Code:</strong> K20C1</p>
-        <p><strong>Condition:</strong> Like new condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,100</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .filter-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-<!-- Engine 16: Infiniti 3.0L V6 Twin Turbo -->
-<div class="engine-card" 
-     data-id="infiniti-3-0l-v6-tt-2020" 
-     data-name="Infiniti 3.0L V6 Twin Turbo" 
-     data-price="3800"
-     data-image="/images/engines/infiniti-3-0l.jpg">
-    <h3>Infiniti 3.0L V6 Twin Turbo</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 26,000 miles</p>
-        <p><strong>Engine Code:</strong> VR30DDTT</p>
-        <p><strong>Condition:</strong> Excellent condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,800</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .filter-select {
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            min-width: 200px;
+        }
 
-<!-- Engine 17: Lexus 3.5L V6 -->
-<div class="engine-card" 
-     data-id="lexus-3-5l-v6-2019" 
-     data-name="Lexus 3.5L V6" 
-     data-price="3400"
-     data-image="/images/engines/lexus-3-5l.jpg">
-    <h3>Lexus 3.5L V6</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2019</p>
-        <p><strong>Mileage:</strong> 32,000 miles</p>
-        <p><strong>Engine Code:</strong> 2GR-FKS</p>
-        <p><strong>Condition:</strong> Excellent condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,400</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .search-btn {
+            background: #c0392b;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-<!-- Engine 18: Cadillac 3.6L V6 -->
-<div class="engine-card" 
-     data-id="cadillac-3-6l-v6-2020" 
-     data-name="Cadillac 3.6L V6" 
-     data-price="3300"
-     data-image="/images/engines/cadillac-3-6l.jpg">
-    <h3>Cadillac 3.6L V6</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 29,000 miles</p>
-        <p><strong>Engine Code:</strong> LGX</p>
-        <p><strong>Condition:</strong> Excellent condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,300</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .search-btn:hover {
+            background: #a93226;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
 
-<!-- Engine 19: Lincoln 3.0L V6 Twin Turbo -->
-<div class="engine-card" 
-     data-id="lincoln-3-0l-v6-tt-2021" 
-     data-name="Lincoln 3.0L V6 Twin Turbo" 
-     data-price="3900"
-     data-image="/images/engines/lincoln-3-0l.jpg">
-    <h3>Lincoln 3.0L V6 Twin Turbo</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2021</p>
-        <p><strong>Mileage:</strong> 18,000 miles</p>
-        <p><strong>Engine Code:</strong> GTDI</p>
-        <p><strong>Condition:</strong> Like new condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,900</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
-<!-- Engine 20: Buick 2.0L Turbo -->
-<div class="engine-card" 
-     data-id="buick-2-0l-turbo-2019" 
-     data-name="Buick 2.0L Turbo" 
-     data-price="2450"
-     data-image="/images/engines/buick-2-0l.jpg">
-    <h3>Buick 2.0L Turbo</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2019</p>
-        <p><strong>Mileage:</strong> 47,000 miles</p>
-        <p><strong>Engine Code:</strong> LTG</p>
-        <p><strong>Condition:</strong> Good condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,450</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        /* Product Card */
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
 
-<!-- Engine 21: Genesis 3.8L V6 -->
-<div class="engine-card" 
-     data-id="genesis-3-8l-v6-2020" 
-     data-name="Genesis 3.8L V6" 
-     data-price="3600"
-     data-image="/images/engines/genesis-3-8l.jpg">
-    <h3>Genesis 3.8L V6</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 24,000 miles</p>
-        <p><strong>Engine Code:</strong> Lambda II</p>
-        <p><strong>Condition:</strong> Excellent condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,600</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
 
-<!-- Engine 22: Ram 5.7L HEMI V8 -->
-<div class="engine-card" 
-     data-id="ram-5-7l-hemi-2019" 
-     data-name="Ram 5.7L HEMI V8" 
-     data-price="3700"
-     data-image="/images/engines/ram-5-7l.jpg">
-    <h3>Ram 5.7L HEMI V8</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2019</p>
-        <p><strong>Mileage:</strong> 52,000 miles</p>
-        <p><strong>Engine Code:</strong> 5.7L HEMI</p>
-        <p><strong>Condition:</strong> Good condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$3,700</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .engine-image {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+            background: #f8f9fa;
+        }
 
-<!-- Engine 23: Chrysler 3.6L Pentastar -->
-<div class="engine-card" 
-     data-id="chrysler-3-6l-pentastar-2020" 
-     data-name="Chrysler 3.6L Pentastar" 
-     data-price="2800"
-     data-image="/images/engines/chrysler-3-6l.jpg">
-    <h3>Chrysler 3.6L Pentastar</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Mileage:</strong> 36,000 miles</p>
-        <p><strong>Engine Code:</strong> ERB</p>
-        <p><strong>Condition:</strong> Good condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,800</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .engine-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
 
-<!-- Engine 24: Mitsubishi 2.4L MIVEC -->
-<div class="engine-card" 
-     data-id="mitsubishi-2-4l-mivec-2018" 
-     data-name="Mitsubishi 2.4L MIVEC" 
-     data-price="1800"
-     data-image="/images/engines/mitsubishi-2-4l.jpg">
-    <h3>Mitsubishi 2.4L MIVEC</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2018</p>
-        <p><strong>Mileage:</strong> 61,000 miles</p>
-        <p><strong>Engine Code:</strong> 4B12</p>
-        <p><strong>Condition:</strong> Good condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$1,800</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .product-card:hover .engine-image img {
+            transform: scale(1.05);
+        }
 
-<!-- Engine 25: Pontiac 3.6L V6 -->
-<div class="engine-card" 
-     data-id="pontiac-3-6l-v6-2017" 
-     data-name="Pontiac 3.6L V6" 
-     data-price="2200"
-     data-image="/images/engines/pontiac-3-6l.jpg">
-    <h3>Pontiac 3.6L V6</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2017</p>
-        <p><strong>Mileage:</strong> 68,000 miles</p>
-        <p><strong>Engine Code:</strong> LFX</p>
-        <p><strong>Condition:</strong> Good condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$2,200</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .engine-details {
+            padding: 1.5rem;
+        }
 
-<!-- Engine 26: Saturn 2.4L Ecotec -->
-<div class="engine-card" 
-     data-id="saturn-2-4l-ecotec-2018" 
-     data-name="Saturn 2.4L Ecotec" 
-     data-price="1650"
-     data-image="/images/engines/saturn-2-4l.jpg">
-    <h3>Saturn 2.4L Ecotec</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2018</p>
-        <p><strong>Mileage:</strong> 71,000 miles</p>
-        <p><strong>Engine Code:</strong> LE5</p>
-        <p><strong>Condition:</strong> Good condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$1,650</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
+        .engine-details h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
 
-<!-- Engine 27: Mercury 3.0L V6 -->
-<div class="engine-card" 
-     data-id="mercury-3-0l-v6-2017" 
-     data-name="Mercury 3.0L V6" 
-     data-price="1900"
-     data-image="/images/engines/mercury-3-0l.jpg">
-    <h3>Mercury 3.0L V6</h3>
-    <div class="engine-details">
-        <p><strong>Year:</strong> 2017</p>
-        <p><strong>Mileage:</strong> 74,000 miles</p>
-        <p><strong>Engine Code:</strong> Duratec 30</p>
-        <p><strong>Condition:</strong> Good condition</p>
-        <p><strong>Warranty:</strong> 90 days</p>
-        <p class="price">$1,900</p>
-    </div>
-    <div class="engine-actions">
-        <button class="add-to-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-    </div>
-</div>
-</div>
+        .engine-details {
+            margin-bottom: 1.5rem;
+        }
 
-     </div> <footer> <p>© 2025 PartsGenie - All rights reserved</p> <p>Contact us: (555) 123-4567 | info@partsgenie.com</p> </footer>
+        .engine-details p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .engine-details strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #c0392b;
+            margin-top: 1rem;
+            text-align: center;
+            padding: 0.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px dashed #c0392b;
+        }
+
+        /* Product Actions */
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .add-to-cart, .view-details {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .add-to-cart {
+            background: #c0392b;
+            color: white;
+        }
+
+        .add-to-cart:hover {
+            background: #a93226;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+        }
+
+        .view-details {
+            background: #34495e;
+            color: white;
+        }
+
+        .view-details:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 73, 94, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            margin-bottom: 0;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .filter-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-select {
+                min-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+           .engine-details {
+                padding: 1rem;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="index.html">PartsGenie</a></h1>
+                <p>Quality Used Auto Parts</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="partner.html">Partners</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-link">
+                            🛒 Cart <span class="cart-count" id="cart-badge" style="display: none;">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="shop-main">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Quality Used Engines</h1>
+                <p>Professional tested engines with warranty - Fast nationwide shipping</p>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-container">
+                    <h2>Find the Perfect Engine for Your Vehicle</h2>
+                    <div class="filter-options">
+                        <select class="filter-select">
+                            <option value="">Any Make</option>
+                            <option value="mazda">Mazda</option>
+                            <option value="bmw">BMW</option>
+                            <option value="gmc">GMC</option>
+                            <option value="honda">Honda</option>
+                            <option value="chrysler">Chrysler</option>
+                            <option value="dodge">Dodge</option>
+                            <option value="chevy">Chevrolet</option>
+                            <option value="audi">Audi</option>
+                            <option value="ford">Ford</option>
+                            <option value="hyundai">Hyundai</option>
+                            <option value="mercedes">Mercedes</option>
+                        </select>
+                        <button class="search-btn">Search Engines</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <div class="products-grid">
+            <!-- Engine 1: Ford EcoBoost -->
+            <div class="product-card"
+                 data-id="ford-ecoboost-2-0l-2019"
+                 data-name="Ford EcoBoost 2.0L"
+                 data-price="1850"
+                 data-image="https://www.powertrainproducts.net/wp-content/uploads/2022/03/ford-5.4l-v8-remanufactured-engine-1999-2001-1.jpg">
+                <img src="https://www.powertrainproducts.net/wp-content/uploads/2022/03/ford-5.4l-v8-remanufactured-engine-1999-2001-1.jpg" alt="Ford EcoBoost Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Ford EcoBoost 2.0L</h3>
+                    <p><strong>Year:</strong> 2019</p>
+                    <p><strong>Mileage:</strong> 42,000 miles</p>
+                    <p><strong>Engine Code:</strong> LHB-42</p>
+                    <p><strong>Condition:</strong> Low mileage, tested</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$1,850</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 2: Toyota 2.5L -->
+            <div class="product-card"
+                 data-id="toyota-2-5l-4cyl-2020"
+                 data-name="Toyota 2.5L 4-Cylinder"
+                 data-price="2200"
+                 data-image="https://i.ebayimg.com/images/g/kVwAAOSwatZkFJOb/s-l1200.jpg">
+                <img src="https://i.ebayimg.com/images/g/kVwAAOSwatZkFJOb/s-l1200.jpg" alt="Toyota Camry Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Toyota 2.5L 4-Cylinder</h3>
+                    <p><strong>Year:</strong> 2020</p>
+                    <p><strong>Mileage:</strong> 35,000 miles</p>
+                    <p><strong>Engine Code:</strong> 2AR-FE</p>
+                    <p><strong>Condition:</strong> Excellent condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,200</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 3: Chevrolet Silverado V8 -->
+            <div class="product-card"
+                 data-id="chevy-silverado-5-3l-v8-2018"
+                 data-name="Chevrolet Silverado 5.3L V8"
+                 data-price="3500"
+                 data-image="https://www.airdesigns.net/wp-content/uploads/09976.jpg">
+                <img src="https://www.airdesigns.net/wp-content/uploads/09976.jpg" alt="Chevrolet Silverado Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Chevrolet Silverado 5.3L V8</h3>
+                    <p><strong>Year:</strong> 2018</p>
+                    <p><strong>Mileage:</strong> 65,000 miles</p>
+                    <p><strong>Engine Code:</strong> L83</p>
+                    <p><strong>Condition:</strong> Good condition, tested</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$3,500</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 4: Honda Civic Turbo -->
+            <div class="product-card"
+                 data-id="honda-civic-1-5l-turbo-2021"
+                 data-name="Honda Civic 1.5L Turbo"
+                 data-price="2800"
+                 data-image="https://globaljdmautoparts.com/cdn/shop/products/IMG_3442_a30a97a6-f54b-4c1c-9716-295f2d9622f4_1024x1024.jpg?v=1591726787">
+                <img src="https://globaljdmautoparts.com/cdn/shop/products/IMG_3442_a30a97a6-f54b-4c1c-9716-295f2d9622f4_1024x1024.jpg?v=1591726787" alt="Honda Civic Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Honda Civic 1.5L Turbo</h3>
+                    <p><strong>Year:</strong> 2021</p>
+                    <p><strong>Mileage:</strong> 25,000 miles</p>
+                    <p><strong>Engine Code:</strong> L15B7</p>
+                    <p><strong>Condition:</strong> Like new condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,800</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 5: Dodge Ram V6 -->
+            <div class="product-card"
+                 data-id="dodge-ram-3-6l-v6-2021"
+                 data-name="Dodge Ram 3.6L V6"
+                 data-price="2950"
+                 data-image="https://www.speedwaymotors.com/_next/image?q=75&url=https%3A%2F%2Fcontent.speedwaymotors.com%2FProductImages%2F35020001_L1600_221c9dbf-c763-4b77-8c18-593c95cd24ca.jpg&w=3840">
+                <img src="https://www.speedwaymotors.com/_next/image?q=75&url=https%3A%2F%2Fcontent.speedwaymotors.com%2FProductImages%2F35020001_L1600_221c9dbf-c763-4b77-8c18-593c95cd24ca.jpg&w=3840" alt="Dodge Ram Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Dodge Ram 3.6L V6</h3>
+                    <p><strong>Year:</strong> 2021</p>
+                    <p><strong>Mileage:</strong> 28,400 miles</p>
+                    <p><strong>Engine Code:</strong> 3.6L V6 24V</p>
+                    <p><strong>Condition:</strong> Like new condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,950</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 6: BMW 3 Series Turbo -->
+            <div class="product-card"
+                 data-id="bmw-3-series-2-0l-turbo-2020"
+                 data-name="BMW 3 Series 2.0L Turbo"
+                 data-price="3200"
+                 data-image="https://www.tomsforeign.com/cdn/shop/products/1284965__4_2048x.jpg?v=1684963546">
+                <img src="https://www.tomsforeign.com/cdn/shop/products/1284965__4_2048x.jpg?v=1684963546" alt="BMW 3 Series Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>BMW 3 Series 2.0L Turbo</h3>
+                    <p><strong>Year:</strong> 2020</p>
+                    <p><strong>Mileage:</strong> 31,000 miles</p>
+                    <p><strong>Engine Code:</strong> B48B20</p>
+                    <p><strong>Condition:</strong> Excellent condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$3,200</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 7: Nissan Altima V6 -->
+            <div class="product-card"
+                 data-id="nissan-altima-3-5l-v6-2019"
+                 data-name="Nissan Altima 3.5L V6"
+                 data-price="2650"
+                 data-image="https://texasjdmmotors.com/cdn/shop/files/P1060035_1024x1024%402x.jpg?v=1728142013">
+                <img src="https://texasjdmmotors.com/cdn/shop/files/P1060035_1024x1024%402x.jpg?v=1728142013" alt="Nissan Altima Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Nissan Altima 3.5L V6</h3>
+                    <p><strong>Year:</strong> 2019</p>
+                    <p><strong>Mileage:</strong> 48,000 miles</p>
+                    <p><strong>Engine Code:</strong> VQ35DE</p>
+                    <p><strong>Condition:</strong> Good condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,650</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 8: Subaru Outback -->
+            <div class="product-card"
+                 data-id="subaru-outback-2-5l-2020"
+                 data-name="Subaru Outback 2.5L"
+                 data-price="2400"
+                 data-image="https://i.ebayimg.com/images/g/CcwAAOSwLPVnQPi4/s-l1200.jpg">
+                <img src="https://i.ebayimg.com/images/g/CcwAAOSwLPVnQPi4/s-l1200.jpg" alt="Subaru Outback Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Subaru Outback 2.5L</h3>
+                    <p><strong>Year:</strong> 2020</p>
+                    <p><strong>Mileage:</strong> 38,000 miles</p>
+                    <p><strong>Engine Code:</strong> FB25</p>
+                    <p><strong>Condition:</strong> Excellent condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,400</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 9: Mazda CX-5 -->
+            <div class="product-card"
+                 data-id="mazda-cx5-2-5l-2021"
+                 data-name="Mazda CX-5 2.5L"
+                 data-price="2300"
+                 data-image="https://i.ebayimg.com/images/g/2LEAAOSw9p9n2-fj/s-l1200.jpg">
+                <img src="https://i.ebayimg.com/images/g/2LEAAOSw9p9n2-fj/s-l1200.jpg" alt="Mazda CX-5 Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Mazda CX-5 2.5L</h3>
+                    <p><strong>Year:</strong> 2021</p>
+                    <p><strong>Mileage:</strong> 22,000 miles</p>
+                    <p><strong>Engine Code:</strong> PY-VPS</p>
+                    <p><strong>Condition:</strong> Like new condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,300</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 10: Volkswagen Jetta Turbo -->
+            <div class="product-card"
+                 data-id="vw-jetta-2-0l-turbo-2019"
+                 data-name="Volkswagen Jetta 2.0L Turbo"
+                 data-price="2750"
+                 data-image="https://i.ebayimg.com/images/g/2LEAAOSw9p9n2-fj/s-l1200.jpg">
+                <img src="https://i.ebayimg.com/images/g/2LEAAOSw9p9n2-fj/s-l1200.jpg" alt="Volkswagen Jetta Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Volkswagen Jetta 2.0L Turbo</h3>
+                    <p><strong>Year:</strong> 2019</p>
+                    <p><strong>Mileage:</strong> 41,000 miles</p>
+                    <p><strong>Engine Code:</strong> EA888</p>
+                    <p><strong>Condition:</strong> Good condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,750</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 11: Kia Sportage -->
+            <div class="product-card"
+                 data-id="kia-sportage-2-4l-2018"
+                 data-name="Kia Sportage 2.4L"
+                 data-price="1950"
+                 data-image="https://xinlinautoparts.com/cdn/shop/files/g4nc-long-block-engine-20l-fit-for-hyundai-kia-778021.jpg?v=1728616259">
+                <img src="https://xinlinautoparts.com/cdn/shop/files/g4nc-long-block-engine-20l-fit-for-hyundai-kia-778021.jpg?v=1728616259" alt="Kia Sportage Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Kia Sportage 2.4L</h3>
+                    <p><strong>Year:</strong> 2018</p>
+                    <p><strong>Mileage:</strong> 55,000 miles</p>
+                    <p><strong>Engine Code:</strong> G4KE</p>
+                    <p><strong>Condition:</strong> Good condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$1,950</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 12: Hyundai Elantra -->
+            <div class="product-card"
+                 data-id="hyundai-elantra-2-0l-2020"
+                 data-name="Hyundai Elantra 2.0L"
+                 data-price="2100"
+                 data-image="https://i.ebayimg.com/images/g/DoMAAOSw8JJn5GcC/s-l1200.jpg">
+                <img src="https://i.ebayimg.com/images/g/DoMAAOSw8JJn5GcC/s-l1200.jpg" alt="Hyundai Elantra Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Hyundai Elantra 2.0L</h3>
+                    <p><strong>Year:</strong> 2020</p>
+                    <p><strong>Mileage:</strong> 33,000 miles</p>
+                    <p><strong>Engine Code:</strong> G4NA</p>
+                    <p><strong>Condition:</strong> Excellent condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,100</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 13: Jeep Wrangler V6 -->
+            <div class="product-card"
+                 data-id="jeep-wrangler-3-6l-v6-2019"
+                 data-name="Jeep Wrangler 3.6L V6"
+                 data-price="2850"
+                 data-image="https://flengines4less.com/wp-content/uploads/2024/04/3.6-LONG-BLOCK.webp">
+                <img src="https://flengines4less.com/wp-content/uploads/2024/04/3.6-LONG-BLOCK.webp" alt="Jeep Wrangler Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Jeep Wrangler 3.6L V6</h3>
+                    <p><strong>Year:</strong> 2019</p>
+                    <p><strong>Mileage:</strong> 44,000 miles</p>
+                    <p><strong>Engine Code:</strong> ERB</p>
+                    <p><strong>Condition:</strong> Good condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,850</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 14: Chevrolet Corvette V8 -->
+            <div class="product-card"
+                 data-id="chevy-corvette-6-2l-v8-2020"
+                 data-name="Chevrolet Corvette 6.2L V8"
+                 data-price="4200"
+                 data-image="https://i.ebayimg.com/thumbs/images/g/jnoAAOSwTzxnpo-n/s-l1200.jpg">
+                <img src="https://i.ebayimg.com/thumbs/images/g/jnoAAOSwTzxnpo-n/s-l1200.jpg" alt="Chevrolet Corvette Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Chevrolet Corvette 6.2L V8</h3>
+                    <p><strong>Year:</strong> 2020</p>
+                    <p><strong>Mileage:</strong> 39,000 miles</p>
+                    <p><strong>Engine Code:</strong> L87</p>
+                    <p><strong>Condition:</strong> Excellent condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$4,200</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 15: Honda Civic Type R -->
+            <div class="product-card"
+                 data-id="honda-civic-type-r-2-0l-turbo-2021"
+                 data-name="Honda Civic Type R 2.0L Turbo"
+                 data-price="3100"
+                 data-image="https://globaljdmautoparts.com/cdn/shop/products/IMG_3442_a30a97a6-f54b-4c1c-9716-295f2d9622f4_1024x1024.jpg?v=1591726787">
+                <img src="https://globaljdmautoparts.com/cdn/shop/products/IMG_3442_a30a97a6-f54b-4c1c-9716-295f2d9622f4_1024x1024.jpg?v=1591726787" alt="Honda Civic Type R Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Honda Civic Type R 2.0L Turbo</h3>
+                    <p><strong>Year:</strong> 2021</p>
+                    <p><strong>Mileage:</strong> 19,000 miles</p>
+                    <p><strong>Engine Code:</strong> K20C1</p>
+                    <p><strong>Condition:</strong> Like new condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$3,100</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 16: Infiniti Q50 Twin Turbo -->
+            <div class="product-card"
+                 data-id="infiniti-q50-3-0l-twin-turbo-2020"
+                 data-name="Infiniti Q50 3.0L Twin Turbo"
+                 data-price="3800"
+                 data-image="https://i.ebayimg.com/00/s/MTA1OVgxNjAw/z/ltsAAOSwd~RnRlVj/%24_57.JPG?set_id=880000500F">
+                <img src="https://i.ebayimg.com/00/s/MTA1OVgxNjAw/z/ltsAAOSwd~RnRlVj/%24_57.JPG?set_id=880000500F" alt="Infiniti Q50 Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Infiniti Q50 3.0L Twin Turbo</h3>
+                    <p><strong>Year:</strong> 2020</p>
+                    <p><strong>Mileage:</strong> 26,000 miles</p>
+                    <p><strong>Engine Code:</strong> VR30DDTT</p>
+                    <p><strong>Condition:</strong> Excellent condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$3,800</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 17: Lexus RX V6 -->
+            <div class="product-card"
+                 data-id="lexus-rx-3-5l-v6-2019"
+                 data-name="Lexus RX 3.5L V6"
+                 data-price="3400"
+                 data-image="https://i.ebayimg.com/images/g/GtcAAOSw0-Zn~XQ4/s-l1200.png">
+                <img src="https://i.ebayimg.com/images/g/GtcAAOSw0-Zn~XQ4/s-l1200.png" alt="Lexus RX Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Lexus RX 3.5L V6</h3>
+                    <p><strong>Year:</strong> 2019</p>
+                    <p><strong>Mileage:</strong> 32,000 miles</p>
+                    <p><strong>Engine Code:</strong> 2GR-FKS</p>
+                    <p><strong>Condition:</strong> Excellent condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$3,400</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 18: Cadillac CTS V6 -->
+            <div class="product-card"
+                 data-id="cadillac-cts-3-6l-v6-2020"
+                 data-name="Cadillac CTS 3.6L V6"
+                 data-price="3300"
+                 data-image="https://i0.wp.com/swaptheuniverse.com/wp-content/uploads/2021/07/109732997_1155653288131186_3377322837876495799_n.jpg">
+                <img src="https://i0.wp.com/swaptheuniverse.com/wp-content/uploads/2021/07/109732997_1155653288131186_3377322837876495799_n.jpg" alt="Cadillac CTS Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Cadillac CTS 3.6L V6</h3>
+                    <p><strong>Year:</strong> 2020</p>
+                    <p><strong>Mileage:</strong> 29,000 miles</p>
+                    <p><strong>Engine Code:</strong> LGX</p>
+                    <p><strong>Condition:</strong> Excellent condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$3,300</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 19: Ford Mustang EcoBoost -->
+            <div class="product-card"
+                 data-id="ford-mustang-ecoboost-2-3l-2021"
+                 data-name="Ford Mustang EcoBoost 2.3L"
+                 data-price="3900"
+                 data-image="https://dealer.parts.ford.com/images/photo-images/619/33619.jpg">
+                <img src="https://dealer.parts.ford.com/images/photo-images/619/33619.jpg" alt="Ford Mustang Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Ford Mustang EcoBoost 2.3L</h3>
+                    <p><strong>Year:</strong> 2021</p>
+                    <p><strong>Mileage:</strong> 18,000 miles</p>
+                    <p><strong>Engine Code:</strong> GTDI</p>
+                    <p><strong>Condition:</strong> Like new condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$3,900</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 20: Chevrolet Camaro Turbo -->
+            <div class="product-card"
+                 data-id="chevy-camaro-2-0l-turbo-2019"
+                 data-name="Chevrolet Camaro 2.0L Turbo"
+                 data-price="2450"
+                 data-image="https://i.ebayimg.com/00/s/MTA2NlgxNjAw/z/Qa4AAOSwmoFm4xUO/%24_57.JPG?set_id=880000500F">
+                <img src="https://i.ebayimg.com/00/s/MTA2NlgxNjAw/z/Qa4AAOSwmoFm4xUO/%24_57.JPG?set_id=880000500F" alt="Chevrolet Camaro Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Chevrolet Camaro 2.0L Turbo</h3>
+                    <p><strong>Year:</strong> 2019</p>
+                    <p><strong>Mileage:</strong> 47,000 miles</p>
+                    <p><strong>Engine Code:</strong> LTG</p>
+                    <p><strong>Condition:</strong> Good condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,450</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 21: Genesis G70 Twin Turbo -->
+            <div class="product-card"
+                 data-id="genesis-g70-3-3l-twin-turbo-2020"
+                 data-name="Genesis G70 3.3L Twin Turbo"
+                 data-price="3600"
+                 data-image="https://cdn11.bigcommerce.com/s-dals72eswg/images/stencil/1280x1280/products/74241/795616/IMG_3336__39095.1727806084.jpg?c=2">
+                <img src="https://cdn11.bigcommerce.com/s-dals72eswg/images/stencil/1280x1280/products/74241/795616/IMG_3336__39095.1727806084.jpg?c=2" alt="Genesis G70 Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Genesis G70 3.3L Twin Turbo</h3>
+                    <p><strong>Year:</strong> 2020</p>
+                    <p><strong>Mileage:</strong> 24,000 miles</p>
+                    <p><strong>Engine Code:</strong> Lambda II</p>
+                    <p><strong>Condition:</strong> Excellent condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$3,600</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 22: Dodge Charger HEMI -->
+            <div class="product-card"
+                 data-id="dodge-charger-5-7l-hemi-2019"
+                 data-name="Dodge Charger 5.7L HEMI"
+                 data-price="3700"
+                 data-image="https://cdn11.bigcommerce.com/s-akjyru/images/stencil/1280x1280/products/38496/3607366/04.5-05DMAX__32023.1719319651.png?c=2%3Fimbypass%3Don">
+                <img src="https://cdn11.bigcommerce.com/s-akjyru/images/stencil/1280x1280/products/38496/3607366/04.5-05DMAX__32023.1719319651.png?c=2%3Fimbypass%3Don" alt="Dodge Charger Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Dodge Charger 5.7L HEMI</h3>
+                    <p><strong>Year:</strong> 2019</p>
+                    <p><strong>Mileage:</strong> 52,000 miles</p>
+                    <p><strong>Engine Code:</strong> 5.7L HEMI</p>
+                    <p><strong>Condition:</strong> Good condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$3,700</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 23: Jeep Grand Cherokee V6 -->
+            <div class="product-card"
+                 data-id="jeep-grand-cherokee-3-6l-v6-2020"
+                 data-name="Jeep Grand Cherokee 3.6L V6"
+                 data-price="2800"
+                 data-image="https://i.ebayimg.com/thumbs/images/g/L8UAAeSw0xtoeqXo/s-l1200.jpg">
+                <img src="https://i.ebayimg.com/thumbs/images/g/L8UAAeSw0xtoeqXo/s-l1200.jpg" alt="Jeep Grand Cherokee Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Jeep Grand Cherokee 3.6L V6</h3>
+                    <p><strong>Year:</strong> 2020</p>
+                    <p><strong>Mileage:</strong> 36,000 miles</p>
+                    <p><strong>Engine Code:</strong> ERB</p>
+                    <p><strong>Condition:</strong> Good condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,800</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 24: Mitsubishi Lancer -->
+            <div class="product-card"
+                 data-id="mitsubishi-lancer-2-4l-2018"
+                 data-name="Mitsubishi Lancer 2.4L"
+                 data-price="1800"
+                 data-image="https://i.ebayimg.com/images/g/cYYAAOSwcCFn5aID/s-l400.jpg">
+                <img src="https://i.ebayimg.com/images/g/cYYAAOSwcCFn5aID/s-l400.jpg" alt="Mitsubishi Lancer Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Mitsubishi Lancer 2.4L</h3>
+                    <p><strong>Year:</strong> 2018</p>
+                    <p><strong>Mileage:</strong> 61,000 miles</p>
+                    <p><strong>Engine Code:</strong> 4B12</p>
+                    <p><strong>Condition:</strong> Good condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$1,800</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 25: Chevrolet Impala V6 -->
+            <div class="product-card"
+                 data-id="chevy-impala-3-6l-v6-2017"
+                 data-name="Chevrolet Impala 3.6L V6"
+                 data-price="2200"
+                 data-image="https://www.airdesigns.net/wp-content/uploads/09976.jpg">
+                <img src="https://www.airdesigns.net/wp-content/uploads/09976.jpg" alt="Chevrolet Impala Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Chevrolet Impala 3.6L V6</h3>
+                    <p><strong>Year:</strong> 2017</p>
+                    <p><strong>Mileage:</strong> 68,000 miles</p>
+                    <p><strong>Engine Code:</strong> LFX</p>
+                    <p><strong>Condition:</strong> Good condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$2,200</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 26: Chevrolet Malibu -->
+            <div class="product-card"
+                 data-id="chevy-malibu-2-4l-2018"
+                 data-name="Chevrolet Malibu 2.4L"
+                 data-price="1650"
+                 data-image="https://cdn11.bigcommerce.com/s-dals72eswg/images/stencil/1280x1280/products/81767/893041/IMG_1329__93294.1750346232.jpg?c=2%3Fimbypass%3Don">
+                <img src="https://cdn11.bigcommerce.com/s-dals72eswg/images/stencil/1280x1280/products/81767/893041/IMG_1329__93294.1750346232.jpg?c=2%3Fimbypass%3Don" alt="Chevrolet Malibu Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Chevrolet Malibu 2.4L</h3>
+                    <p><strong>Year:</strong> 2018</p>
+                    <p><strong>Mileage:</strong> 71,000 miles</p>
+                    <p><strong>Engine Code:</strong> LE5</p>
+                    <p><strong>Condition:</strong> Good condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$1,650</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Engine 27: Ford Fusion V6 -->
+            <div class="product-card"
+                 data-id="ford-fusion-3-0l-v6-2017"
+                 data-name="Ford Fusion 3.0L V6"
+                 data-price="1900"
+                 data-image="https://i.ytimg.com/vi/7EvYbw-dRRQ/hq720.jpg?rs=AOn4CLClW8cKRArtXjhcRRHOTHGJTw5Gdg&sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD">
+                <img src="https://i.ytimg.com/vi/7EvYbw-dRRQ/hq720.jpg?rs=AOn4CLClW8cKRArtXjhcRRHOTHGJTw5Gdg&sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD" alt="Ford Fusion Engine" class="engine-image">
+                <div class="engine-details">
+                    <h3>Ford Fusion 3.0L V6</h3>
+                    <p><strong>Year:</strong> 2017</p>
+                    <p><strong>Mileage:</strong> 74,000 miles</p>
+                    <p><strong>Engine Code:</strong> Duratec 30</p>
+                    <p><strong>Condition:</strong> Good condition</p>
+                    <p><strong>Warranty:</strong> 90 days</p>
+                    <p class="price">$1,900</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+     <footer><div class="container"> <p>© 2025 PartsGenie - All rights reserved</p> </div></footer>
        <!-- Search and Details JS -->
          <script> 
          function searchEngines() { 
@@ -608,6 +942,6 @@
             document.getElementById('engineSize').value = ''; 
             document.querySelectorAll('.engine-item').forEach(e => e.style.display = 'block'); } 
             </script> <script src="cart.js"></script>
-         </body> 
+    </body> 
  </html>
    

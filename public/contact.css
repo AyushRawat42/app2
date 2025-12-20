@@ -19,12 +19,15 @@ header .logo h1 {
     margin: 0;
     font-size: 2.5rem;
     color: white;
+    
 }
 
 header .logo p {
     margin: 5px 0 0;
     font-size: 1rem;
 }
+
+
 
 nav ul {
     list-style: none;

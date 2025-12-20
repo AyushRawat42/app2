@@ -98,6 +98,20 @@ header .logo p {
     line-height: 1.1;
     font-size: 1.5rem;
 }
+
+header .addressline-1{
+  background: #000;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;  /* pushes h6 to the right */
+  padding: 6px 20px;
+}
+
+header .addressline-1 h6{
+  margin: 0;                 /* remove default h6 margins */
+  color: #fff;
+}
+
 /* Navigation Home Tab Styling */
 .hometab {
      background-color: transparent;

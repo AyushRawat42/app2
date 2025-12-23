@@ -204,9 +204,11 @@
     
     <!-- Billing Information -->
     <h3>Billing Information</h3>
-    <label>
-        <input type="checkbox" id="sameAsShipping"> Same as shipping address
-    </label>
+    <label class="checkbox-end">
+  <span>Same as shipping address</span>
+  <input type="checkbox" id="sameAsShipping">
+</label>
+
     
     <div id="billingFields">
         <input type="text" id="billingFirstName" placeholder="First Name*" required>
@@ -281,11 +283,10 @@
     <input type="text" id="cvv" placeholder="CVV*" required>
     
     <!-- Terms & Conditions -->
-    <label>
-        <input type="checkbox" id="agreeTerms" required> 
-        I Agree to <a href="terms.html" target="_blank">Terms & Conditions</a>
-    </label>
-    
+    <label class="checkbox-end">
+  <span>I Agree to <a href="terms.html" target="_blank">Terms & Conditions</a></span>
+  <input type="checkbox" id="agreeTerms" required>
+</label>
     <button type="submit">Complete Order</button>
 </form>
 

@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #c0392b;
+    background-color: #fb1900;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -27,7 +27,18 @@ header .logo p {
     font-size: 1rem;
 }
 
-
+header .logo .logo-img{
+  height: 4rem;      /* similar visual height to your old h1 (font-size: 3rem) */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+@media (max-width: 768px){
+  header .logo .logo-img{ height: 3rem; }
+}
+@media (max-width: 480px){
+  header .logo .logo-img{ height: 2.5rem; }
+}
 
 nav ul {
     list-style: none;

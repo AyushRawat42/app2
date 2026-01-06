@@ -52,11 +52,30 @@
     nav {
       background: #111;
       display: flex;
-      justify-content: center;
+      align-items: center;
       gap: 2rem;
       padding: 1rem;
     }
 
+   nav .logo-link{
+      margin-right: auto; /* forces the other links to move right */
+        display: inline-flex;
+       align-items: center;
+    }
+
+    nav img{
+      height: 3rem;      /* similar visual height to your old h1 (font-size: 3rem) */
+     width: auto;
+     display: block;
+     object-fit: contain;
+     justify-content: end;
+    }
+   @media (max-width: 768px){
+       nav img{ height: 3rem; }
+    }
+   @media (max-width: 480px){
+        nav img{ height: 2.5rem; }
+    }
     nav a {
       color: var(--gray);
       font-weight: 600;
@@ -193,12 +212,16 @@
 </head>
 <body>
   <nav>
+      <a href="index.html" class="logo-link">
+    <img src="images/l4.png" alt="PartsGenie" class="logo-img">
+  </a>
     <a href="#why">Why Us</a>
     <a href="#how">How It Works</a>
     <a href="#contact">Get Started</a>
   </nav>
 
   <header data-aos="fade-in">
+  
     <h1>Partner with PartsGenie</h1>
     <p>Nationwide exposure. Trusted logistics. Real growth for your auto parts business.</p>
   </header>
@@ -246,7 +269,7 @@
   <section class="section" id="contact" data-aos="fade-up">
     <h2 class="section-title">Ready to Accelerate?</h2>
     <p style="text-align:center; max-width:600px; margin:0 auto 2rem;">
-      Fill out the form below or call <a href="tel:+18886565933">+1&nbsp;888‑656‑5933</a>. Let’s grow together.
+      Fill out the form below or E-mail us at <a href="tel:+18886565933">partsgeniepartner@gmil.com</a>. Let’s grow together.
     </p>
    <form id="partnerForm" data-aos="zoom-in">
     <input type="text" id="businessName" placeholder="Business Name" required>

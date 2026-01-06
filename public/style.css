@@ -87,7 +87,7 @@ header .logo .logo-img{
   object-fit: contain;
 }
 @media (max-width: 768px){
-  header .logo .logo-img{ height: 3rem; }
+  header .logo .logo-img{ height: 2.5rem; }
 }
 @media (max-width: 480px){
   header .logo .logo-img{ height: 2.5rem; }
